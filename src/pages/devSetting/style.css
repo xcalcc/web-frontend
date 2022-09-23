@@ -1,0 +1,14 @@
+.dev-setting-box ul{
+  margin: 50px auto;
+}
+
+.dev-setting-box li{
+  display: inline-block;
+  margin: 0 30px 15px 0;
+
+  user-select: none;
+}
+
+.dev-setting-box li input{
+  margin-right:5px;
+}

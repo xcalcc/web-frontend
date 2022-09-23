@@ -1,0 +1,24 @@
+@import "~styles/colors";
+
+@mixin input-style {
+    color: $color-jet-black;
+
+    &::-webkit-input-placeholder{
+        color: $color-grey7;
+        text-transform: none;
+    }
+}
+
+input.xinput {
+    @include input-style;
+    font-weight: 500;
+
+    border:1px solid $color-grey;
+    border-radius: unset;
+
+    &:focus{
+        @include input-style;
+        border:1.5px solid $color-jet-black;
+        box-shadow: none;
+    }
+}

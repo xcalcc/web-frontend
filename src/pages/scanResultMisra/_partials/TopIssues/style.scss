@@ -1,0 +1,114 @@
+@import "~styles/variables";
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.scan-result-wrap-misra .top-issues {
+  font-size:12px;
+  &-chart {
+    margin-top: 25px;
+    padding-right: 0;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content : flex-start;
+
+    .title {
+      @include text-label;
+      color: $color-grey12;
+
+      .tooltip-icon {
+        display: inline-block;
+        margin-left: 8px;
+
+        color: $color-grey12;
+        svg {
+          margin-top: -2px;
+        }
+      }
+    }
+
+    .ruleset-list {
+      margin-left: 30px;
+      li {
+        display: inline-block;
+        margin-right: 8px;
+
+        padding: 1px 7px;
+  
+        color: $color-grey12;
+        font-weight: 600;
+        font-size: 13px;
+        font-family: $font-family-condensed;
+
+        border-radius: 3px;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-pale-grey2;
+        }
+
+        &.active {
+          color: $color-jet-black;
+
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+
+  .rule-list {
+    height: 160px;
+    margin-top: 20px;
+    overflow: scroll;
+    .rule-static-item {
+      .row {
+        width: 100%;
+      }
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      height: 32px;
+      padding: 0 5px;
+
+      border-bottom: 1px solid $color-grey1;
+
+      .rule-name {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+
+        .marquee {
+          width: 100%;
+          p {
+            overflow: hidden;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .rule-count {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &:hover {
+        .rule-name {
+          .marquee {
+            width: auto;
+            p {
+              overflow: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .doughnut-number {
+    @include verticalCenter;
+    max-width: 140px;
+  }
+}

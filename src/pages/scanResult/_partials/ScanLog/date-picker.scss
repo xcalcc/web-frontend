@@ -1,0 +1,60 @@
+@import "~styles/colors";
+
+.date-picker {
+  .rmdp-container {
+    .rmdp-input {
+      min-width: 160px;
+      height: auto;
+      margin: 0;
+
+      background-color: $color-white;
+      border-color: $color-grey11;
+      border-radius: 0;
+      &:focus {
+        border-color: $color-grey12;
+        box-shadow: none;
+      }
+    }
+  }
+  .multi-date-picker {
+    margin-top: 2px;
+
+    transform: none;
+    &::after {
+      display: none;
+    }
+    .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+      background-color: $color-grey12;
+    }
+    .rmdp-range {
+      background-color: $color-grey12;
+      box-shadow: none;
+    }
+    .rmdp-day.rmdp-today span {
+      background-color: $color-grey13;
+    }
+    .rmdp-week-day {
+      color: $color-black;
+      font-weight: bold;
+    }
+    .rmdp-header-values {
+      font-weight: bold;
+    }
+    .rmdp-arrow {
+      border-color: $color-grey12;
+    }
+  }
+  .rmdp-input {
+    color: $color-grey12;
+  }
+  .rmdp-input-icon {
+    color: $color-grey12;
+  }
+  .rmdp-arrow-container:hover {
+    background-color: transparent;
+    box-shadow: none;
+    .rmdp-arrow {
+      border-color: $color-jet-black;
+    }
+  }
+}

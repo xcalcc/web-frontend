@@ -1,0 +1,280 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.setup-guide-page {
+    .main-wrapper {
+        position: relative;
+    
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .header-logo {
+        float: left;
+        width: 15.6%;
+    }
+    
+    .header-logo a img {
+        width: 57%;
+        height: auto;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 9;
+
+        display: block;
+        width: 22px;
+        padding: 0 5px;
+
+        text-align: center;
+
+        background: $color-white;
+        transform: translateY(-50%);
+
+        cursor: pointer;
+
+        img {
+            max-width: 13px;
+        }
+    }
+
+    .login-email-massage {
+        justify-content: center;
+        margin: 21px 0 0 0;
+    }
+
+    .login-success-massage {
+        margin: 40px 0 0 0;
+        .gray-txt {
+            text-transform: uppercase;
+        }
+    }
+
+    .login-form-head .big-icon {
+        margin-bottom: 6px;
+    }
+
+    .login-form-head h4 {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 15px auto;
+    
+        font-size: 20px;
+        font-family: $font-family-condensed;
+        line-height: 50px;
+        text-align: center;
+    
+        border: 0.5px solid $color-black;
+        border-radius: 100%;
+    }
+
+    .login-sidebar-right {
+        margin-left: 200px;
+
+        .inner-container {
+            margin-top: 24px;
+        }
+        
+        .signin-form-head {
+            h2 {
+                margin: 10px 0 18px 0;
+            
+                font-size: 22px;
+                letter-spacing: 1.5px;
+            }
+            
+            h2 small {
+                font-size: 100%;
+                font-family: $font-family-condensed;
+            }
+            
+            p {
+                color: $color-black;
+                font-size: 12px;
+                font-family: $font-family-condensed;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+            
+            p a {
+                color: $color-black;
+                font-family: $font-family-condensed;
+            }
+            
+            p small {
+                font-size: 100%;
+                font-family: $font-family-condensed;
+            }
+        }
+    }
+
+    .login-massage {
+        margin: 93px 0 0 0;
+
+        p {
+            color: $color-black;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: center;
+
+            a {
+                color: $color-black;
+            }
+
+            &.gray-txt a {
+                color: $color-grey10 !important;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .login-right-list {
+        position: relative;
+    
+        width: 18%;
+        padding: 27px 20px 27px 10px;
+    
+        background-color: #fff;
+        box-shadow: 1px 1px 2px 0px rgba(190, 190, 190, 0.9);
+
+        ul {
+            li {
+                position: relative;
+            
+                padding: 9px 0;
+            
+                color: #231f20;
+                font-weight: 600;
+                font-size: 12px;
+                font-family: 'Barlow Condensed', sans-serif;
+                line-height: 17px;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+            
+                border-bottom: 0.5px solid #c8c7c7;
+
+                &:first-child {
+                    border-top: 0.5px solid #c8c7c7;
+                }
+
+                span {
+                    display: block;
+                
+                    text-transform: capitalize;
+                }
+
+                small {
+                    font-size: 100%;
+                    font-family: 'barlow_condensedregular';
+                }
+
+                .check-image {
+                    position: absolute;
+                    top: 50%;
+                    right: 12px;
+
+                    display: none;
+                    width: 14px;
+                    height: auto;
+
+                    transform: translateY(-50%);
+                }
+            }
+
+            li.completed-stap {
+                color: $color-grey10;
+            }
+            
+            li.completed-stap .check-image {
+                display: block;
+            }
+            
+            li.completed-stap span {
+                display: none;
+            }
+            
+            li.completed-stap.setup-completed {
+                color: $color-black;
+            }
+        }
+    }
+
+    .login-left-box {
+        width: calc(100% - 19%);
+        padding: 19px;
+    
+        background: $color-white;
+        box-shadow: 1px 1px 2px 0px rgba(190, 190, 190, 0.9);
+    }
+
+    .scanning-middle-content {
+        position: relative;
+    
+        height: 100%;
+    }
+}
+
+@media screen and (max-height: 628px) {
+    .main-wrapper {
+        padding: 20px 0 20px 0;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .main-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0;
+    }
+
+}
+
+@media screen and (min-width: 1550px) {
+    .setup-guide-page {
+        .toggle-password {
+            width: 44px;
+            img {
+                max-width: 17px;
+            }
+        }
+
+        .login-form-head h4 {
+            width: 70px;
+            height: 70px;
+    
+            font-size: 30px;
+            line-height: 70px;
+        }
+
+
+        .login-sidebar-right {
+            .signin-form-head h2 {
+                font-size: 26px;
+            }
+
+            .signin-form-head p {
+                font-size: 17px;
+            }
+        }
+
+        .login-massage p {
+            font-size: 17px;
+        }
+
+        .login-right-list {
+            ul li {
+                font-size: 14px;
+                line-height: 23px;
+
+                .check-image {
+                    width: 17px;
+                }
+            }
+        }
+    }
+}

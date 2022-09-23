@@ -1,0 +1,72 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.zh-CN {
+	&.project-risk {
+		.meter-block-pdf {
+			.pill{
+			}
+			.meterbox__title {
+				font-size: 9px;
+			}
+		}
+	}
+}
+
+//override
+.meter-block-pdf {
+	position: relative;
+
+	height: 64px;
+
+	color: $color-black;
+
+	line-height: 64px;
+
+	border-right: 1px solid $color-grey15;
+	.pill {
+		margin-right: 5px;
+		padding: 0 6px;
+
+		color: $color-white !important;
+		font-weight: 600 !important;
+		font-size: 7px !important;
+		line-height: 8px !important;
+		text-align: center;
+
+		border-radius: 20px;
+
+		&.high {
+			background-color: $color-pantone;
+		}
+
+		&.medium {
+			background-color: $color-orange;
+		}
+
+		&.low {
+			background-color: $color-blue;
+		}
+	}
+	.meterbox__title {
+		position: absolute;
+
+		color: $color-black;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px !important;
+		white-space: pre-wrap;
+		text-align: left;
+	}
+
+	.meterbox {
+		position: relative;
+
+		text-align: center;
+
+		&__meter {
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+}

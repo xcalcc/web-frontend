@@ -1,0 +1,45 @@
+@import '~styles/colors';
+.drop-down-block {
+  .drop-down-two-lines {
+    .dropdown-toggle {
+      &::after {
+        position: relative;
+        top: 0;
+
+        padding: 0;
+
+        color: $color-pantone;
+
+        background-image: none;
+
+        content: "\25BE";
+      }
+    }
+    .drop-down-block {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .drop-down-one-line {
+    .icon {
+      color: $color-red;
+      svg {
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+    }
+    .show.dropdown {
+      .icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .text {
+      color: $color-jet-black;
+      font-size: 14px;
+    }
+  }
+}

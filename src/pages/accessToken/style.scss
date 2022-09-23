@@ -1,0 +1,68 @@
+@import "~styles/colors";
+
+.access-token {
+    .section {
+        margin-bottom: 40px;
+
+        .title {
+            padding-bottom: 0;
+        }
+    }
+    .token-input-wrap {
+        margin: 20px 0;
+
+        font-size: 16px;
+    }
+
+    .token-unit {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .xbutton {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .table {
+        font-size: 16px;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 50%;
+            overflow: hidden;
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .link {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .norecord {
+        margin-top: 40px;
+
+        color: $color-grey12;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .chinese {
+        .access-token {
+            .token-input-wrap,
+            .table {
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.project-summary-page {
+	.title {
+		color: $color-grey16;
+		font-size: 24px;
+	}
+
+	.field-name {
+		color: $color-jet-black;
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.field-value {
+		color: $color-grey12;
+		font-size: 10px;
+		line-height: 12px;
+		letter-spacing: 0.01em;
+	}
+	hr {
+		height: 2px;
+
+		color: $color-grey12;
+	}
+	.block {
+		h6 {
+			color: $color-black;
+			font-weight: 600;
+			font-size: 10px;
+			line-height: 12px !important;
+		}
+	}
+}

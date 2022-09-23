@@ -1,0 +1,73 @@
+@import "~styles/mixins";
+@import "~styles/colors";
+
+.sorting-table {
+  th {
+    height: 50px;
+
+    white-space: nowrap;
+    vertical-align: middle !important;
+    a.sort-label {
+      position: relative;
+
+      display: inline-block;
+      width: 10px;
+      margin: 0 0 6px 5px;
+
+      &::before, 
+      &::after {
+        @include verticalCenter;
+        position: absolute;
+
+        display: block;
+        width: 0;
+        height: 0;
+
+        border: 5px solid transparent;
+
+        content: "";
+      }
+
+      &::before {
+        margin-top: -5px;
+
+        border-bottom-color: $color-jet-black;
+      }
+
+      &::after {
+        margin-top: 7px;
+
+        border-top-color: $color-jet-black;
+      }
+
+      &.up::before {
+        border-bottom-color: $color-pantone;
+      }
+      
+      &.down::after {
+        border-top-color: $color-pantone;
+      }
+    }
+    @media screen and (min-width:1921px){
+      font-size: 16px;
+    }
+  }
+  .table {
+    td {
+      align-items: center;
+      height: 50px;
+      min-height: 26px;
+      max-height: 50px !important;
+    }
+    .header-label {
+      margin: 0;
+      padding: 0;
+
+      text-transform: uppercase;
+    }
+    tbody tr:hover,
+    tbody tr:hover td {
+      background-color: $color-grey6;
+    }
+  }
+}

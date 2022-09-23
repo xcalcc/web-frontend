@@ -1,0 +1,89 @@
+@import '~styles/colors';
+.full-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.theme-basic {
+  width: 100vw;
+  min-width: 1320px;
+  height: 100vh;
+  &-main {
+    display: flex;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  &-content {
+    flex: 1;
+    height: calc(100vh - 72px);
+    min-height: 700px;
+    padding: 25px 30px 30px;
+    overflow: scroll;
+    > .container,
+    > .container-fluid {
+      padding: 0;
+    }
+  }
+  &-sidebar {
+    position: relative;
+
+    width: 240px;
+    height: 100%;
+    min-height: 750px;
+
+    background-color: $color-white;
+
+    transition: width 100ms ease-out 0s;
+
+    .sidebar-toggle {
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      z-index: 1;
+
+      width: 24px;
+      height: 24px;
+  
+      background-color: $color-white;
+      border: 0;
+      border-radius: 50%;
+      outline: 0;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  
+      &-icon {
+        font-size: 12px;
+
+        transition: transform 100ms ease-out 0.3s;
+      }
+  
+      &:hover {
+        background-color: $color-pantone;
+        .sidebar-toggle-icon {
+          color: $color-white;
+        }
+      }
+    }
+
+    &.hide {
+      display: block;
+      width: 30px;
+      .sidebar-toggle-icon {
+        transform: rotate(180deg);
+      }
+      .side-bar {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+  &-header {
+    top: 0;
+
+    height: 72px;
+  }
+
+}

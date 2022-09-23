@@ -1,0 +1,53 @@
+---
+project:
+    enter: Enter
+    project-title: NEW PROJECT
+    scan: Scan
+    save-configuration: Save
+    project-information: Project Information
+    project-language: Project Language 
+    project-name: Project Name
+    project-id: Project ID
+    source: Source
+    source-url: Source URL
+    access-token: Access Token
+    branch: Branch
+    source-code-path: Source Code Path
+    build-file-path: Build File Path
+    preprocess-file-path: .i / .ii File Path
+    gerrit-project-id: Gerrit Project ID
+    gerrit-username: Gerrit Username
+    project-configuration-method: Project configuration method
+    use-old-configuration: Use an existing project configuration
+    use-new-configuration: Start a new configuration
+    build-tool: Build Tool
+    select-build-tool: Select Build Tool
+    build-opt: Build Option
+    build-opt-hint: If Build Tool is make then the entry should be of the form "target F00=bar-j8"
+    configure-command: Prebuild Command
+    build-tool-path: Build Tool Path
+    upload-source-code: Upload Source Code
+    upload-source-code-hint: By selecting this option you are enabling the detailed view of source code when reviewing the scanning results
+    select-configuration : select configuration
+    select-configuration-title: Select an existing configuration
+    memory-limit-title: Memory Limit for Scan (GB)
+    memory-limit: Minimum is {{limit}}GB
+    memory-limit-hint-c: "{{increase}} is recommended for every 1000 lines of code. Minimum is {{limit}}GB."
+    memory-limit-hint-java: "1GB plus {{increase}} for every 1000 lines of code is recommended. Minimum is {{limit}}GB."
+    other: other
+    other-build-tool: Other Build Tool
+    other-configuration: Other Configuration
+    enter-name: Enter Name
+    enter-value: Enter Value
+    add: Add
+    settings: PROJECT SETTINGS
+    project-info: PROJECT INFO
+    project-configuration: PROJECT CONFIGURATION
+    agent-name: Project Path
+    not-edit-tip: This field can't be edited
+    edit-warning: Please note that the change you are about to submit would result in a deviation in the scan result.
+    result-records: Scan result records to be saved
+    result-records-hint: (Optional) User only needs to fill in an integer (greater than 0) if the number of scan result records to be saved will be different from the number set for all projects in "Data Management".
+    yes: Yes
+    no: No
+    back: BACK

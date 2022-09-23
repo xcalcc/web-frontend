@@ -1,0 +1,20 @@
+@import "~styles/colors";
+
+.dropdown-with-edit {
+    .as-label {
+        background-color: transparent;
+        border-color: transparent;
+
+        &:hover {
+            background-color: $color-grey6;
+        }
+
+        .xdropdown__toggle-text {
+            color: $color-ink-blue;
+        }
+
+        .xdropdown__toggle-icon {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+
+  background-color: #ffff;
+}
+
+.single-chart {
+  justify-content: space-around;
+  width: 33%;
+  padding: 10px 0px;
+}
+
+.circular-chart {
+  display: block;
+  max-width: 100%;
+  max-height: 250px;
+  margin: 10px auto;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  animation: progress 1s ease-out forwards;
+
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.circular-chart.orange .circle {
+  stroke: #ff8300;
+}
+
+.single-chart > text {
+  padding: 0px 65px !important;
+}
+
+.single-chart.blue.scan-text {
+  padding: 0px 79px !important;
+}
+
+.circular-chart.green .circle {
+  stroke: #4cc790;
+}
+
+.circular-chart.blue .circle {
+  stroke: #3c9ee5;
+}
+
+.percentage {
+  font-weight: 600;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+
+  fill: #3c9ee5;
+  text-anchor: middle;
+}
+.percentage1 {
+  font-weight: 600;
+  font-size: 7px;
+  font-family: sans-serif;
+
+  fill: #3c9ee5;
+  text-anchor: middle;
+}
+
+.scan-text {
+  font-size: 1.2vw;
+}
+
+.font-fm {
+  font-family: Barlow Condensed;
+}
+
+.img-down {
+  width: 4.5%;
+  height: 4.5%;
+  margin-top: 17%;
+}
+.header-card {
+  margin-bottom: 0px;
+  padding: 0.2rem 0.1rem;
+
+  background-color: #fff;
+  border-bottom: 1px solid #c8ced3;
+}
+
+.header-text {
+  margin-left: -74%;
+
+  font-size: 52%;
+}
+
+@media (max-width: 1500px) {
+  .single-chart {
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+@media (min-width: 1500px) {
+  .single-chart {
+    justify-content: space-around;
+    width: 100%;
+
+    text-align: center;
+  }
+  .header-text {
+    margin-left: -74%;
+
+    font-size: 77%;
+  }
+}
+
+.dev-scan {
+  margin-top: 16%;
+
+  font-size: 30px;
+}
+
+.font-sm {
+  font-size: 2.5px;
+}

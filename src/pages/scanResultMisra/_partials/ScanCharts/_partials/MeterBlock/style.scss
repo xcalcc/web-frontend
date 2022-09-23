@@ -1,0 +1,60 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-wrap-misra .meter-block {
+    height: 100%;
+
+    & > .row {
+        height: 100%;
+    }
+
+    .left-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+            color: $color-grey12;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .pill {
+            width: 65px;
+            padding: 1px 0;
+
+            color: $color-white;
+            font-size: 13px;
+            font-family: $font-family-condensed;
+            text-align: center;
+
+            border-radius: 20px;
+
+            &.high {
+                background-color: $color-pantone;
+            }
+
+            &.medium {
+                background-color: $color-orange;
+            }
+
+            &.low {
+                background-color: $color-blue;
+            }
+        }
+    }
+
+    .right-area {
+        position: relative;
+        .meterbox{
+            position: absolute;
+            bottom: 0;
+
+            height: auto;
+            &__meter {
+                width: 100%;
+                max-width: unset;
+            }
+        }
+    }
+}

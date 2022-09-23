@@ -1,0 +1,33 @@
+@import "~styles/colors";
+
+.tip-message {
+    position: fixed;
+    top: 123px;
+    left: 50%;
+    z-index: 10;
+
+    height: 36px;
+    padding: 10px 20px;
+
+    color: $color-white;
+    font-size: 12px;
+
+    background-color: $color-grey12;
+    border-radius: 8px;
+    transform: translateX(-50%);
+
+    &__icon {
+        display: inline-block;
+        margin-right: 10px;
+        .spinner-border {
+            width: 15px;
+            height: 15px;
+
+            border-width: 1.8px;
+        }
+    }
+
+    &__content {
+        line-height: 1;
+    }
+}

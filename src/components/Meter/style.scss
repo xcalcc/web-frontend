@@ -1,0 +1,82 @@
+.meterbox{
+    flex: 1;
+    min-width: 64px;
+    height: 100%;
+
+    &__title {
+        margin-bottom: 8px;
+
+        font-weight: 600;
+
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__meter {
+        position: relative;
+
+        width: 85%;
+        max-width: 90px;
+        height: auto;
+        margin: 0 auto;
+    
+        &-pointer {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+
+            width: 40%;
+            margin: 3px 0 0 3px;
+
+            transform-origin: calc(100% - 3px) calc(100% - 3px);
+
+            transition: all 2s ease-in-out;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    h6 {
+        margin-top: 5px;
+
+        font-size: 14px;
+    }
+    img {
+        transform-origin: calc(100% - 3px) calc(100% - 3px);
+        &.perc0 {
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        &.perc30 {
+            -moz-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+        &.perc90 {
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        &.perc150 {
+            -moz-transform: rotate(150deg);
+            -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+        }
+    }
+
+}
+
+@media screen and (min-width: 1550px) {
+    .meterbox {
+        &__title {
+            font-size: 14px;
+        }
+    }
+}

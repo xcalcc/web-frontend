@@ -1,0 +1,29 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.total-defects-block-pdf {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 64px;
+	padding: 0 12px !important;
+
+	color: $color-black;
+
+	border-right: 1px solid $color-grey15;
+
+	.digits {
+		font-weight: 500;
+		font-size: 24px;
+
+		transform: translateY(8px);
+
+		.icon {
+			margin-right: 5px;
+			img {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+}

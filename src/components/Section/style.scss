@@ -1,0 +1,19 @@
+@import "~styles/colors";
+@import '~styles/mixins';
+
+.section {
+    width: 100%;
+    margin-bottom: 20px;
+
+    .card {
+        @include box-shadow;
+    }
+
+    .title {
+        padding-bottom: 8px;
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

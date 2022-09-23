@@ -1,0 +1,106 @@
+@import '~styles/colors';
+
+.guide-user-list-wrap {
+    max-width: 80%;
+    margin: 0 auto;
+
+    .user-member-head {
+        margin-bottom: 8px;
+        padding: 3px 17px;
+
+        background-color: $color-pale-grey3;
+        box-shadow: 1px 1px 2px 0px rgba(190, 190, 190, 0.9);
+
+        li {
+            display: inline-block;
+            margin-right: -4px;
+    
+            color: $color-black;
+            font-weight: 600;
+            font-size: 12px;
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        li:nth-child(1) {
+            width: 31%
+        }
+    
+        li:nth-child(2) {
+            width: 28%
+        }
+    }
+
+    .user-member-row {
+        margin-bottom: 5px;
+    }
+
+    .user-member-listing {
+        min-height: 225px;
+        max-height: 225px;
+    }
+
+    .second-block.member-td, .third-block.member-td {
+        text-transform: capitalize;
+    
+        background-image: none;
+    }
+    
+    .member-td {
+        padding: 0;
+    
+        color: $color-black;
+        font-size: 12px;
+        font-family: 'barlow_condensedregular';
+        letter-spacing: 1px;
+    
+        background-repeat: no-repeat;
+        background-position: 0px;
+        background-size: 12px;
+    }
+    
+    .first-block.member-td {
+        width: 32%;
+        padding-left: 18px;
+    }
+    
+    .second-block.member-td {
+        width: 26.3%;
+    }
+    
+    .third-block.member-td {
+        width: auto;
+    }
+
+    .three-login-btn {
+        margin: 20px 0 0 0;
+    }
+    
+    .three-login-btn .btn {
+        width: 155px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .guide-user-list-wrap {
+        max-width: 100%;
+
+        .user-member-head {
+            padding: 6px 17px;
+
+            li {
+                font-size: 16px;
+            }
+        }
+
+        .user-member-listing {
+            min-height: 350px;
+            max-height: 350px;
+        }
+
+        .member-td {
+            font-size: 16px;
+        }
+    }
+}

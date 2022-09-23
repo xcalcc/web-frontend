@@ -1,0 +1,46 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.project-summary-page {
+  padding-right: 0;
+  padding-left: 0;
+  .title {
+    color: $color-grey16;
+    font-size: 24px;
+  }
+  .key-value {
+    padding: 0;
+
+    .field-name {
+      height: 12px;
+
+      color: $color-jet-black;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .field-value {
+      height: 12px;
+
+      color: $color-grey12;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  hr {
+    height: 2px;
+
+    color: $color-grey12;
+  }
+
+  .block {
+    h6 {
+      color: $color-black;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px !important;
+    }
+  }
+}

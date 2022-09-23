@@ -1,0 +1,27 @@
+---
+user:
+  user-has-deleted: User has been deleted!
+  imported: Imported!
+  import-success: Users has been successfully imported!
+  user-admin: USER MANAGEMENT
+  display-name: Display Name
+  name: User Name
+  email-address: Email Address
+  role: Role
+  admin: ADMIN
+  add-user: Add team member
+  import-user: import team
+  team-template: Team Template
+  profile: User Profile
+  email: Email
+  old-password: Old Password
+  new-password: New Password
+  conf-password: Confirm Password
+  profile-update-success: Profile has been updated successfully.
+  user-update-success: User details has been updated successfully.
+  create-success: User has been added successfully.
+  new-user: Add User
+  set-to-admin: Administrator
+  unlock: Unlock
+  admin-view: Admin View
+  unlock-success: User unlocked successfully

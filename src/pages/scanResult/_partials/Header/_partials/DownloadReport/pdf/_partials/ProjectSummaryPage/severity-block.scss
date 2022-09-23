@@ -1,0 +1,68 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.zh-CN {
+	&.risk-chart {
+		.risk-severity-block-pdf {
+			.risk-data {
+				.risk-label {
+					.risk-counts {
+						font-weight: 600;
+						font-size: 9px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.risk-severity-block-pdf {
+	height: 64px;
+
+	border-right: 1px solid $color-grey15;
+
+	.risk-data {
+		padding: 0 2px;
+		.risk-percentage {
+			padding-left: 7px;
+
+			font-size: 24px;
+			text-align: left;
+			span {
+				font-size: 18px;
+			}
+		}
+
+		.risk-label {
+			position: relative;
+			top: 5px;
+
+			display: flex;
+			align-items: center;
+
+			white-space: nowrap;
+			.risk-dot {
+				display: inline-block;
+				width: 5px;
+				height: 5px;
+
+				border-radius: 50%;
+				&.high {
+					background: $color-pantone;
+				}
+				&.medium {
+					background: $color-orange;
+				}
+				&.low {
+					background: $color-blue;
+				}
+			}
+			.risk-counts {
+				margin-left: 5px;
+
+				font-weight: 600;
+				font-size: 10px;
+			}
+		}
+	}
+}

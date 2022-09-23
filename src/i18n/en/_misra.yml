@@ -1,0 +1,7 @@
+misra:
+  top-issues-title: MANDATORY
+  severity:
+    HIGH: MANDATORY
+    MEDIUM: REQUIRED
+    LOW: ADVISORY
+  issue-type: OBLIGATION LEVEL

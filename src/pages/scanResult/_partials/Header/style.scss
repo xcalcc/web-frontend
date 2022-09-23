@@ -1,0 +1,60 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-header {
+    min-width: 1020px;
+    height: 50px;
+    padding: 23px 0 0;
+
+    background-color: $color-grey14;
+    .right-area {
+        display: flex;
+        align-items: top;
+        justify-content: flex-end;
+
+        .nav {
+            margin-left: 15px;
+            &-link {
+                padding: 0 5px 0;
+
+                color: $color-grey16;
+                font-weight: 500;
+                font-size: 14px;
+                font-family: $font-family-condensed;
+                line-height: 1;
+                img {
+                    width: 15px;
+                    max-height: 15px;
+                    margin-right: 6px;
+
+                    vertical-align: bottom;
+
+                    opacity: 0.5;
+                }
+
+                &.active, &:hover {
+                    color: $color-jet-black;
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* for the page is included in a Theme frame */
+.theme-basic-content {
+    .scan-result-header {
+        position: fixed;
+        top: 72px;
+        z-index: 9;
+
+        width: calc(100% - 300px);
+    }
+    &.sidebar-hidden {
+        .scan-result-header {
+            width: 100%;
+        }
+    }
+}   

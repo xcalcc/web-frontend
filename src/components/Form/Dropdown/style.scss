@@ -1,0 +1,35 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.xdropdown {
+    height: calc(1.5em + .75rem + 2px);
+
+    background-color: $color-grey6;
+    border:1px solid $color-grey;
+    border-radius: .25rem;
+
+    &__toggle {
+        position: relative;
+
+        padding: .375rem .75rem;
+
+        cursor: pointer;
+
+        &-text {
+            color: $color-jet-black;
+        }
+
+        &-icon {
+            @include verticalCenter;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+
+            font-size: .8rem;
+        }
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+}

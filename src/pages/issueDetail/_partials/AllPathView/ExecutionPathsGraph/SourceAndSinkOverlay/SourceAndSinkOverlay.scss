@@ -1,0 +1,53 @@
+@import "~styles/colors";
+
+.issue-detail-page {
+    .graph__sns-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .graph__sns-overlay__line {
+        position: absolute;
+
+        border-top: 2px dashed #c7c8ca;
+    }
+
+    .graph__sns-overlay h4 {
+        position: absolute;
+
+        font-weight: bold;
+        font-size: 16px;
+
+        font-family: barlow_condensed_extra_bold, sans-serif;
+        white-space: nowrap;
+    }
+    .graph__sns-overlay__node-header {
+        font-size: 14px;
+        font-family: barlow_condensedsemibold, sans-serif;
+        text-align: left;
+        text-transform: uppercase;
+    }
+    .graph__sns-overlay__node-info {
+        display: flex;
+
+        font-family: barlow_condensedregular, sans-serif;
+    }
+
+    .graph__sns-overlay__node-info__labels {
+        margin-right: 15px;
+
+        color: $color-grey12;
+
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    .graph__sns-overlay__node-info__values {
+        color: $color-grey12;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,117 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.filter-popup {
+    .header {
+        .title {
+            color: $color-jet-black;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: $font-family-condensed;
+        }
+        .links {
+            color: $color-grey12;
+            font-size: 12px;
+            text-align: right;
+            
+            span {
+                text-decoration: underline;
+
+                cursor: pointer;
+                text-decoration-color: $color-grey12;
+
+                &:hover {
+                    color: $color-jet-black;
+                }
+            }
+        }
+    }
+    .switch-btn-area {
+        margin: 10px 0 20px;
+
+        color: $color-grey12;
+        .switch-button {
+            vertical-align: middle;
+        }
+        .label {
+            margin-left: 10px;
+
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .number {
+            margin-left: 10px;
+
+            font-size: 14px;
+        }
+        .tooltip-icon {
+            display: inline-block;
+            margin-left: 10px;
+
+            font-size: 14px;
+        }
+    }
+
+    .rule-set-area {
+        padding-right: 20px;
+
+        border-right: 2px solid $color-pale-grey;
+    }
+
+    .rule-area {
+        overflow: hidden;
+        .types {
+            margin-right: 15px;
+
+            color: $color-jet-black;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    .button-area {
+        margin-top: 25px;
+
+        text-align: right;
+
+        .btn {
+            margin-left: 20px;
+            padding: 3px 12px;
+
+            font-weight: 600;
+
+            font-size: 12px;
+            font-family: $font-family-condensed;
+
+            border: none;
+            box-shadow: none;
+
+            transition: none;
+
+            &-cancel {
+                padding: 3px 18px;
+
+                color: $color-white;
+
+                background-color: $color-grey13;
+                border: 1px solid $color-grey13;
+
+                &:hover {
+                    background-color: $color-grey12;
+                }
+            }
+
+            &-apply {
+                color: $color-grey12;
+
+                background-color: transparent;
+                border: 1px solid $color-grey12;
+
+                &:hover {
+                    background-color: $color-pale-grey;
+                }
+            }
+        }
+    }
+}

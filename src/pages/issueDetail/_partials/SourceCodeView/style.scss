@@ -1,0 +1,20 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.source-code-view {
+    background-color: $color-white;
+
+    .left-block {
+        padding: 20px 15px;
+
+        border-right: 1px solid $color-grey14;
+    }
+
+    .right-block {
+        .source-code-wrap {
+            padding: 10px 15px;
+
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+.round-styled-title-number-block {
+  display: flex;
+  width: 100%;
+  &.auto-width {
+    width: auto;
+  }
+  &.red {
+    .title {
+      color: $color-pantone;
+
+      background-color: $color-white;
+    }
+    .number {
+      color: $color-white;
+
+      background-color: $color-pantone;
+    }
+  }
+  &.orange {
+    .title {
+      color: $color-orange;
+
+      background-color: $color-white;
+    }
+    .number {
+      color: $color-white;
+
+      background-color: $color-orange;
+    }
+  }
+  &.blue {
+    .title {
+      color: $color-blue;
+
+      background-color: $color-white;
+    }
+    .number {
+      color: $color-white;
+
+      background-color: $color-blue;
+    }
+  }
+  &.grey {
+    .title {
+      color: $color-white;
+      text-transform: uppercase;
+
+      background-color: $color-mid-grey2;
+    }
+    .number {
+      margin: 0;
+
+      color: $color-black;
+      text-align: center;
+
+      background-color: transparent;
+
+      border: 0;
+      box-shadow: none;
+    }
+  }
+  .round {
+    width: 100%;
+    margin: auto;
+    padding: 0 12px;
+
+    text-align: center;
+
+    border: 1px solid $color-grey1;
+    border-radius: 20px;
+  }
+  .title {
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &.active {
+      box-shadow: 0px 4px 4px $color-transparent-black, 0px 4px 4px $color-transparent-black;
+    }
+  }
+  .number {
+    margin-top: -5px;
+    @include borderShadow;
+  }
+
+  &-title-number {
+    width: 100%;
+    [class^="col-"] {
+      padding: 0;
+    }
+  }
+  &-tooltip {
+    [class^="col-md"] {
+      padding: 0;
+    }
+    margin-top: 5px;
+    padding-left: 10px;
+
+    color: $color-grey1;
+  }
+}

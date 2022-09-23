@@ -1,0 +1,30 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+.assignments-block-pdf {
+	height: 64px;
+
+	.assigned-data {
+		&_percentage {
+			font-weight: 500;
+			font-size: 24px;
+			span {
+				font-size: 18px;
+			}
+		}
+		&_label {
+			position: relative;
+			top: -5px;
+			&_icon {
+				img {
+					width: 12px;
+				}
+				padding-right: 5px;
+			}
+			&_counts {
+				font-weight: 500;
+				font-size: 10px;
+			}
+		}
+	}
+}

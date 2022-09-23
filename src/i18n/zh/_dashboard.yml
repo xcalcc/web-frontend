@@ -1,0 +1,15 @@
+dashboard:
+  projects: 个项目
+  fail-scan: 扫描失败
+  no-data-found: 没有数据
+  scan-failed-tip: 扫描失败
+  my-projects: 我的项目
+  search-project: 搜索项目
+  sort-by: 排序
+  scanning: 扫描中...
+  risk-level: 项目风险等级
+  obligation-level: 修复指标
+  sort-by-field:
+    name: 项目名称
+    date-scanned: 扫描日期
+    defects-found: 缺陷数量

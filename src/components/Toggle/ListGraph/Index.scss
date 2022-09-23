@@ -1,0 +1,215 @@
+.comp-header-right {
+  display: flex !important;
+  justify-content: space-between;
+  padding-left: 13px;
+
+  background-color: white;
+  border-bottom: 1px solid #c8ced3;
+}
+
+.Component-root-7 {
+  width: 150px !important;
+  height: 38px !important;
+  margin: 0px !important;
+}
+
+.Component-switchBase-8.Component-checked-11 + .Component-track-10 {
+  background: #ededee 0% 0% no-repeat padding-box !important;
+}
+
+.Component-track-10 {
+  background-color: #ededee;
+  border: none !important;
+  border-radius: 0px !important;
+  border-radius: 5px !important;
+}
+
+.Component-switchBase-8.Component-checked-11 {
+  transform: translateX(68px) !important;
+}
+
+.MuiSwitch-thumb {
+  background-color: white !important;
+  border-radius: 10% !important;
+  box-shadow: none !important;
+}
+
+.Component-thumb-9 {
+  width: 75px !important;
+  height: 30px !important;
+}
+
+.right {
+  display: inline-flex;
+}
+
+.right > img {
+  width: 3vw;
+
+  cursor: pointer;
+}
+.menu-hover {
+  position: absolute;
+  right: 6.5vw;
+  z-index: 1;
+
+  display: none;
+  width: 8vw;
+  min-width: 10px;
+
+  background-color: #fff;
+  border: 2px solid #f1f1f1;
+}
+
+.menu-hover a {
+  display: block;
+  padding: 12px 16px;
+
+  color: black;
+  text-decoration: none;
+}
+.menu-hover a:hover {
+  background-color: #f1f1f1;
+}
+
+.setting:hover > img {
+  cursor: pointer;
+  -webkit-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-60deg) saturate(600%)
+    contrast(1.5);
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-60deg) saturate(600%)
+    contrast(1.5);
+}
+
+.setting:hover .menu-hover {
+  display: block !important;
+}
+
+.MuiFormControlLabel-root {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.MuiSwitch-switchBase {
+  transition: left 409ms cubic-bezier(0.9, 0, 0.2, 1) 0ms,
+    transform 409ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.MuiIconButton-label {
+  margin: 3px !important;
+}
+
+.Component-track-10 {
+  background-color: #ededee !important;
+}
+
+.label-switch-btn {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  line-height: 1.55vw;
+  // padding: 0% 10% !important;
+  text-align: center;
+
+  .f-1 {
+    width: 10vw !important;
+
+    text-align: center;
+
+    cursor: pointer;
+  }
+}
+
+.lg {
+  font-size: 1vw;
+}
+
+.label-switch-btn > .lg:first-child {
+  margin-left: 0.2vw;
+}
+
+.react-toggle-track-x {
+  display: none;
+}
+
+.react-toggle-track-check {
+  display: none;
+}
+.react-toggle-thumb {
+  top: 0 !important;
+
+  width: 48%;
+  height: 87%;
+  margin: 2px;
+
+  background-color: #ffff;
+  border: none;
+  border-radius: 5px;
+
+  transition: all 0.75s ease;
+}
+.react-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  // position: absolute;
+  // margin-top: 7.5px;
+  // background-color: #f1f1f1;
+  border-radius: 5px;
+  // margin-left: 17% !important;
+}
+
+.react-toggle-track {
+  width: 10vw !important;
+  height: 100% !important;
+
+  background-color: transparent !important;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: transparent !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  left: 48% !important;
+
+  background-color: #ffff;
+  border-color: #ffff;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: transparent !important;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: transparent !important;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: transparent !important;
+}
+
+.right-title {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.bg-grey {
+  background-color: #f1f1f1;
+}
+
+.toggle-w {
+  width: 20%;
+  height: 1.5vw;
+
+  background-color: #f1f1f2;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1920px), screen and (min-height: 1080px) {
+}

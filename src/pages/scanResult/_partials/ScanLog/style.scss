@@ -1,0 +1,76 @@
+@import "~styles/variables";
+@import '~styles/colors';
+@import '~styles/mixins';
+
+.scan-log {
+  font-size: 12px;
+  .title {
+    @include text-label;
+    color: $color-grey12;
+  }
+  .right-items {
+    display: flex;
+    justify-content: flex-end;
+
+    .repo-action-dropdown {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 150px;
+      margin-right: 10px;
+
+      color: $color-grey12;
+      font-size: 12px;
+
+      border: 1px solid $color-grey11;
+      border-radius: 0px 3px 3px 0px;
+
+      &:hover {
+        border-color: $color-grey12;
+      }
+
+      .name {
+        margin-left: 2px;
+
+        font-weight: 500;
+        font-family: $font-family-condensed-medium;
+        white-space: nowrap;
+      }
+
+      .divider {
+        width: 1px;
+        height: 12px;
+        margin: 2px 5px 0;
+
+        background-color: $color-grey12;
+      }
+
+      .dropdown {
+        &-toggle {
+          width: 63px;
+
+          font-weight: 400;
+
+          font-size: 12px;
+          font-family: $font-family-normal;
+        }
+        &-menu {
+          right: -4px !important;
+
+          min-width: 100px;
+          margin-top: 1px !important;
+        }
+        .arrow-icon {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .search-box {
+      width: 100%;
+      min-width: 135px;
+      margin-right: 20px;
+    }
+  }
+}

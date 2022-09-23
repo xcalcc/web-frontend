@@ -1,0 +1,64 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-metas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    .scan-mode-wrap {
+        color: $color-grey12;
+        font-weight: 600;
+        font-size: 14px;
+
+        .title {
+            margin-right: 45px;
+        }
+
+        .title-suffix {
+            display: inline-block;
+            margin-left: 12px;
+            img {
+                height: 16px;
+                margin-top: -1px;
+            }
+        }
+    }
+
+    .meta-wrap {
+        display: flex;
+        margin-top: 2px;
+
+        color: $color-grey12;
+        line-height: 1;
+
+        .meta-column {
+            flex: 1;
+            margin-left: 20px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            p {
+                margin: 10px 0 3px;
+
+                white-space: nowrap;
+            }
+
+            strong {
+                margin-right: 10px;
+
+                font-weight: 600;
+                font-size: 14px;
+                white-space: nowrap; 
+            }
+    
+            span {
+                font-size: 14px;
+            }
+        }
+        
+    }
+}
+

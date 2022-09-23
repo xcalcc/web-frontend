@@ -1,0 +1,74 @@
+---
+common:
+  project: 我的项目
+  delete: 删除
+  delete-it: 是的，删除!
+  are-you-sure: 确认操作?
+  delete-tip: 此项操作无法恢复
+  action: 操作
+  edit: 编辑
+  save: 保存
+  next: 下一步
+  dismiss: 关闭
+  update-success: 更新成功!
+  create-success: 创建成功!
+  operation-success: 操作成功!
+  table-no-data: 没有找到结果
+  copy: 复制
+  copied: 已复制
+  notifications:
+    scan-aborted: 扫描中止
+    delete-success: 已成功删除项目！
+    delete-failure: 删除项目失败...
+    success: 成功
+    failure: 失败
+    project-create-success: 项目创建成功
+    project-update-success: 项目更新成功
+  buttons:
+    confirm: 确定
+    back: 返回
+    apply: 确认
+    cancel: 取消
+    apply-save: 应用并保存
+  severity:
+    high: 高
+    medium: 中
+    low: 低
+  header:
+    contact: 联系我们
+    support: 帮助
+    logout: 登出
+    locale:
+      en: ENGLISH
+      zh-CN: 中文
+  sidebar:
+    new-project: 新建项目
+    my-project: 我的项目
+    admin: 管理
+    license: 证书管理
+    scm: 源码仓库管理
+    user-management: 用户管理
+    email-server-configuration: 邮件设置
+    data-management: 数据管理
+    settings: 设置
+    access-token: 访问令牌
+    license-info: >
+      <p>爱科识 {{version}}</p>
+      <p>本软件所有权益归属于</p>
+      <p>鉴释科技（深圳）有限公司</p>
+      <p>版权所有 2019 - {{currentYear}}</p>
+      <br/>
+      <p>未经许可，不得复制，传播。</p>
+  dropzone:
+    title: 拖拽或者打开配置文件
+    errors:
+      file-too-large: 文件超过{{size}}大小限制
+      name-too-long: 文件名过长，请限制在{{nameLength}}个字内
+      not-supported-type: 不支持的文件类型
+      bad-json-format: JSON格式错误
+  scan-mode: 
+    title: 扫描模式
+    SINGLE: 单文件
+    CROSS: 跨文件
+    SINGLE_XSCA: 单文件和MISRA
+    XSCA: MISRA

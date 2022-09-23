@@ -1,0 +1,18 @@
+.block-list {
+  position: absolute;
+  top: 5px;
+
+  width: calc(100% + 60px);
+
+  height: 100%;
+  padding: 25px 30px;
+  overflow-y: scroll;
+  .project-tile.show {
+    z-index: 10;
+  }
+  .inner-list {
+    flex-wrap: wrap;
+    min-height: 180px;
+    margin: 0px -10px 0;
+  }
+}

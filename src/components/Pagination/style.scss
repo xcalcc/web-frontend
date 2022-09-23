@@ -1,0 +1,70 @@
+@import '~styles/colors';
+@import "~styles/variables";
+
+.x-pagination {
+    .pagination {
+        align-items : center;
+        justify-content : center;
+        padding-bottom: 1px;
+        .page-link {
+            display: flex;
+            align-items: center;
+
+            color: $color-jet-black;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: $font-family-normal;
+
+            background: none;
+            border: none;
+        }
+        span.page-link {
+            color: $color-pantone;
+        }
+        .page-item:first-child,
+        .page-item:last-child {
+            .page-link {
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    .page-selector {
+        font-weight: 600;
+        font-size: 14px;
+        .dropdown-with-title {
+            display: inline-block;
+
+            text-align: left;
+
+            .drop-down .dropdown {
+                width: 60px;
+
+                background: none;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                .dropdown-menu {
+                    left: -40px !important;
+
+                    width: 100px;
+                    min-width: unset;
+
+                    .dropdown-item {
+                        padding: 5px 16px;
+
+                        font-size: 14px;
+
+                        line-height: 1;
+                    }
+                }
+                .down-arrow {
+                    width: 12px;
+                }
+                .icon {
+                    top: 16px;
+                }
+            }
+        }
+    }
+}

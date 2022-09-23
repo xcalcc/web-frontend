@@ -1,0 +1,108 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.xradio {
+    padding-left: 0;
+
+    .form-check {
+        padding-left: 0;
+    }
+
+    &__hint {
+        padding-left: 30px;
+
+        font-size: .8rem;
+    }
+
+    input[type=radio] {
+        position: absolute;
+        left: -9999px;
+    }
+
+    input[type=radio] + label {
+        position: relative;
+
+        display: inline-block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding-left: 30px;
+
+        color: $color-jet-black;
+        font-size: 1rem;
+        line-height: calc(1.5em + .75rem + 2px);
+
+        cursor: pointer;
+
+        &:before {
+            @include verticalCenter;
+            position: absolute;
+
+            width: 20px;
+            height: 20px;
+
+            background: none;
+            border: 2px solid $color-grey5;
+            border-radius: 100%;
+            box-shadow: none;
+
+            content: '';
+        }
+
+        &:after {
+            @include verticalCenter;
+            position: absolute;
+            left: 5px;
+
+            width: 10px;
+            height: 10px;
+
+            background: $color-red;
+            border-radius: 100%;
+
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+
+            content: '';
+        }
+    }
+
+    input[type=radio]:checked + label {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    input[type=radio]:not(:checked) + label {
+        &:after {
+            opacity: 0;
+        }
+    }
+}
+
+.xradio.xradio-button {
+    input[type=radio] + label {
+        padding-left: 45px;
+
+        background-color: $color-grey6;
+        border:1px solid $color-grey;
+        border-radius: .25rem;
+
+        &:before {
+            left: 10px;
+        }
+
+        &:after {
+            left : 15px;
+        }
+    }
+
+    input[type=radio]:checked + label {
+        color: $color-white;
+
+        background-color: $color-jet-black;
+
+        &:before {
+            border-color: $color-white;
+        }
+    }
+}

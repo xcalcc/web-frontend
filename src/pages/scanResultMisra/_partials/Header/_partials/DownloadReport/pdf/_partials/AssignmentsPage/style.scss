@@ -1,0 +1,41 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+@import '~styles/colors';
+
+.assignments-page {
+	.title {
+		margin-bottom: 16px;
+
+		color: $color-grey16;
+		font-size: 24px;
+	}
+
+	.block-title {
+		color: $color-black;
+		font-size: 10px;
+	}
+	.total-counts {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 32px;
+		&__icon {
+			width: 10px;
+			margin-right: 5px;
+		}
+
+		&__number {
+			font-size: 24px;
+		}
+	}
+	.assignee-block {
+		display: flex;
+		justify-items: flex-start;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		.issue-counts {
+			color: $color-black;
+			font-weight: 500;
+			font-size: 18px;
+		}
+	}
+}

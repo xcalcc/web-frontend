@@ -1,0 +1,55 @@
+@import "~styles/colors";
+
+.create-project-wrapper{
+    min-height: 630px;
+
+    background-color: $color-white;
+
+    &__header {
+        padding: 40px 0 35px;
+    }
+
+    &__back-button {
+        position: absolute;
+        top: 24px;
+        left: 22px;
+        z-index: 1;
+
+        padding: 2px;
+
+        font-size: 36px;
+
+        border-radius: 3px;
+        box-shadow: 2px 2px 4px $color-transparent-black;
+        cursor: pointer;
+    }
+
+    h2 {
+        margin-top: 15px;
+    }
+
+    h3.title {
+        margin: 40px 0 30px;
+
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .xbutton {
+        font-size: 1rem;
+
+        &.link {
+            margin-right: 40px;
+        }
+    }
+
+    form {
+        margin-bottom: 30px;
+    }
+
+    .custom-config-wrapper {
+        .row {
+            margin-bottom: 1.5rem;
+        }
+    }
+}

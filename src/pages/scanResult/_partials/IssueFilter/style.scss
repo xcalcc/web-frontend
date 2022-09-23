@@ -1,0 +1,107 @@
+@import "~styles/mixins";
+@import "~styles/variables";
+@import "~styles/colors";
+
+.issue-filter {
+    display: flex;
+    margin-top: 35px;
+    @include noSelect;
+
+    .divide {
+        height: 24px;
+        margin: 2px 20px 0 25px;
+
+        border-left:2px solid $color-grey11;
+    }
+
+    .total {
+        color: $color-jet-black;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: $font-family-condensed;
+
+        .number {
+            margin-right: 3px;
+
+            color: $color-pantone;
+            font-weight: 700;
+        }
+    }
+
+    .filter-dropdown {
+        margin-top: -3px;
+
+        color: $color-grey12;
+
+        cursor: pointer;
+        @include noSelect;
+        .num {
+            margin-left: 4px;
+            label {
+                color: $color-pantone;
+            }
+        }
+
+        &.show {
+            .down-arrow-icon {
+                background-color: $color-white;
+                transform: rotate(180deg);
+            }
+            .dropdown-toggle {
+                &:hover {
+                    .down-arrow-icon {
+                        background-color: $color-white;
+                    }
+                }
+            }
+        }
+
+        .down-arrow-icon {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+
+            margin: -2px 0 0 10px;
+
+            vertical-align: middle;
+
+            border-radius: 50%;
+
+            img {
+                @include verticalCenter;
+                opacity: 0.6;
+            }
+        }
+
+        .dropdown-toggle {
+            color: $color-grey12;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: $font-family-condensed;
+
+            border: none;
+            box-shadow: none;
+            @include verticalCenter;
+            &::after {
+                display: none;
+            }
+            &:hover {
+                .down-arrow-icon {
+                    background-color: $color-grey11;
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .dropdown-menu {
+            @include dropdown-menu-shadow;
+            width: 800px;
+            padding: 20px 15px;
+
+            border: none;
+            cursor: default;
+        }
+    }
+}

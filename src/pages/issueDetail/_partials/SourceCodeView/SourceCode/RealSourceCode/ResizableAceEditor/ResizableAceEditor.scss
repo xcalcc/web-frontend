@@ -1,0 +1,59 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail-page {
+    .ace-editor-wrapper {
+        position: relative;
+
+        width: 100%;
+        
+        .code {
+            width: 100% !important;
+
+            counter-reset: line;
+        }
+
+        .resizing-button {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            margin-top: 10px;
+
+            border-bottom: 1px solid $color-grey13;
+
+            &::before, &::after {
+                position: absolute;
+                left: 50%;
+
+                width: 0;
+                height: 0;
+
+                border: 7px solid transparent;
+                transform: translate(-50%, -4px);
+                cursor: row-resize;
+
+                content: '';
+            }
+
+            &::before {
+                top: -9px;
+
+                border-bottom-color: $color-grey12;
+            }
+
+            &::after {
+                top: 5px;
+
+                border-top-color: $color-grey12;
+            }
+        }
+
+        .select-disabled {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+}

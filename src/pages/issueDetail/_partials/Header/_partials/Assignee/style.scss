@@ -1,0 +1,43 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail__header__assignee {
+
+    white-space: nowrap;
+    .time, 
+    .user {
+        display: flex;
+        justify-content: space-between;
+        .title {
+            display: inline-block;
+
+            font-weight: 600;
+        }
+        .value {
+            display: inline-block;
+            margin-left: 5px;
+        }
+    }
+
+    .user {
+        .value {
+            margin-top: 1px;
+        }
+    }
+
+    .custom-dropdown {
+        display: inline-block;
+        .dropdown-toggle {
+            font-weight: 400;
+            font-size: 14px;
+            font-family: $font-family-normal;
+
+            .arrow-icon {
+                margin-left: 3px;
+            }
+        }
+        .btn {
+            text-transform: none;
+        }
+    }
+}

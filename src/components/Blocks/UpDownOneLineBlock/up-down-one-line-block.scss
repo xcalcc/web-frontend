@@ -1,0 +1,9 @@
+.up-down-one-line-block {
+  .block-text {
+    width: 80%;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

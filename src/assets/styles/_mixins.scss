@@ -1,0 +1,171 @@
+@import "colors";
+
+@mixin noSelect {
+  -webkit-touch-callout: none;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin flexCenter {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+
+@mixin borderShadow {
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(190, 190, 190, 0.9);
+  -moz-box-shadow: 1px 1px 2px 0 rgba(190, 190, 190, 0.9);
+  -o-box-shadow: 1px 1px 2px 0 rgba(190, 190, 190, 0.9);
+  -ms-box-shadow: 1px 1px 2px 0 rgba(190, 190, 190, 0.9);
+  box-shadow: 1px 1px 2px 0 rgba(190, 190, 190, 0.9);
+}
+
+@mixin verticalCenter {
+  position: relative;
+  top: 50%;
+
+  margin: 0;
+
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin box-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin dropdown-menu-shadow {
+
+  background: $color-white;
+  border-radius: 3px;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+@mixin text-hover-underline-animation {
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $color-jet-black;
+    transform: scaleX(0);
+    visibility: hidden;
+
+    transition: all .2s ease-in-out 0s;
+
+    content: "";
+  }
+  &:hover::before {
+    transform: scaleX(1);
+    visibility: visible;
+  }
+}
+
+@mixin text-title-basic {
+  color: $color-jet-black;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+@mixin text-h1 {
+  @include text-title-basic;
+  font-size: 32px;
+}
+@mixin text-big-mark {
+  @include text-title-basic;
+  font-size: 40px;
+}
+@mixin text-huge-mark {
+  @include text-title-basic;
+  font-size: 56px;
+}
+@mixin text-small-mark {
+  @include text-title-basic;
+  font-size: 56px;
+}
+@mixin text-label {
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+
+  text-transform: uppercase;
+}
+@mixin text-link {
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 24px;
+
+  text-transform: uppercase;
+}
+@mixin text-breadcrumb {
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+}
+@mixin text-placeholder {
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+}
+@mixin text-tag {
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  text-transform: uppercase;
+}
+@mixin text-percentage-small {
+  font-weight: bold;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  text-transform: uppercase;
+}
+@mixin text-title-1 {
+  font-weight: 600;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 24px;
+}
+@mixin text-body {
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+}
+@mixin text-body-comfortable {
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 24px;
+}
+@mixin text-button-text {
+  font-weight: bold;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+}
+@mixin disableColorChange {
+  & {color:$color-black !important;}         /* Unvisited link  */
+  &:visited {color:$color-black !important;} /* Visited link    */
+  &:hover {color:$color-black !important;}   /* Mouse over link */
+  &:active {color:$color-black !important;}  /* Selected link   */
+}

@@ -1,0 +1,27 @@
+@import ~styles/colors
+.number-with-margin
+  .grey
+    color: $color-grey5
+  .title
+    color: $color-grey3
+    text-transform: uppercase
+    font-size: 1em
+  .margin-text
+    color: $color-grey5
+
+  .number-container
+    &-one-line
+      white-space: nowrap
+      display: inline-block
+      .number
+        display: inline-block
+      .margin-text
+        display: inline-block
+        margin-left: 10px
+    &-two-lines
+      display: block
+      .margin-text
+        margin: 10px
+        display: block
+
+

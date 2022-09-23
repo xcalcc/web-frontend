@@ -1,0 +1,33 @@
+@import "~styles/variables";
+@import '~styles/colors';
+
+.total-defects-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 0;
+
+    white-space: nowrap;
+    .title {
+        color: $color-grey12;
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .digits {
+        font-weight: 500;
+        font-size: 48px;
+        font-family: $font-family-condensed;
+        line-height: 1;
+
+        vertical-align: middle;
+    }
+    .icon {
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+}

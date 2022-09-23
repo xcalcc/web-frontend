@@ -1,0 +1,24 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.project-scanning-icon {
+    display: inline-block;
+    margin-left: 10px;
+    .text-danger {
+        color: $color-pantone !important;
+    }
+    .spinner-border {
+        width: 14px;
+        height: 14px;
+
+        border-width: 2px;
+        border-right-color: $color-grey11;
+    }
+    .text {
+        margin: 2px 0 0 5px;
+
+        font-family: $font-family-normal;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+}

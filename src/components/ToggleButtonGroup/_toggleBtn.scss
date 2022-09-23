@@ -1,0 +1,28 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+.toggle-btn-group {
+  width: 80%;
+  padding: 2px;
+
+  background-color: $color-grey1;
+  border-radius: 5px;
+  .btn {
+    width: 50%;
+
+    color: $color-grey4 !important;
+    font-weight: normal;
+    line-height: 15px;
+
+    background-color: $color-grey1 !important;
+    border: none;
+    border-radius: 5px;
+    @include noSelect;
+    &.active {
+      background-color: $color-white !important;
+    }
+    &.focus,&.active {
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
+}

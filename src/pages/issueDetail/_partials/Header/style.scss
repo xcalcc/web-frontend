@@ -1,0 +1,75 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail__header {
+    display: flex;
+    justify-content: space-between;
+
+    color: $color-grey12;
+    font-weight: normal;
+    font-size: 14px;
+
+    .divider {
+        flex-grow: 1;
+        width: 1px;
+        margin: 0 5px;
+
+        &::after {
+            display: block;
+            width: 1px;
+            height: 100%;
+            margin: 0 auto;
+
+            border-left: 1px solid $color-grey11;
+
+            content: '';
+        }
+    }
+
+    .header-column {
+        flex-grow: 1;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        &.file-info-column {
+            flex-shrink: 1;
+        }
+
+        &.assignee-column {
+            overflow: unset;
+        }
+
+        &.line-column {
+            padding-left: 10px;
+
+            border-left: 8px solid transparent;
+
+            &.high {
+                border-color: $color-light-pantone;
+                &.certainty {
+                    border-color: $color-pantone;
+                }
+            }
+
+            &.medium {
+                border-color: $color-light-orange;
+                &.certainty {
+                    border-color: $color-orange;
+                }
+            }
+
+            &.low {
+                border-color: $color-light-blue;
+                &.certainty {
+                    border-color: $color-blue;
+                }
+            }
+        }
+    }
+}
+
+.theme-basic-content {
+    .issue-detail__header {
+        margin-top: 30px;
+    }
+}

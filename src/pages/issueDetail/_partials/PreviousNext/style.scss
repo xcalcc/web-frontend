@@ -1,0 +1,77 @@
+@import "~styles/mixins";
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail-page {
+    .previous-next {
+        @include noSelect;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 2px;
+
+        line-height: 16px;
+
+        a {
+            color: $color-grey16;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: $font-family-condensed;
+
+            &:hover {
+                color: $color-jet-black;
+
+                &::before, &::after {
+                    border-color: $color-jet-black;
+                }
+            }
+
+            &.disabled {
+                &:hover {
+                    color: $color-grey16;
+    
+                    &::before, &::after {
+                        border-color: $color-grey11;
+                    }
+                }
+            }
+        }
+
+        .divider {
+            width: 1px;
+            height: 14px;
+            margin: 0 10px;
+
+            background: $color-grey13;
+        }
+
+        .previous-link {
+            &::before {
+                @extend .previous-next__arrow-icon;
+                margin-right: 10px;
+            }
+        }
+
+        .next-link {
+            &::after {
+                @extend .previous-next__arrow-icon;
+                margin-left: 10px;
+
+                transform: rotate(135deg) !important;
+            }
+        }
+    }
+}
+
+.previous-next__arrow-icon {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-bottom: 1px;
+
+    border-top: 1px solid $color-grey11;
+    border-left: 1px solid $color-grey11;
+    transform: rotate(-45deg);
+
+    content: '';
+}

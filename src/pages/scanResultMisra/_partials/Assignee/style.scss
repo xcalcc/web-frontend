@@ -1,0 +1,53 @@
+@import "~styles/colors";
+@import '~styles/mixins';
+
+.scan-result-wrap-misra .assignee {
+  font-size: 12px;
+  .header {
+    @include text-label;
+    color: $color-grey12;
+  }
+  &-chart {
+    margin-top: 25px;
+    padding-right: 0;
+  }
+  &-list {
+    height: 160px;
+    margin-top: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    .row {
+      width: 100%;
+    }
+
+    .assignee-item {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 5px;
+
+      border-bottom: 1px solid $color-grey1;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .circle-icon {
+          color: $color-grey12;
+          font-size: 16px;
+        }
+        .text {
+          margin-left: 10px;
+        }
+      }
+      .count {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+  .doughnut-number {
+    @include verticalCenter;
+    max-width: 140px;
+  }
+}

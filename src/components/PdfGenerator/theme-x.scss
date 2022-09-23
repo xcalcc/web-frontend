@@ -1,0 +1,56 @@
+@import '~styles/colors';
+@import '~styles/mixins';
+@import '~styles/variables';
+
+.zh-CN {
+	&.footer__text {
+		font-family: $font-family-noto-sans;
+	}
+}
+
+.footer {
+	&__text {
+		color: $color-grey13;
+		font-weight: 400;
+		font-size: 7px;
+	}
+}
+
+.theme-x {
+	.header {
+		position: fixed;
+
+		left: 0;
+		img {
+			width: 100%;
+			height: 72px;
+		}
+	}
+	.pdf-content {
+		left: 0;
+
+		.title {
+			padding-top: 72px;
+
+			color: $color-grey13;
+			font-weight: 500;
+			font-size: 24px;
+
+			/* Title/Title 1 */
+
+			font-style: normal;
+			line-height: 32px;
+		}
+	}
+	.footer {
+		position: fixed;
+		bottom: 0;
+
+		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 72px;
+		}
+	}
+}

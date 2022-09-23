@@ -1,0 +1,98 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+@import '~styles/colors';
+
+.assigned-block__list {
+	width: 100%;
+	margin-top: 20px;
+
+	.assigned-block:nth-child(odd) {
+		padding-right: 16px;
+	}
+	.assigned-block:nth-child(even) {
+		padding-left: 16px;
+	}
+
+	.assigned-block {
+		display: inline-block;
+		width: 50%;
+
+		&__info-wrapper {
+			display: flex;
+		}
+
+		&__avatar {
+			padding-right: 5px;
+
+			img {
+				width: 10px;
+				height: 10px;
+			}
+		}
+
+		&__avatar,
+		.name,
+		.issue-counts {
+			color: $color-jet-black;
+		}
+
+		.issue-counts {
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		.name {
+			font-size: 10px;
+			line-height: 12px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.assigned-block {
+	.risk-breakdown {
+		padding-bottom: 16px;
+		.high {
+			color: $color-red;
+		}
+		.medium {
+			color: $color-orange;
+		}
+		.low {
+			color: $color-blue;
+		}
+
+		.block-title {
+			&__text {
+				color: $color-jet-black;
+				font-weight: 500;
+				font-size: 8px;
+				line-height: 8px;
+				text-transform: capitalize;
+			}
+
+			&__dot {
+				padding-right: 2px;
+
+				font-size: 16px !important;
+				line-height: 6px;
+
+				transform: translateY(2px);
+			}
+
+			padding-bottom: 6px;
+		}
+		.data-row {
+			font-size: 7px;
+			line-height: 12px;
+
+			border-bottom: 0.5px solid $color-grey15;
+			&_code {
+				text-align: left;
+			}
+			&_counts {
+				text-align: right;
+			}
+		}
+	}
+}

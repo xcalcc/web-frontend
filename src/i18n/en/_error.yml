@@ -1,0 +1,18 @@
+---
+error:
+  error: Error
+  system:
+    token-expired: Login expired, please login again.(0x8143003B)
+    not-authorized: Access Denied!
+    page-not-found: 404 Page not found
+  api:
+  validation:
+    required: Cannot be empty
+    memory-limit: Must be integer. Minimum is {{limit}}.
+    invalidUrl: Invalid URL
+    invalid-project-name: Invalid project name
+    user-info-input-error: Please enter valid user information.
+    user:
+      password-do-not-match: Passwords do not match
+      enter-the-old-password: Please enter the old password
+      invalid-user-or-password: Invalid username or password

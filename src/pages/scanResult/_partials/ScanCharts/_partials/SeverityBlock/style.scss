@@ -1,0 +1,14 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-wrap {
+    .risk-severity-block{
+        height: 75px;
+        margin-top: -5px;
+        padding: 0;
+
+        .severity-doughnut .severity-level {
+            cursor: default;
+        }
+    }
+}

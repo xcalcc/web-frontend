@@ -1,0 +1,41 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+@import "~styles/variables";
+.breadcrumbs {
+    @include text-breadcrumb;
+    position: relative;
+
+    display: inline-block;
+
+    color: $color-grey12;
+    font-size: 14px;
+
+    * {
+        font-family: $font-family-normal;
+    }
+
+    > :first-child {
+        margin-right: 5px;
+    }
+
+    a {
+        color: $color-grey12;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        &:active {
+            font-weight: 600;
+        }
+    }
+
+    i {
+        margin: 0 5px;
+
+        font-style: normal;
+    }
+
+    .current {
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,26 @@
+@import "~styles/variables";
+
+.scan-result-wrap {
+    * {
+        font-family: $font-family-normal;
+    }
+
+    .project-name {
+        font-size: 24px;
+        font-family: $font-family-condensed;
+        white-space: nowrap;
+    }
+
+    .statistics-block {
+        margin-top: 50px;
+    }
+}
+
+/* for the page is included in a Theme frame */
+.theme-basic-content {
+    .scan-result-wrap {
+        .project-name {
+            margin-top: 37px;
+        }
+    }
+}

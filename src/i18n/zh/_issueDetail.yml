@@ -1,0 +1,49 @@
+---
+issueDetail:
+  id: 编号
+  type: 类型
+  status: 缺陷状态
+  fixed-defects: 已修复
+  new-defects: 新的缺陷
+  outstanding-defects: 未修复
+  file: 文件
+  line: 行号
+  function: 函数名
+  variable: 变量名
+  of-paths: 总路径
+  first-detected: 首次发生时间
+  assigned: 分配缺陷
+  severity: 严重程度
+  likelihood: 可能性
+  remediation-cost: 修复成本
+  complexity: 复杂度
+  unknown: 未知
+  abstract: 概要
+  explanation: 解释
+  rule-standard: 规则与标准
+  example: 例子
+  avoid: 避免
+  prefer: 推荐
+  description: 描述
+  path: 路径
+  depth: 深度
+  source: 源头
+  sink: 触发点
+  issue-source-code-tip-title: 注释
+  new-issue-source-code-tip: 所有路径参考最近一次扫描的的源代码
+  fix-issue-source-code-tip: 缺陷已修复，所有路径参考修复之前最近一次扫描的源代码
+  trace-path-operation-tip: 要查看缺陷的详细路径，请输入上面的路径编号或单击 + 打开新选项卡，你亦可将鼠标悬停在图形中的任意路径上。
+  trace-path-click-node-tip: 要修改可见节点，请单击要更改的节点，然后点击新节点查看
+  no-source-code: 无源代码
+  no-select-source-code: 请点击其中一个节点显示源代码
+  defect-info: 缺陷信息
+  all-paths: 所有路径
+  no-graph: 路径图太大，不支持显示
+  delta-view: 增量显示
+  unassigned: 未分配
+  previous: 上一个缺陷
+  next: 下一个缺陷
+  level: 
+    HIGH: 高
+    MEDIUM: 中
+    LOW: 低

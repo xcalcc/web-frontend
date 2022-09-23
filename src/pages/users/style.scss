@@ -1,0 +1,269 @@
+@import '~styles/colors';
+
+.user-list-page {
+    .user-listing {
+        position: relative;
+
+        height: 300px;
+        margin-bottom: 11px;
+
+        ul li:nth-child(1) {
+            display: inline-block;
+            width: 295px;
+        }
+    
+        ul li:nth-child(2) {
+            display: inline-block;
+        }
+    }
+
+    .box-list-body {
+        width: 100%;
+    }
+
+    .box-list-head {
+        display: flex;
+        margin-bottom: 10px;
+        padding: 6px 0;
+
+        background-color: $color-pale-grey3;
+        box-shadow: 1px 1px 2px 0px rgba(190, 190, 190, 0.9);
+
+        li {
+            display: inline-block;
+
+            color: $color-black;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        li:nth-child(1) {
+            width: 23.161%;
+
+            text-indent: 19px;
+        }
+
+        li:nth-child(2) {
+            width: 19.96%;
+        }
+
+        li:nth-child(3) {
+            width: 33.222%;
+        }
+
+        li:nth-child(4) {
+            width: 14.67%;
+        }
+
+        li:nth-child(5) {
+            width: 11%;
+        }
+    }
+
+    .user-td {
+        display: inline-block;
+        padding-left: 19px;
+    
+        color: $color-black;
+        font-size: 12px;
+        font-family: 'barlow_condensedregular';
+        letter-spacing: 2px;
+    
+        background-repeat: no-repeat;
+        background-position: 0px;
+        background-size: 12px;
+    }
+
+    .user-td:not(.fifth-block) {
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .action-button-admin {
+        width: 100%;
+        margin: 14px auto auto;
+
+        text-align: center;
+    }
+
+    .uploard-team {
+        display: inline-block;
+        width: 200px;
+
+        vertical-align: middle;
+
+        .input-file-container {
+            position: relative;
+        
+            max-width: 198px;
+            height: 34px;
+            margin: 0 auto;
+        
+            text-align: center;
+        
+            background: $color-red;
+            box-shadow: 1px 1px 2px 0px rgba(190, 190, 190, 0.9);
+        }
+
+        .attech-doc {
+            color: $color-white;
+            font-size: 14px;
+            line-height: 34px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            img {
+                width: 16px;
+                margin: -2px 10px 0 0;
+            }
+        }
+    }
+
+    .middle-content {
+        transition: all 0.2s ease-in;
+    }
+
+    .first-block {
+        width: 23.161%;
+    }
+
+    .second-block {
+        width: 19.96%;
+        padding: 0;
+
+        background: none;
+    }
+
+    .third-block {
+        width: 33.222%;
+        padding: 0px;
+
+        text-transform: inherit;
+
+        background: none;
+    }
+
+    .fourth-block {
+        display: flex;
+        align-items: center;
+        width: 14.67%;
+        padding: 0;
+
+        text-transform: uppercase;
+
+        img {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    }
+
+    .fifth-block {
+        display: flex;
+        align-items: center;
+        width: 11%;
+        padding-left: 0px;
+
+        color: $color-red;
+        text-transform: uppercase;
+
+        img {
+            width: 15px;
+            height: auto;
+            margin-right: 8px;
+        }
+    }
+
+    .btn-template {
+        display: inline-block;
+        width: 80px;
+        margin-left: 10px;
+        padding: 0;
+    
+        color: $color-grey10;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        vertical-align: middle;
+    
+        background-color: transparent;
+        border: 0;
+
+        img {
+            width: 13px;
+            height: auto;
+            margin-bottom: 6px;
+        }
+
+        span {
+            display: block;
+        
+            text-align: center;
+        }
+    }
+
+    .btn-add-team-member {
+        width: 200px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .user-list-page {
+        .user-td {
+            font-size: 16px;
+
+            background-size: 15px
+        }
+
+        .box-list-head li {
+            font-size: 16px;
+        }
+
+        .fifth-block img {
+            width: 18px;
+        }
+
+        .fourth-block img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-template {
+            font-size: 12px;
+            img {
+                width: 17px;
+            }
+        }
+
+        .uploard-team {
+            .input-file-container {
+                height: 44px;
+
+                .attech-doc {
+                    font-size: 18px;
+                    line-height: 44px;
+
+                    background-size: 20px;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        .btn-add-team-member {
+            height: 44px;
+
+            font-size: 18px;
+            line-height: 44px;
+        }
+
+    }
+}

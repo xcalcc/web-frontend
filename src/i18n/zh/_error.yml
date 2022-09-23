@@ -1,0 +1,18 @@
+---
+error:
+  error: 错误
+  system:
+    token-expired: 登录状态已失效，请重新登录 (0x8143003B)
+    not-authorized: 没有权限! 
+    page-not-found: 404，页面未找到
+  api:
+  validation:
+    required: 不能为空
+    memory-limit: 必须为整数，最小值为{{limit}}。
+    invalidUrl: URL格式无效
+    invalid-project-name: 项目名不合法
+    user-info-input-error: 请输入有效的用户信息。
+    user:
+      password-do-not-match: 密码不正确
+      enter-the-old-password: 请输入旧密码
+      invalid-user-or-password: 登录名或登录密码不正确

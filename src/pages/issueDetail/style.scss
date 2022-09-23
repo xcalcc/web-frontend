@@ -1,0 +1,36 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail-page {
+    * {
+        font-family: $font-family-normal;
+    }
+
+    .topbar {
+        min-width: 1020px;
+        height: 50px;
+        padding: 23px 0 0;
+
+        background-color: $color-grey14;
+    }
+}
+
+/* for the page is included in a Theme frame */
+.theme-basic-content {
+    .issue-detail-page {
+        .topbar {
+            position: fixed;
+            top: 72px;
+            z-index: 9;
+
+            width: calc(100% - 300px);
+        }
+    }
+    &.sidebar-hidden {
+        .issue-detail-page {
+            .topbar {
+                width: calc(100% - 100px);
+            }
+        }
+    }
+}   

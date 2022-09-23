@@ -1,0 +1,56 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+@import '~styles/colors';
+
+.defects-summary-table-pdf {
+	.table-title {
+		color: $color-jet-black;
+		font-size: 10px !important;
+	}
+
+	.pdf-table {
+		thead {
+			tr {
+				th {
+					color: $color-jet-black;
+					font-weight: 600;
+					font-size: 8px !important;
+				}
+
+				th:nth-child(1) {
+					width: 4px !important;
+				}
+				th:nth-child(2) {
+					width: 10% !important;
+				}
+				th:nth-child(3) {
+					width: 10% !important;
+				}
+				th:nth-child(4) {
+					width: 50% !important;
+				}
+				th:nth-child(5) {
+					max-width: 100px !important;
+
+					white-space: nowrap;
+				}
+				th:nth-child(6) {
+					text-align: right !important;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					font-size: 8px !important;
+				}
+				td:nth-child(1) {
+					width: 4px !important;
+				}
+				td:nth-child(6) {
+					text-align: right !important;
+				}
+			}
+		}
+	}
+}

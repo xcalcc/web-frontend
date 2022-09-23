@@ -1,0 +1,268 @@
+pages:
+  scan-result:
+    right-nav:
+      latest-view: 最新扫描结果
+      delta-view: 增量显示
+      download: 下载
+      project-summary: 项目概要
+      detailed-report: 详细报告
+      project-setting: 查看项目设置
+      delete: 删除项目
+    side-bar:
+      filter: 筛选
+      reset: 重置
+      possible-defects: 潜在的缺陷
+      possible-defects-tooltip: 潜在的缺陷是指那些无法确认为确定的缺陷。 这是因为跟踪路径中的源仅在运行时可用。
+      include-possible-defects: 包括潜在的缺陷
+      view-all-folders: 查看所有文件夹
+      all-folders: 所有文件夹
+      selected-folders: 选择文件夹
+      download-report: 下载报告
+      severity-total: "所有{{severity}}风险"
+      severity-total-misra: "所有{{severity}}"
+      severity:
+        H: 高
+        M: 中
+        L: 低
+      obligation:
+        H: 必须修复
+        M: 要求修复
+        L: 建议修复
+    tooltip:
+      total-defects: 代码缺陷有涵盖起点至终点的确定路径，起源可以在运行时才确定（例如用户输入）。
+      critical-number: 您在操作下标记为“严重”的缺陷数量
+      scan-fail: "最近的一次扫描失败于 <br/> {{date}}, {{time}}"
+      top-issues-tip: 仅显示前 10 位
+      copy-full-path-tip: 复制完整路径
+    issue-table:
+      rule-standard: 规则与标准
+      assignee: 指派人
+    report-download-description: 我们支持PDF和CSV两种报告格式，点击图标下载。
+    report-download-description-all: 点击图标下载。
+    report-download-detail: 详细报告
+    report-download-summary: 项目摘要
+    report-download-tip: 报告准备中
+    certainty: 确定
+    definite: 确定的
+    including: 缺陷包括
+    current-scan: 本次扫描
+    last-successful-scan: 最后一次成功的扫描
+    scan-time: 扫描时间
+    scan-date: 扫描日期
+    lines: 代码行数
+    files: 文件数量
+    scan-with: 由爱科识提供扫描，版本号
+    scan: 扫描
+    issue-total: 缺陷数量
+    rule-standard: 规则与标准
+    all: 全部
+    HIGH: 高
+    MEDIUM: 中
+    LOW: 低
+    all-issue-count: 对应所有风险
+    issue-type: 类型
+    assigned: 任务指派成功
+    results: 条数据
+    search-results: 搜索结果
+    search-box-placeholder: 搜索
+    copy: 复制
+    copied: 已复制
+    project-risk: 项目风险等级
+    single: 单文件
+    misra: MISRA
+    statistic-view:
+      top-issues: 高风险缺陷
+      defects-assigned: 缺陷分配
+      total-assigned: 已分配缺陷
+      status: 状态
+      unassigned: 未分配
+      high-risk: 高风险
+    pdf:
+      project-summary:
+        project-summary-report: 扫描摘要
+        project-name: 项目名称
+        report-date: 报告日期
+        scan-date: 日期
+        scan-time: 时间
+        files-scanned: 扫描文件数量
+        scan-mode: 扫描模式
+        total-files: 文件数量
+        lines-scanned: 代码行数
+        project-owner: 项目负责人
+        language: 代码语言
+
+        project-risk: 项目风险等级
+        risk: 风险
+        defects-assigned: 已分配缺陷
+
+        defects-by-risk-level: 按风险等级排序的缺陷
+        defects-by-risk-level-misra: 按修复指标划分的缺陷
+      directory:
+        directories: 目录
+        defects-by-directory: 按目录排序的缺陷
+      assignments:
+        assignments: 缺陷修复分派
+        unassigned: 未分配
+        assigned: 已分配
+      table:
+        defects-found: 缺陷数量
+        description: 描述
+        percentage: %
+        type: 类型
+        rule-standard: 规则与标准
+        file: 文件
+        high: 高
+        medium: 中
+        low: 低
+        MANDATORY: 必须修复
+        REQUIRED: 要求修复
+        ADVISORY: 建议修复
+      filters:
+        filter-condition: 筛选条件
+        types: 类型
+        keywords: 搜索关键字
+        rule-standard: 规则与标准
+      footer: 第{{pageNumber}}页 | 爱科识 {{versionNumber}} | 生成报告者 {{userName}}
+  settings:
+    title: 设置
+    line-of-code-title: 代码行数显示设置
+    line-of-code-dropdown-title: 显示代码行数
+    maximum-line: 完整路径最多可显示的代码行数
+    recommended: 推荐
+    lines: 行
+    default: 默认
+    unlimited: 无限制
+    unlimited-hint: 该设置可能会影响浏览器的性能
+    save: 保存
+    data-management:
+      title: 数据管理
+      archive:
+        title: 扫描数据保存
+        description: 对于代码缺陷，设置与其相关的扫描数据保存时间为
+        dropdown-title: 扫描数据保存时间
+        days: 天
+        week: 个星期
+        weeks: 个星期
+        month: 个月
+        months: 个月
+        perpetual: 永久保存
+      result-records:
+        title: 每个项目最少保留的扫描记录次数
+        description: 当设置的"扫描数据保存时间"到期后，在清除过期数据时，为所有项目设定需保留的扫描记录数值（从最近一次扫描记录开始）
+        input-title: 最少保留扫描记录数
+        hint: 用户可以在"项目设置"中对特定项目设定需保留的扫描记录数值（在"项目设置"中设置的值会被作为该项目保存扫描记录的依据）
+    access-token:
+      title: 访问令牌
+      new-token-title: 创建一个新的访问令牌
+      new-token-description: 您可以为需要访问Xcalscan API的每个应用程序生成访问令牌。
+      token: 令牌
+      token-name: 令牌名称
+      token-expiration: 令牌有效期
+      token-expiration-unit: 天
+      button-save: 生成令牌
+      token-list-title: 令牌列表
+      token-created: 创建日期
+      token-expiration-date: 过期日期
+      action: 操作
+      delete: 删除
+  dsr:
+    dsr: DSR
+    delta: 差异
+    current: 现时
+    benchmark: 评分
+    total: 总共
+    fixed: 已修复
+    new: 新问题
+    list: 列表
+    graph: 图形
+    dsr-title: 差异扫描结果
+    this-scan: 本次扫描
+    git-commit-id: GIT 提交 ID
+    commit-id: 提交编号
+    repo-action: 提交命令
+    repo-action-all: 推送合并
+    repo-action-CI: 推送
+    repo-action-CD: 合并
+    build-info: 构建信息
+    duration: 耗时
+    baseline-id: 对比提交
+    scan-log: 扫描记录
+    search-commit-id: 搜索提交代码编号
+    no-scan-log-found: 找不到扫描记录
+    new-counts: 新的
+    fixed-counts: 已修正的
+    files: 文件数
+    lines: 行数
+    scan-time: 扫描时间
+    view-by: 查看种类
+    CERT: CERT
+    BUILTIN: XCALIBYTE
+    scan-with: 由爱科识提供扫描，版本号
+    complexity: 复杂度
+    regression: 回归测试
+    total-defects: 总缺陷数
+    fixed-defects: 已修复的缺陷
+    new-defects: 新的缺陷
+    outstanding-defects: 未修复的缺陷
+    detected-time: 首次发现时间
+    fixed-time: 修复时间
+    defect-type: 缺陷类型
+    remaining: 剩余缺陷
+    view-total: 查看所有
+    view-dsr: 查看DSR
+    time: 时间
+    date: 日期
+    this: 这次
+    scan: 扫描
+    last: 上次
+    previous: 前一次
+    defects: 缺陷
+    delta-scan-result: 差异扫描结果
+    flag-as-critical: 标记为严重
+    more-details: 查看细节
+    see-full-scan-result: 查看全部扫描结果
+    standard-rule: 标准/规则
+    severity-index: 严重指数
+    dropdown:
+      all: 全部
+      builtin: XCALIBYTE
+      cert: CERT
+      owasp: OWASP
+      rules: 规则
+      standards: 标准
+    tooltip:
+      latest-scan: 基准指此前最后一次对提交代码的成功扫描。
+      on-last-scan: 上次扫描
+      severity-index: 严重指数 = 代码经过扫描后会产生1-10的严重指数（Severity Index），该指数综合了缺陷发生的可能性，缺陷的严重性以及修复成本的高低而生成；指数越高，修复优先级别越高。
+      cumulative: 累积
+      on-this-scan: 本次扫描
+      delta: >
+        本次扫描显示出和上次提交的扫描一个{{diff}}严重程度指数的提升*.
+        <p class="gray-txt">*使用CERT范围从1-10的加权严重程度指数.</p>
+    issue-table:
+      defects: 缺陷数
+      items-per-page: "每页显示:"
+      seq: ID
+      rule: 规则
+      type: 类型
+      standard: 采用标准
+      definite: 确定的
+      paths: 路径
+      source-file: 文件
+      assign: 指派
+      assigned: 指派給
+      unassigned: 未分配
+  license:
+    license: 证书
+    customer-name: 客户名称
+    product-name: 产品名称
+    update-success: 证书更新成功
+  scanning:
+    prompt:
+      title: 有正在进行的预处理任务
+      confirm: 继续
+      cancel: 取消
+      tasks-in-preprocessing: 已经有预处理项目在进行中，多个同时进行的预处理可能会拖慢系统的表现，继续吗？
+  triage:
+    rule-standard: 规则与标准
+    assignee: 指派人

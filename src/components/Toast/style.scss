@@ -1,0 +1,47 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.xtoast {
+    max-width: 100%;
+
+    border: none;
+    border: 1px solid $color-grey2;
+    box-shadow: none;
+
+    &__body {
+        position: relative;
+
+        width: 60%;
+        margin: 0 auto;
+
+        &-icon {
+            display: inline-block;
+            margin-top: 2px;
+
+            color: $color-jet-black;
+            font-size: 18px;
+            vertical-align: top;
+        }
+
+        &-content {
+            display: inline-block;
+            width: 80%;
+            padding-left: 5px;
+        }
+
+        &-close {
+            @include verticalCenter;
+            position: absolute;
+            right: 0;
+
+            font-weight: 700;
+            font-size: 14px;
+
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

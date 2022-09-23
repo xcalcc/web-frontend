@@ -1,0 +1,12 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-wrap {
+    .risk-severity-block-misra{
+        padding: 0;
+
+        .severity-doughnut .severity-level {
+            cursor: default;
+        }
+    }
+}

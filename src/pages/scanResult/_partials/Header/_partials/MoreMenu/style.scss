@@ -1,0 +1,21 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.scan-result-header__more-menu {
+    margin-top: -4px;
+    .custom-dropdown {
+        .arrow-icon {
+            display: none;
+        }
+
+        .dropdown-toggle {
+            font-size: 26px;
+            letter-spacing: 1px;
+
+            transition: none;
+            &:hover {
+                color: $color-jet-black;
+            }
+        }
+    }
+}

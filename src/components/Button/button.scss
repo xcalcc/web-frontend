@@ -1,0 +1,101 @@
+@import "~styles/colors";
+
+.xbutton {
+    width: 134px;
+    height: 40px;
+
+    .icon {
+        margin-right: 8px;
+
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 17px;
+        vertical-align: text-top;
+    }
+    &.btn.red {
+        color: $color-white;
+        line-height: 15px;
+
+        background-color: $color-pantone;
+        border: none;
+    }
+
+    &.btn.disabled {
+        color: $color-white;
+
+        background: $color-grey11;
+    }
+    &.btn.red:hover {
+        color: $color-white;
+        line-height: 15px;
+
+        background-color: $color-dark-red;
+        border: none;
+
+        -webkit-animation: color_change .2s infinite alternate;
+        -moz-animation: color_change .2s infinite alternate;
+        -ms-animation: color_change .2s infinite alternate;
+        -o-animation: color_change .2s infinite alternate;
+        animation: color_change .2s infinite alternate;
+    }
+
+    &.btn.grey,
+    &.btn.grey:hover {
+        color: $color-grey12;
+        line-height: 15px;
+
+        background-color: transparent;
+        border: 1px solid $color-grey12;
+    }
+
+    &.btn.grey:hover {
+        background-color: $color-pale-grey;
+    }
+
+    &.btn {
+        color: $color-dark-grey;
+        line-height: 15px;
+
+        background-color: $color-pale-grey2;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn:hover {
+        color: $color-white;
+        line-height: 15px;
+
+        background-color: $color-dark-blue;
+        border: none;
+    }
+
+    &.btn.link,
+    &.btn.link:hover {
+        padding: 0;
+
+        color: $color-jet-black !important;
+
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    &.btn.gradigent {
+        box-sizing: border-box;
+        width: auto;
+        padding: 0 18px;
+
+        color: $color-jet-black;
+        text-transform: unset;
+
+        background: linear-gradient(180deg, $color-white 0%, $color-grey2 100%);
+        border: 1px solid $color-grey;
+        border-radius: 3px;
+        &:hover {
+            .icon {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        &:active {
+            color: $color-mid-grey;
+        }
+    }
+}

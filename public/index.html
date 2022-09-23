@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/images/favicon.svg" />
+    <title>Xcalscan</title>
+    <link href="%PUBLIC_URL%/css/bootstrap.css" rel="stylesheet" />
+    <link href="%PUBLIC_URL%/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="%PUBLIC_URL%/css/style.css" rel="stylesheet" />
+    <link href="%PUBLIC_URL%/css/style-custom.css" rel="stylesheet" />
+
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <style type="text/css">
+      .page-loading{
+        max-width: 200px;
+        max-height: 300px;
+        margin:0 auto;
+        top:40%;
+        left:48%;
+        position:absolute;
+      }
+      .page-loading span{
+        font-size:13px;
+      }
+      .page-loading .dots {
+        width: 2em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+
+      .page-loading .dots div {
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: #ed1c24;
+        animation: loadingFade 0.8s ease-in-out alternate infinite;
+      }
+
+      .page-loading .dots div:nth-of-type(1) {
+        animation-delay: -0.4s;
+      }
+
+      .page-loading .dots div:nth-of-type(2) {
+        animation-delay: -0.2s;
+      }
+
+      @keyframes loadingFade {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <script type="text/javascript">
+      (function(){
+        var query = function() {
+          var url = window.location.search;
+          var str = url;
+          var theRequest = {};
+          if (url.indexOf("?") !== -1) {
+            str = url.substr(1);
+          }
+          if(str.length > 0){
+            str = str.split("&");
+            for(var i = 0; i < str.length; i ++) {
+              theRequest[str[i].split("=")[0]] = decodeURI(str[i].split("=")[1] || "");
+            }
+          }
+          return theRequest;
+        }
+
+        if(localStorage.getItem("language") === null) {
+          localStorage.setItem("language", window.navigator.language === "zh-CN" ? "zh-CN" : "en");
+        }
+
+        var query = query();
+        if(query.lang) {
+          localStorage.setItem("language", query.lang);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="height:100%;">
+      <div class="page-loading">
+        <div class="dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span>Loading...</span>
+      </div>
+    </div>
+    <div id="pdf" style="z-index: -1;"></div>
+    <div id="tooltips-container"></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react-leaflet/2.2.1/react-leaflet.min.js"></script> -->
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        try {
+          var msg = {
+            message: message,
+            source: source,
+            lineno: lineno,
+            colno: colno,
+            stack: error && error.stack,
+            traceId: window.appData && window.appData.traceId,
+            href: window.location.href,
+          };
+          console.log("========Error Begin========")
+          console.log(JSON.stringify(msg))
+          console.log("========Error End========")
+        } catch (err) {
+          console.log('report error', err);
+        }
+      };
+    </script>
+  </body>
+</html>

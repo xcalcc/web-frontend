@@ -1,0 +1,146 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+.dsr-graph-item {
+  padding: 10px;
+
+  border-bottom: 1px dashed $color-grey1;
+  .dsr-graph-item-project {
+    &:hover {
+      cursor: pointer;
+    }
+    text-align: left;
+
+    .project-name-block {
+      width: 100%;
+      padding-right: 0;
+      .project-name {
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+        span {
+          font-size: 1.2em;
+        }
+      }
+      .project-current-scan {
+        align-items: flex-start;
+
+        font-size: 0.6em;
+      }
+    }
+    .dsr-value {
+      @include flexCenter;
+
+      @media only screen and (min-width: 1300px) {
+        div {
+          width: 60%;
+        }
+      }
+      div {
+        color: $color-white;
+        text-align: center;
+
+        background: $color-orange;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .dsr-graph-item-issue {
+    .project-name-block {
+      display: inline;
+      justify-content: flex-start;
+      justify-items: flex-start;
+
+      text-align: left;
+      .name {
+        display: inline;
+      }
+      .tooltip-dot {
+        display: inline;
+        height: 100%;
+        padding-left: 5px;
+
+        color: $color-grey1;
+        font-size: .6em;
+        line-height: 100%;
+      }
+    }
+    .remaining-label {
+      @include flexCenter;
+      padding-left: 0;
+      @media only screen and (min-width: 1300px) {
+        div {
+          width: 60%;
+        }
+      }
+      div {
+        padding-right: 0;
+        padding-left: 0;
+
+        color: $color-white;
+        text-align: center;
+
+        background: $color-grey3;
+        border-radius: 10px;
+      }
+      .label-text {
+        width: 100%;
+
+        font-size: .8em;
+      }
+      .revert {
+        color: $color-grey3;
+
+        background: $color-white;
+        border: 1px solid $color-grey3;
+      }
+    }
+  }
+
+  .issue-fixed {
+    color: $color-blue;
+    &-progress {
+      background-color: $color-blue;
+    }
+  }
+  .issue-new {
+    color: $color-orange;
+    &-progress {
+      background-color: $color-orange;
+    }
+  }
+  .arrow {
+    align-self: center;
+
+    color: $color-orange;
+    text-align: end;
+  }
+
+  .progress {
+    height: 1em;
+
+    background-color: $color-white
+  }
+
+  .progress-bar {
+    border-radius: 10rem;
+
+    -webkit-transition: width 0.76s ease;
+    -o-transition: width 0.76s ease;
+    transition: width 0.76s ease;
+  }
+
+  .label {
+    margin-top: -3px;
+    margin-left: 5px;
+
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+
+    background-color: $color-white;
+    border-radius: 0;
+  }
+}

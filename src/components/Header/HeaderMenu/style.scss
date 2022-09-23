@@ -1,0 +1,77 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.header-menu {
+    &.show {
+        .trigger-icon {
+            color: $color-jet-black;
+        }
+    }
+
+    .trigger-icon {
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+
+        user-select: none;
+
+        &:hover {
+            color: $color-jet-black;
+        }
+    }
+
+    .dropdown-menu {
+        min-width: 180px;
+        inset: 0px auto auto 0px !important;
+
+        transform: translate(-150px, 46px) !important;
+
+        a {
+            font-weight: 400;
+            font-size: 14px;
+            font-family: $font-family-normal;
+            letter-spacing: normal;
+        }
+
+        .dropdown-item {
+            color: $color-jet-black;
+            line-height:40px;
+
+            &:active {
+                background-color: $color-grey8;
+            }
+
+            .icon-wrap {
+                margin: 0 16px 0 8px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0;
+                }
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    color: $color-jet-black;
+                }
+            }
+        }
+    }
+
+    a{
+        text-transform: none;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .header-menu a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header-menu a {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}

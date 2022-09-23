@@ -1,0 +1,69 @@
+@import "~styles/variables";
+@import "~styles/colors";
+
+.download-report {
+    margin-top: -3px;
+
+    border: 0;
+    
+    .dropdown-toggle {
+        margin-left: 15px;
+        padding: 0 5px;
+
+        color: $color-grey16;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: $font-family-condensed;
+
+        box-shadow: none;
+
+        transition: none;
+        &::after {
+            display: none;
+        }
+        img {
+            max-height: 15px;
+            margin-right: 6px;
+
+            vertical-align: text-bottom;
+
+            opacity: 0.5;
+        }
+        .arrow-icon {
+            margin-left: 10px;
+
+            img {
+                margin-right: 0;
+
+                vertical-align: middle;
+            }
+        }
+
+        &:hover {
+            color: $color-jet-black;
+            img {
+                opacity: 1;
+            }
+        }
+    }
+    .dropdown-menu {
+        width: 180px;
+    }
+    .dropdown-item {
+        padding: 5px;
+
+        font-size: 14px;
+        img {
+            width: 30px;
+            margin-right: 5px;
+        }
+        &.active {
+            background-color: $color-pale-grey;
+        }
+        &:hover, &:focus {
+            color: $color-jet-black;
+
+            background-color: $color-pale-grey;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+dashboard:
+  projects: PROJECTS
+  fail-scan: FAIL SCAN
+  no-data-found: No data found
+  scan-failed-tip: Most recent scan failed
+  my-projects: MY PROJECTS
+  search-project: Search projects
+  sort-by: SORT BY
+  scanning: Scanning...
+  risk-level: RISK LEVEL
+  obligation-level: OBLIGATION LEVEL
+  sort-by-field:
+    name: Name
+    date-scanned: Date Scanned
+    defects-found: Defects Found

@@ -1,0 +1,145 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail-page {
+    /*ace line numbers */
+    .ace_gutter-cell, .ace_layer.ace_text-layer {
+        color: $color-grey12;
+        font-size: 14px !important;
+        font-family: $font-family-normal;
+    }
+
+    .ace_editor .ace_gutter {
+        background-color: $color-white !important;
+    }
+
+    .ace_cursor-layer .ace_cursor {
+        color: $color-red !important;
+
+        opacity: 1 !important;
+    }
+
+    .gray_marker {
+        position: absolute;
+        z-index: 1000;
+
+        background-color: #ecedee;
+    }
+
+    .ace-arrows {
+        position: relative;
+
+        display: flex;
+    }
+
+    .code {
+        flex: 1;
+    }
+
+    .svg-arrows {
+        width: 30px;
+
+        background-color: $color-white;
+    }
+
+    .code-tooltips {
+        position: absolute;
+        right: 0;
+        z-index: 1001;
+
+        width: 250px;
+
+        line-height: 16px;
+    }
+
+    .code-tooltips__item {
+        position: absolute;
+
+        display: flex;
+        width: 100%;
+
+        transform: translate(0, 1px);
+    }
+
+    .code-tooltips__arrow-wrapper {
+        width: 15px;
+        height: 16px;
+        margin-right: 2px;
+
+        background-color: #c7c8ca;
+    }
+
+    .code-tooltips__arrow {
+        width: 3px;
+        margin: 4px 0 0 2px;
+        padding: 3px;
+
+        border: solid #FFF;
+        border-width: 0 1px 1px 0;
+        -webkit-transform: rotate(-45deg);
+
+        transform: rotate(-45deg);
+    }
+
+    .code-tooltips__double-arrow {
+        position: relative;
+    }
+
+    .code-tooltips__double-arrow .code-tooltips__arrow:first-child {
+        position: absolute;
+
+        left: -3px;
+    }
+
+    .code-tooltips__double-arrow .code-tooltips__arrow:last-child {
+        position: absolute;
+
+        left: 2px;
+    }
+
+    .scrolled-content-wrapper {
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+
+    .ace-xcode .ace_constant.ace_numeric {color: #034EA2 !important;}
+    .ace-xcode .ace_string {color: #F5333F !important;}
+    .ace-xcode .ace_comment {color: #6ABF4B !important;}
+    .ace-xcode .ace_entity.ace_other.ace_attribute-name, .ace-xcode .ace_support.ace_constant, .ace-xcode .ace_support.ace_function {
+        color: #00AEE6 !important;
+    }
+    .ace-xcode .ace_constant.ace_language, .ace-xcode .ace_keyword, .ace-xcode .ace_meta, .ace-xcode .ace_variable.ace_language {
+        color: #FF8300 !important;
+    }
+}
+
+.code-tooltips__text {
+    color: $color-dark-grey;
+    font-size: 14px;
+    font-family: $font-family-normal;
+
+    background-color: #c7c8ca;
+}
+
+.code-tooltips__text--short {
+    flex: 1;
+    padding-left: 7px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.code-tooltips__text--long {
+    position: absolute;
+
+    width: 234px;
+    padding: 10px;
+
+    line-height: 13px;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    opacity: 1;
+}

@@ -1,0 +1,27 @@
+---
+user:
+  user-has-deleted: 用户已删除!
+  imported: 导入成功!
+  import-success: 用户已成功导入!
+  user-admin: 用户管理
+  display-name: 显示名称
+  name: 用户名
+  email-address: 邮件地址
+  role: 角色
+  admin: 管理员
+  add-user: 添加用户
+  import-user: 导入用户
+  team-template: 模板下载
+  profile: 用户资料
+  email: 邮箱
+  old-password: 旧密码
+  new-password: 新密码
+  conf-password: 确认新密码
+  profile-update-success: 个人信息更新成功
+  user-update-success: 用户信息提交成功
+  create-success: 添加用户成功
+  new-user: 创建新用户
+  set-to-admin: 设置为管理员
+  unlock: 解锁
+  admin-view: 管理员视图
+  unlock-success: 用户解锁成功

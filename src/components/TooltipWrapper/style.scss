@@ -1,0 +1,64 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.default-info-tooltip {
+  color: rgba(0,0,0,.2);
+}
+
+.popover {
+  z-index: 99999;
+
+  background-color: $color-grey12;
+  border: 0;
+  border-radius: 2px;
+
+  &-body {
+    padding: 4px 15px;
+    div {
+      color: $color-white;
+      font-size: 12px;
+      font-family: $font-family-normal;
+      text-align: center;
+    }
+  }
+
+  &.bs-popover-top {
+    margin-bottom: 6px !important;
+    .arrow {
+      bottom: calc((.4rem + 1px) * -1);
+      &::after {
+        border-top-color: $color-grey12;
+      }
+    }
+  }
+
+  &.bs-popover-right {
+    margin-left: 6px !important;
+    .arrow {
+      left: calc((.4rem + 1px) * -1);
+      &::after {
+        border-right-color: $color-grey12;
+      }
+    }
+  }
+
+  &.bs-popover-bottom {
+    margin-top: 6px !important;
+    .arrow {
+      top: calc((.4rem + 1px) * -1);
+      &::after {
+        border-bottom-color: $color-grey12;
+      }
+    }
+  }
+
+  &.bs-popover-left {
+    margin-right: 6px !important;
+    .arrow {
+      right: calc((.4rem + 1px) * -1);
+      &::after {
+        border-left-color: $color-grey12;
+      }
+    }
+  }
+}

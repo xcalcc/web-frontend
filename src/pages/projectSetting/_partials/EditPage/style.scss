@@ -1,0 +1,41 @@
+@import "~styles/colors";
+
+.project-setting-edit {
+    width: 70%;
+    margin-bottom: 15px;
+
+    h2 {
+        padding-bottom: 32px;
+
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    .xbutton.link {
+        margin-right: 40px;
+    }
+
+    .config-value {
+        padding: .375rem .75rem;
+
+        color: $color-ink-blue;
+
+        cursor: not-allowed;
+    }
+
+    .xform-group {
+        margin-bottom: 10px;
+    }
+
+    .section {
+        .title {
+            text-transform: uppercase;
+        }
+    }
+
+    .other-configuration {
+        .xbutton {
+            margin-top:7px;
+        }
+    }
+}

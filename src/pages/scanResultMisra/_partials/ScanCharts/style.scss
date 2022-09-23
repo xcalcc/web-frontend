@@ -1,0 +1,19 @@
+@import "~styles/colors";
+
+.scan-result-charts {
+    margin-top: 20px;
+
+    .metas-wrap {
+        flex: 0 0 33%;
+        flex-basis: 350px;
+    }
+
+    & > .row {
+        & > div {
+            &:nth-child(1),
+            &:nth-child(2) {
+                border-right: 1px solid $color-grey11;
+            }
+        }
+    }
+}

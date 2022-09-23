@@ -1,0 +1,14 @@
+@import "~styles/colors";
+
+.input-with-edit {
+    .as-label {
+        color: $color-ink-blue;
+
+        background-color: transparent;
+        border-color: transparent;
+
+        &:hover {
+            background-color: $color-grey6;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import '~styles/colors';
+
+.table-footer {
+  .dropdown-with-title .drop-down .dropdown {
+    width: 80px;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    .down-arrow {
+      width: 12px;
+    }
+    .icon {
+      top: 0;
+      right: -8px;
+
+      float: none;
+    }
+  }
+}

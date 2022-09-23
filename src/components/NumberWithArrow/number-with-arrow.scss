@@ -1,0 +1,14 @@
+.number-with-arrow {
+  display: inline;
+  width: 100%;
+
+  white-space: nowrap;
+
+  text-align: center;
+  span {
+    display: inline;
+  }
+  sup {
+    left: 10%;
+  }
+}

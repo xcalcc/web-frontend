@@ -1,0 +1,128 @@
+@import "~styles/variables";
+@import '~styles/colors';
+@import '~styles/mixins';
+
+.log-table {
+  height: 130px;
+  margin-top: 17px;
+  .row {
+
+    height: 32px;
+    padding: 0 5px;
+
+    line-height: 32px;
+
+    border-bottom: 1px solid $color-grey11;
+
+    &:not(.header):hover {
+
+      background-color: $color-grey8;
+      cursor: pointer;
+    }
+
+    &.active {
+      background-color: $color-white;
+    }
+
+    .new-count,.fixed-count {
+      text-align: right;
+    }
+
+    .action {
+      flex: 0 0 9%;
+      max-width: 9%;
+    }
+
+    .build {
+      flex: 0 0 13%;
+      max-width: 13%;
+      padding-right: 14px;
+
+      white-space: nowrap;
+
+      &-wrap {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        overflow: hidden;
+      }
+      &-start {
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+      }
+
+      &-end {
+        display: block;
+        flex: 0 0 auto;
+      }
+    }
+
+    .date {
+      flex: 0 0 11%;
+      max-width: 11%;
+    }
+
+    .time {
+      flex: 0 0 10%;
+      max-width: 10%;
+    }
+
+    .duration {
+      flex: 0 0 11%;
+      max-width: 11%;
+    }
+  
+    .commit-id {
+      flex: 0 0 15%;
+      max-width: 15%;
+
+      white-space: nowrap;
+    }
+
+    .compared-commit-id {
+      flex: 0 0 13%;
+      max-width: 13%;
+
+      white-space: nowrap;
+    }
+
+    .new-count {
+      flex: 0 0 7%;
+      max-width: 7%;
+      padding-right: 5px;
+    }
+
+    .fixed-count {
+      flex: 0 0 10%;
+      max-width: 10%;
+    }
+  }
+
+  .item-list {
+    height: auto;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .no-result-found {
+    padding: 1em;
+
+    font-weight: bold;
+
+    text-align: center;
+  }
+
+  .header {
+    color: $color-jet-black;
+    font-weight: 600;
+    font-size: 14px;
+
+    border: none;
+    div {
+      font-family: $font-family-condensed;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+  }
+}

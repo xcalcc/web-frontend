@@ -1,0 +1,108 @@
+.graph {
+    position: relative;
+
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.graph__container {
+
+    position: relative;
+
+    height: 60vh;
+    min-height: 600px;
+
+    overflow: hidden;
+}
+
+.graph__canvas {
+    height: 100%;
+
+    cursor: pointer;
+}
+
+.graph__canvas:active {
+    cursor: grabbing;
+}
+
+.graph__canvas .vis-network {
+    z-index: 1;
+}
+
+.graph__zoom {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9;
+
+    width: 30px;
+    height: 60px;
+    overflow: hidden;
+
+    border: 1px solid #c7c8ca;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.graph__zoom-button {
+    position: relative;
+
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    background-color: #fff;
+
+    border: none;
+}
+
+.graph__zoom-button.zoom-in::before, .graph__zoom-button.zoom-out::before, .graph__zoom-button.zoom-in::after {
+    position: absolute;
+
+    display: block;
+
+    background-color: #231f20;
+
+    content: '';
+}
+
+.graph__zoom-button.zoom-in::before, .graph__zoom-button.zoom-out::before {
+    top: calc(50% - 1px);
+    left: 50%;
+
+    width: 50%;
+    height: 2px;
+
+    transform: translateX(-50%);
+}
+
+.graph__zoom-button.zoom-in::after {
+    top: 50%;
+    left: calc(50% - 1px);
+
+    width: 2px;
+    height: 50%;
+
+    transform: translateY(-50%);
+}
+
+.graph__zoom-button.zoom-in:hover::before, .graph__zoom-button.zoom-out:hover::before, .graph__zoom-button.zoom-in:hover::after {
+    background-color: #666;
+}
+
+.graph__zoom-button.zoom-out:disabled {
+    cursor: default;
+}
+
+.graph__zoom-button.zoom-out:disabled::before {
+    background-color: #ccc;
+}
+
+.graph__zoom-divider {
+    width: 70%;
+    height: 1px;
+    margin: 0 auto;
+
+    background-color: #c7c8ca;
+}

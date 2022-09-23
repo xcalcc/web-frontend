@@ -1,0 +1,74 @@
+@import "~styles/mixins";
+@import "~styles/variables";
+@import "~styles/colors";
+
+.x-accordion {
+    @include noSelect;
+    &.show > .card-header {
+        background-color: $color-pale-grey;
+        .icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+    .card-header {
+        position: relative;
+
+        height: 40px;
+        padding: 0 6px;
+
+        font-weight: 600;
+        font-size: 16px;
+        font-family: $font-family-condensed;
+        line-height: 40px;
+
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        .icon {
+            @include verticalCenter;
+            position: absolute;
+            right: 5px;
+
+            transition: transform 100ms ease-out 0.1s;
+        }
+    }
+
+    .x-accordion {
+        margin-top: 5px;
+        .card-header {
+            font-size: 14px;
+            font-family: $font-family-normal;
+
+            background: none;
+        }
+    }
+
+    ul {
+        padding: 0 5px;
+        li {
+            position: relative;
+
+            margin-top: 6px;
+
+            font-size: 12px;
+            line-height: 28px;
+
+            border-bottom: 1px solid $color-grey11;
+            cursor: pointer;
+
+            span {
+                @include verticalCenter;
+                position: absolute;
+                right: 0;
+
+                padding-left: 5px;
+
+                background-color: $color-white;
+            }
+            &.selected {
+                color: $color-pantone;
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@import "~styles/mixins";
+@import "~styles/colors";
+
+.switch-button {
+    @include noSelect;
+    cursor: pointer;
+    &__label {
+        &.before {
+            margin-right: 25px;
+
+            color: $color-grey12;
+        }
+        &.after {
+            margin-left: 25px;
+
+            color: $color-grey11;
+        }
+    }
+
+    &:hover {
+        .switch-button__label {
+            &.after {
+                color: $color-grey16;
+            }
+        }
+
+        .react-toggle .react-toggle-track {
+            border-color: $color-pantone;
+        }
+        .react-toggle .react-toggle-thumb {
+            background-color: $color-pantone;
+            border-color: $color-pantone;
+        }
+    }
+
+    &.checked {
+        .switch-button__label {
+            &.before {
+                color: $color-grey11;
+            }
+            &.after {
+                color: $color-grey12;
+            }
+        }
+
+        &:hover {
+            .switch-button__label {
+                &.before {
+                    color: #a1a1a1;
+                }
+            }
+
+            .react-toggle .react-toggle-track {
+                background-color: $color-pantone !important;
+                border-color: $color-pantone;
+            }
+            .react-toggle .react-toggle-thumb {
+                background-color: $color-grey14;
+                border-color: $color-pantone;
+            }
+        }
+    }
+
+    .react-toggle {
+        margin-bottom: -2px;
+    }
+    .react-toggle-track {
+        box-sizing: border-box;
+        width: 26px;
+        height: 14px;
+
+        background-color: transparent;
+        border: 1px solid $color-grey12;
+
+        transition: unset;
+    }
+
+    .react-toggle-thumb {
+        left: 0;
+
+        box-sizing: border-box;
+        width: 12px;
+        height: 12px;
+
+        background-color: transparent;
+        border: 1px solid $color-grey12;
+
+        transition: left 0.25s ease;
+    }
+
+    .react-toggle--focus .react-toggle-thumb {
+        box-shadow: none;
+    }
+    .react-toggle--checked .react-toggle-thumb {
+        left: 14px;
+
+        background-color: $color-grey14;
+        border-color: $color-grey12;
+    }
+    .react-toggle.react-toggle--checked:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: $color-grey12;
+        box-shadow: none;
+    }
+    .react-toggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: $color-grey12;
+        box-shadow: none;
+    }
+    .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: transparent;
+    }
+    .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+        box-shadow: none;
+    }
+}

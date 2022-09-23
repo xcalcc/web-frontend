@@ -1,0 +1,120 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-search-box {
+    position: relative;
+
+    width: 216px;
+    margin: 2px 15px 0;
+
+    .search-suggest {
+        position: absolute;
+        z-index: 1;
+
+        width: 100%;
+        max-height: 410px;
+        padding-bottom: 20px;
+
+        &-content {
+            width: 100%;
+            max-height: 390px;
+            overflow: scroll;
+
+            background: $color-white;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+
+            ul {
+                width: 100%;
+                li {
+                    width: 100%;
+                    padding-top: 10px;
+
+                    &:hover {
+                        background-color: $color-pale-grey;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 10px;
+                    }
+
+                    .data-item {
+                        display: flex;
+                        align-items: center;
+                        width: 194px;
+                        min-height: 28px;
+                        margin: 0 auto;
+
+                        color: $color-grey12;
+
+                        font-size: 12px;
+
+                        border-bottom: 1px solid $color-grey11;
+
+                        .text {
+                            display: inline-block;
+                            width: 145px;
+
+                            word-break: break-all;
+                        }
+
+                        .icon-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 25px;
+                            height: 25px;
+
+                            cursor: pointer;
+
+                            &-favorite {
+                                justify-content: flex-start;
+                                img:nth-child(1) {
+                                    display: block;
+                                }
+                                img:nth-child(2) {
+                                    display: none;
+                                }
+
+                                &:hover {
+                                    img:nth-child(1) {
+                                        display: none;
+                                    }
+                                    img:nth-child(2) {
+                                        display: block;
+                                    }
+                                }
+
+                                &.favorited {
+                                    &:hover {
+                                        img:nth-child(1) {
+                                            display: block;
+                                        }
+                                        img:nth-child(2) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &-delete {
+                                img {
+                                    width: 8px;
+                                    height: 8px;
+
+                                    opacity: 0.4;
+                                }
+
+                                &:hover {
+                                    img {
+                                        opacity: 0.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.dashboard-header {
+    .left-area {
+        color: $color-grey12;
+        font-size: 14px;
+        font-family: $font-family-normal;
+    }
+
+    .right-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .scanning-search {
+            width: 220px;
+        }
+        .view-by {
+            margin-left: 15px;
+
+            cursor: pointer;
+            img {
+                width: 16px;
+                height: 16px;
+
+                opacity: 0.4;
+            }
+            &.active,
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

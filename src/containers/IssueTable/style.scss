@@ -1,0 +1,209 @@
+@import '~styles/colors';
+@import '~styles/mixins';
+
+.issue-table {
+  width: 100%;
+
+  thead {
+    box-sizing: border-box;
+
+    background: $color-pale-grey;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  }
+  tr {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  }
+
+  th {
+    min-width: 3px;
+    padding-right: 0;
+    padding-left: 0;
+
+    font-weight: 600;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 16px;
+  }
+  td {
+    max-width: 100px;
+    padding: 0;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+
+    cursor: pointer;
+  }
+
+  .seq {
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 16px;
+  }
+
+  .severity {
+    height: 56px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .label-flag {
+    position: relative;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    &.high {
+      background-color: $color-red;
+    }
+
+    &.medium {
+      background-color: $color-orange;
+    }
+
+    &.low {
+      background-color: $color-blue;
+    }
+  }
+
+  .definite {
+    div {
+      width: 42px;
+      height: 12px;
+
+      color: $color-white;
+      font-weight: 600;
+      font-size: 10px;
+
+      font-style: normal;
+      line-height: 12px;
+      /* identical to box height, or 120% */
+
+      text-align: center;
+
+      background: $color-myth;
+      border-radius: 2px;
+    }
+  }
+
+  .standards {
+    .data {
+      span {
+        width: auto;
+        padding-right: 3px;
+        padding-left: 3px;
+
+        background: $color-myth2;
+        border-radius: 3px;
+      }
+      height: 12px;
+
+      color: $color-white;
+      font-weight: 600;
+      font-size: 10px;
+      font-style: normal;
+      line-height: 12px;
+      /* identical to box height, or 120% */
+
+      text-align: left;
+
+    }
+  }
+
+  .filePath, .paths {
+    color: rgba(35, 31, 32, 0.6);
+    font-weight: normal;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 16px;
+  }
+
+  .issue-table-title {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      font-weight: bold;
+      font-size: 24px;
+      font-style: normal;
+      line-height: 32px;
+    }
+
+    .search-box-and-filter {
+      display: flex;
+      justify-content: flex-end;
+      .search-box-container {
+        margin: 0;
+        padding-right: 8px;
+        .scanning-search {
+          width: 234px;
+          height: 40px;
+          padding-right: 0;
+
+          line-height: 40px;
+
+          .form-control {
+            height: 40px;
+          }
+
+          .btn-search {
+            display: table-cell;
+            height: 40px;
+
+            vertical-align: center;
+          }
+        }
+      }
+
+      .drop-down-filter {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .issue-table-footer {
+    position: relative;
+    top: -16px;
+
+    background: $color-pale-grey3;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    .row {
+      padding: 0;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      .page-item {
+        &.active {
+          .page-link {
+            color: $color-red;
+          }
+        }
+        .page-link {
+          color: $color-jet-black;
+
+          background: none;
+          border: none;
+        }
+      }
+    }
+
+    .page-selector {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      span {
+        padding-right: 8px;
+      }
+    }
+  }
+  .ruleName {
+    .data {
+      max-width: 250px;
+    }
+  }
+
+}

@@ -1,0 +1,202 @@
+@import "~styles/mixins";
+@import "~styles/variables";
+@import "~styles/colors";
+
+.issue-table-wrap {
+    margin-top: 20px;
+
+    .total {
+        color: $color-jet-black;
+        font-weight: 600;
+        font-size: 18px;
+        font-family: $font-family-condensed;
+    }
+
+    table.data-table {
+        width: 100%;
+        margin: 20px 0 0;
+
+        td, th {
+            padding: 0 5px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:nth-child(4),
+            &:nth-child(6),
+            &:nth-child(8) {
+                padding-right: 10px;
+            }
+        }
+
+        thead {
+            background-color: $color-pale-grey;
+            th {
+                height: 40px;
+
+                color: $color-jet-black;
+                font-weight: 600;
+                font-size: 14px;
+                font-family: $font-family-condensed;
+                text-transform: uppercase;
+
+                border: 0;
+            }
+        }
+
+        tbody {
+            min-height: 600px;
+            tr {
+                cursor: pointer;
+
+                td:nth-child(4),
+                td:nth-child(6) {
+                    max-width: 140px;
+                }
+
+                td:nth-child(8),
+                td:nth-child(9) {
+                    max-width: 80px;
+                }
+
+                td:nth-child(3),
+                td:nth-child(4),
+                td:nth-child(6),
+                td:nth-child(8),
+                td:nth-child(9) {
+                    span {
+                        display: inline-block;
+                        width: 100%;
+                        overflow: hidden;
+
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        word-break: break-word;
+                    }
+
+                    &:hover {
+                        span {
+                            white-space: normal;
+                        }
+                    }
+                }
+            }
+
+            tr:hover td, tr:hover {
+                background-color: $color-grey6;
+            }
+
+            td {
+                height: 40px;
+
+                font-size: 12px;
+
+                background-color: $color-white;
+                border-bottom: 1px solid $color-pale-grey;
+
+                &:hover span {
+                    z-index: 9;
+
+                    overflow: visible;
+
+                    white-space: normal;
+                }
+
+                .badge-secondary {
+                    margin-right: 5px;
+
+                    background-color: $color-grey13;
+                }
+            }
+        }
+
+        .label-flag {
+            width: 7px;
+            height: 105%;
+
+            opacity: 0.4;
+
+            &.certainty {
+                opacity: 1;
+            }
+
+            &.high {
+                background-color: $color-red;
+            }
+
+            &.medium {
+                background-color: $color-orange;
+            }
+
+            &.low {
+                background-color: $color-blue;
+            }
+        }
+
+        .dropdown-with-title {
+            @include noSelect;
+            .dropdown {
+                width: unset;
+                height: unset;
+
+                line-height: unset;
+
+                background: unset;
+                border: unset;
+                box-shadow: unset;
+    
+                .label {
+                    position: unset;
+        
+                    height: unset;
+
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: unset;
+                    text-transform: unset;
+                }
+    
+                .icon {
+                    position: unset;
+
+                    float: left;
+                    height: unset;
+                    margin-right: 5px;
+                    overflow: scroll;
+
+                    font-size: 18px;
+                    line-height: unset;
+                }
+
+                .dropdown-menu {
+                    min-height: 40px;
+                    max-height: 380px;
+                    overflow: scroll;
+                }
+
+                .dropdown-item {
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+
+    .x-pagination {
+        background-color: $color-pale-grey;
+    }
+
+    .norecord {
+        width: 100%;
+
+        font-size: 16px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .copy-icon {
+        display: inline !important;
+        padding: 10px 5px;
+    }
+}

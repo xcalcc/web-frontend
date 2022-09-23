@@ -1,0 +1,90 @@
+@import '~styles/colors';
+@import '~styles/variables';
+
+.directory-summary-table-pdf-misra {
+	.table-header {
+		.risk-dot {
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+
+			line-height: 12px;
+			vertical-align: middle;
+
+			border-radius: 50%;
+
+			&.high {
+				background: $color-pantone;
+			}
+
+			&.medium {
+				background: $color-orange;
+			}
+
+			&.low {
+				background: $color-blue;
+			}
+		}
+		.risk-text {
+			display: inline-block;
+			margin-left: 3px;
+		}
+	}
+
+	.table-title {
+		font-size: 10px;
+	}
+
+	.pdf-table {
+		thead {
+			tr {
+				th {
+					color: $color-jet-black;
+					font-weight: 600;
+					font-size: 8px !important;
+				}
+
+				th:nth-child(1) {
+					width: 45% !important;
+				}
+				th:nth-child(2) {
+					width: 10%;
+				}
+				th:nth-child(3) {
+					width: 8%;
+				}
+				th:nth-child(4),
+				th:nth-child(5),
+				th:nth-child(6) {
+					min-width: 8%;
+
+					white-space: nowrap;
+				}
+				th:nth-child(2),
+				th:nth-child(3),
+				th:nth-child(4),
+				th:nth-child(5),
+				th:nth-child(6) {
+					text-align: right;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					font-size: 8px !important;
+				}
+				td:nth-child(1) {
+					width: 45% !important;
+				}
+				td:nth-child(2),
+				td:nth-child(3),
+				td:nth-child(4),
+				td:nth-child(5),
+				td:nth-child(6) {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

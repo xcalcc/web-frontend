@@ -1,0 +1,73 @@
+---
+common:
+  project: MY PROJECTS
+  delete: Deleted
+  delete-it: Yes, delete it!
+  are-you-sure: Are you sure?
+  delete-tip: You will not be able to recover this record!
+  action: Actions
+  edit: edit
+  save: Save
+  next: Next
+  dismiss: Dismiss
+  update-success: Updated!
+  create-success: Created!
+  operation-success: Operation is successful!
+  table-no-data: No results found
+  copy: Copy
+  copied: Copied
+  notifications:
+    scan-aborted: SCAN ABORTED
+    delete-success: Project has been deleted!
+    delete-failure: Delete project failed.
+    success: Success
+    failure: Failure
+    project-create-success: Project has been added successfully!
+    project-update-success: Project has been updated successfully!
+  buttons:
+    confirm: Confirm
+    back: BACK
+    apply: APPLY
+    cancel: CANCEL
+    apply-save: APPLY & SAVE
+  severity:
+    high: HIGH
+    medium: MEDIUM
+    low: LOW
+  header:
+    contact: Contact
+    support: Support
+    logout: Logout
+    locale:
+      en: ENGLISH
+      zh-CN: 中文
+  sidebar:
+    new-project: NEW PROJECT
+    my-project: MY PROJECTS
+    admin: ADMIN
+    license: License
+    scm: Source Code Management
+    user-management: User Management
+    email-server-configuration: Email Configuration
+    data-management: Data Management
+    settings: SETTINGS
+    access-token: Access Token
+    license-info: >
+      <p>Xcalscan {{version}}</p>
+      <p>Copyright 2019 - {{currentYear}}</p>
+      <p>&copy; Xcalibyte (Shenzhen) Limited.</p>
+      <br/>
+      <p>Do not redistribute without authorization.</p>
+  dropzone:
+    title: Open a config file or drag the file here
+    errors:
+      file-too-large: File reach the limit of {{size}}
+      name-too-long: File name is over length limit of {{nameLength}}
+      not-supported-type: Not supported file type
+      bad-json-format: Invalid JSON
+  scan-mode: 
+    title: SCAN MODE
+    SINGLE: SINGLE
+    CROSS: CROSS
+    SINGLE_XSCA: SINGLE & MISRA
+    XSCA: MISRA

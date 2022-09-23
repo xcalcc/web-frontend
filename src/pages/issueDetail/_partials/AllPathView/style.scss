@@ -1,0 +1,32 @@
+@import "~styles/colors";
+
+.all-path-view {
+    background-color: $color-white;
+
+    .left-block {
+        padding: 20px 15px;
+
+        border-right: 1px solid $color-grey14;
+    }
+
+    .right-block {
+        .trace-path-graph {
+            min-height: 600px;
+            padding: 10px 15px;
+
+            box-shadow: none;
+
+            .graph {
+                box-shadow: none;
+            }
+
+            .no-graph {
+                margin-top: 200px;
+
+                color: $color-grey13;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    }
+}

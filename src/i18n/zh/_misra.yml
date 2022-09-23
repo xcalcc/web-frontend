@@ -1,0 +1,7 @@
+misra:
+  top-issues-title: 必须修复
+  severity:
+    HIGH: 必须修复
+    MEDIUM: 要求修复
+    LOW: 建议修复
+  issue-type: 修复指标

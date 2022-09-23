@@ -1,0 +1,95 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+@import "~styles/variables";
+
+.severity-doughnut2 {
+  .col {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .row {
+    padding: 0 !important;
+  }
+  .chart {
+    width: 100px;
+  }
+  .severity-level {
+    position: static;
+
+    height: 20px;
+    margin-top: 3px;
+    padding: 0 10px;
+
+    color: $color-jet-black;
+    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+
+    .number {
+      &::before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+
+        background-color: $color-pantone;
+        border-radius: 50%;
+
+        content: "";
+      }
+    }
+  }
+  .defect-number {
+    padding-top: 8px;
+
+    color: $color-jet-black;
+    font-weight: 800;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &.theme-high {
+    .severity-level::before {
+      background-color: $color-pantone;
+    }
+  }
+  &.theme-medium {
+    .severity-level .number::before {
+      background-color: $color-orange;
+    }
+  }
+  &.theme-low {
+    .severity-level .number::before {
+      background-color: $color-blue;
+    }
+  }
+
+  &.align-horizontal {
+    .chart {
+      width: 115px;
+    }
+    .severity-level {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: unset;
+      margin-left: -5px;
+      padding: 0 10px 0 0;
+
+      text-align: left;
+      .name {
+        font-family: $font-family-condensed;
+      }
+    }
+  }
+}

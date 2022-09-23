@@ -1,0 +1,51 @@
+@import "~styles/colors";
+
+$spacing: 30px;
+
+.steps {
+    &__progress {
+        ul {
+            li {
+                position: relative;
+
+                display: inline-block;
+                width: 1.5rem;
+                margin-right: $spacing;
+
+                color: $color-white;
+                font-weight: 600;
+                text-align: center;
+
+                background-color: $color-grey;
+                border-radius: 100%;
+
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+
+                    display: inline-block;
+                    width: $spacing;
+                    height: 2px;
+
+                    background-color: $color-jet-black;
+                    transform: translateY(-50%);
+
+                    content: '';
+                }
+
+                &.steps__progress--active {
+                    background-color: $color-jet-black;
+                }
+            }
+
+            li:last-child {
+                margin-right: 0;
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+}

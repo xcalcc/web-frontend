@@ -1,0 +1,37 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail__header__meters {
+    display: flex;
+
+    .meterbox {
+        h6{
+            width: 88%;
+            margin: 5px auto 0;
+            padding: 2px 0;
+
+            color: $color-white !important;
+            font-weight: 600;
+            font-size: 13px;
+            font-family: $font-family-condensed;
+            text-align: center;
+
+            border-radius: 16px;
+
+            &.red-txt {
+                background: $color-pantone;
+            }
+
+            &.orange-txt {
+                background: $color-orange;
+            }
+
+            &.lightblue-txt {
+                background: $color-blue;
+            }
+        }
+        &__title {
+            font-family: $font-family-condensed;
+        }
+    }
+}

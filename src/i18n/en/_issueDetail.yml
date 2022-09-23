@@ -1,0 +1,49 @@
+---
+issueDetail:
+  id: ID
+  type: TYPE
+  status: STATUS
+  fixed-defects: Fixed
+  new-defects: New
+  outstanding-defects: Outstanding
+  file: FILE
+  line: LINE
+  function: FUNCTION
+  variable: VARIABLE
+  of-paths: "# OF PATHS"
+  first-detected: FIRST DETECTED
+  assigned: ASSIGNEE
+  severity: SEVERITY
+  likelihood: LIKELIHOOD
+  remediation-cost: REMEDIATION COST
+  complexity: COMPLEXITY
+  unknown: Unknown
+  abstract: ABSTRACT
+  explanation: EXPLANATION
+  rule-standard: RULE & STANDARD
+  example: EXAMPLE
+  avoid: AVOID
+  prefer: PREFER
+  description: DESCRIPTION
+  path: PATH
+  depth: DEPTH
+  source: SOURCE
+  sink: SINK
+  issue-source-code-tip-title: NOTE
+  new-issue-source-code-tip: All the paths refer to the source code of the latest scan
+  fix-issue-source-code-tip: The defect has been fixed. All the paths refer to the source code of the last scan that contains the defect
+  trace-path-operation-tip: To see the detailed path referring to a defect please input the path number above, click the + to open a new tab, or mouseover and click any path in the graph.
+  trace-path-click-node-tip: To modify the visible nodes, unclick the node to change then click on a new node to view
+  no-source-code: Source code not found
+  no-select-source-code: Please click one of the nodes to display the source code
+  defect-info: DEFECT INFO
+  all-paths: ALL PATHS
+  no-graph: Path graph is too large for display.
+  delta-view: DELTA VIEW
+  unassigned: Unassigned
+  previous: PREVIOUS DEFECT
+  next: NEXT DEFECT
+  level: 
+    HIGH: HIGH
+    MEDIUM: MEDIUM
+    LOW: LOW

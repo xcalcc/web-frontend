@@ -1,0 +1,9 @@
+.notification-wrapper {
+    position: fixed;
+    z-index: 1;
+
+    width: calc(100% - 250px);
+    width: -webkit-calc(100% - 250px);
+    margin-top: -30px;
+    margin-left: -12px;
+}

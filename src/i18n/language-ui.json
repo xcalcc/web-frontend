@@ -1,0 +1,1654 @@
+{
+  "lng":{
+    "zh-CN":"ENGLISH",
+    "en":"中文"
+  },
+  "u_name":{
+    "zh-CN":"用户名",
+    "en":"Username"
+  },
+  "pass":{
+    "zh-CN":"密码",
+    "en":"Password"
+  },
+  "rem_me":{
+    "zh-CN":"下次自动登录",
+    "en":"Remember me"
+  },
+  "f_pass":{
+    "zh-CN":"忘记密码？",
+    "en":"Forgot password?"
+  },
+  "login":{
+    "zh-CN":"登录",
+    "en":"LOG IN"
+  },
+  "product_name":{
+    "zh-CN":"爱科识",
+    "en":"Xcalscan"
+  },
+  "projects":{
+    "zh-CN":"我的项目",
+    "en":"My Projects"
+  },
+  "admin":{
+    "zh-CN":"证书管理",
+    "en":"Administration"
+  },
+  "administration":{
+    "zh-CN":"管理",
+    "en":"Administration"
+  },
+  "user_admin":{
+    "zh-CN":"用户管理",
+    "en":"USER MANAGEMENT"
+  },
+  "profile":{
+    "zh-CN":"基本资料",
+    "en":"Profile"
+  },
+  "back":{
+    "zh-CN":"返回",
+    "en":"Back"
+  },
+  "logout":{
+    "zh-CN":"退出",
+    "en":"Log Out"
+  },
+  "contact":{
+    "zh-CN":"联系我们",
+    "en":"Contact"
+  },
+  "new_project":{
+    "zh-CN":"新建项目",
+    "en":"New Project"
+  },
+  "sort_by":{
+    "zh-CN":"排序",
+    "en":"Sort By"
+  },
+  "scan_date":{
+    "zh-CN":"扫描日期",
+    "en":"Scan Date"
+  },
+  "name":{
+    "zh-CN":"项目名称",
+    "en":"name"
+  },
+  "total_files":{
+    "zh-CN":"文件数量",
+    "en":"Files"
+  },
+  "total_lines":{
+    "zh-CN":"代码行数",
+    "en":"Lines"
+  },
+  "total_files2":{
+    "zh-CN":"文件 数量",
+    "en":"Total Files"
+  },
+  "total_lines2":{
+    "zh-CN":"代码 行数",
+    "en":"Total Lines"
+  },
+  "last_scan":{
+    "zh-CN":"扫描时间",
+    "en":"LAST SCAN"
+  },
+  "last_scan2":{
+    "zh-CN":"扫描 时间",
+    "en":"TIME DATE"
+  },
+  "last_scan_1":{
+    "zh-CN":"上次",
+    "en":"LAST"
+  },
+  "last_scan_2":{
+    "zh-CN":"扫描",
+    "en":"SCAN"
+  },
+  "scan_time_1":{
+    "zh-CN":"扫描时间",
+    "en":"Time"
+  },
+  "scan_time_2":{
+    "zh-CN":"扫描日期",
+    "en":"Date"
+  },
+  "risk_level":{
+    "zh-CN":"风险等级",
+    "en":"Risk Level"
+  },
+  "top":{
+    "zh-CN":"顶部",
+    "en":"Top"
+  },
+  "license":{
+    "zh-CN":"证书",
+    "en":"License"
+  },
+  "max_users":{
+    "zh-CN":"证书编号",
+    "en":"Max Users"
+  },
+  "expires":{
+    "zh-CN":"有效期",
+    "en":"Expires"
+  },
+  "license_number":{
+    "zh-CN":"证书编号",
+    "en":"License Number"
+  },
+  "update":{
+    "zh-CN":"更新",
+    "en":"Update"
+  },
+  "users":{
+    "zh-CN":"用户",
+    "en":"Users"
+  },
+  "adm":{
+    "zh-CN":"管理员",
+    "en":"ADMIN"
+  },
+  "edit":{
+    "zh-CN":"编辑",
+    "en":"edit"
+  },
+  "add_team_member":{
+    "zh-CN":"添加用户",
+    "en":"Add team member"
+  },
+  "import_team":{
+    "zh-CN":"导入用户",
+    "en":"import team"
+  },
+  "new_user":{
+    "zh-CN":"创建新用户",
+    "en":"Add User"
+  },
+  "user_profile":{
+    "zh-CN":"用户资料",
+    "en":"User Profile"
+  },
+  "admin_view":{
+    "zh-CN":"管理员视图",
+    "en":"Admin View"
+  },
+  "username":{
+    "zh-CN":"用户名",
+    "en":"Username"
+  },
+  "display_name":{
+    "zh-CN":"显示名称",
+    "en":"Display Name"
+  },
+  "email":{
+    "zh-CN":"邮箱",
+    "en":"Email"
+  },
+  "administrator":{
+    "zh-CN":"设置为管理员",
+    "en":"Administrator"
+  },
+  "user_lock_status":{
+    "zh-CN":"用户锁定状态",
+    "en":"Locked"
+  },
+  "user_unlock":{
+    "zh-CN":"解锁",
+    "en":"Unlock"
+  },
+  "new_pass":{
+    "zh-CN":"新密码",
+    "en":"New Password"
+  },
+  "conf_pass":{
+    "zh-CN":"确认新密码",
+    "en":"Confirm Password"
+  },
+  "save":{
+    "zh-CN":"保存",
+    "en":"Save"
+  },
+  "password":{
+    "zh-CN":"新密码",
+    "en":"Password"
+  },
+  "pwd":{
+    "zh-CN":"密码",
+    "en":"Password"
+  },
+  "old_password":{
+    "zh-CN":"旧密码",
+    "en":"Old Password"
+  },
+  "time_to_scan":{
+    "zh-CN":"扫描 时间",
+    "en":"TIME TO SCAN"
+  },
+  "scan_total_time":{
+    "zh-CN":"扫描 时长",
+    "en":"Scan Time"
+  },
+  "scan_total_time2":{
+    "zh-CN":"扫描时长",
+    "en":"Scan Time"
+  },
+  "defect_found":{
+    "zh-CN":"缺陷 数量",
+    "en":"Defects Found"
+  },
+  "compliance":{
+    "zh-CN":"扫描选项",
+    "en":"SCANNING FOR"
+  },
+  "scan_using":{
+    "zh-CN":"扫描选项",
+    "en":"SCANNED USING"
+  },
+  "scan_using_2":{
+    "zh-CN":"扫描选项",
+    "en":"View by"
+  },
+  "project_name":{
+    "zh-CN":"项目名称",
+    "en":"Project Name"
+  },
+  "location":{
+    "zh-CN":"文件位置",
+    "en":"Location"
+  },
+  "configuration":{
+    "zh-CN":"设置",
+    "en":"Configuration"
+  },
+  "total_no_of_files":{
+    "zh-CN":"文件数量",
+    "en":"Total No. of Files"
+  },
+  "total_no_of_lines":{
+    "zh-CN":"代码行数",
+    "en":"Total No. of Lines"
+  },
+  "risk":{
+    "zh-CN":"风险",
+    "en":"RISK"
+  },
+  "severity":{
+    "zh-CN":"严重程度",
+    "en":"SEVERITY"
+  },
+  "defect type":{
+    "zh-CN":"缺陷类型",
+    "en":"DEFECT TYPE"
+  },
+  "file_line":{
+    "zh-CN":"文件:行号",
+    "en":"FILE : LINE"
+  },
+  "description":{
+    "zh-CN":"描述",
+    "en":"DESCRIPTION"
+  },
+  "status":{
+    "zh-CN":"操作",
+    "en":"ACTION"
+  },
+  "uiv":{
+    "zh-CN":"缺陷描述",
+    "en":"UIV"
+  },
+  "scan_result":{
+    "zh-CN":"扫描结果",
+    "en":"Scan Results"
+  },
+  "performance":{
+    "zh-CN":"性能类问题",
+    "en":"Performance"
+  },
+  "defect_type":{
+    "zh-CN":"缺陷类型",
+    "en":"Defect Type"
+  },
+  "n_p_d":{
+    "zh-CN":"空指针引用 (NPD)",
+    "en":"Null Pointer Dereference (NPD)"
+  },
+  "u_i_v":{
+    "zh-CN":"未初始化变量使用 (UIV)",
+    "en":"Use of Uninitialized Variable (UIV)"
+  },
+  "d_b_z":{
+    "zh-CN":"除数为零 (DBZ)",
+    "en":"Division By Zero (DBZ)"
+  },
+  "r_a_l":{
+    "zh-CN":"返回局部变量地址 (RAL)",
+    "en":"Return Address of Local Variable (RAL)"
+  },
+  "d_b_f":{
+    "zh-CN":"堆内存重复释放 (DBF)",
+    "en":"Double Free (DBF)"
+  },
+  "m_s_f":{
+    "zh-CN":"堆内存泄露 (MSF)",
+    "en":"Missing Free (MSF)"
+  },
+  "u_a_f":{
+    "zh-CN":"堆内存释放后使用 (UAF)",
+    "en":"Use After Free (UAF)"
+  },
+  "posix_api":{
+    "zh-CN":"基于POSIX API语义规则检",
+    "en":"POSIX API Rule Based Checking (RBC)"
+  },
+  "rbc":{
+    "zh-CN":"等多种错误和漏洞",
+    "en":"and other errors and vulnerabilities"
+  },
+  "print_report":{
+    "zh-CN":"下载报告",
+    "en":"Download Report"
+  },
+  "contact_name":{
+    "zh-CN":"姓名",
+    "en":"Name"
+  },
+  "message":{
+    "zh-CN":"讯息",
+    "en":"Message"
+  },
+  "submit":{
+    "zh-CN":"提交",
+    "en":"Submit"
+  },
+  "high":{
+    "zh-CN":"高",
+    "en":"High"
+  },
+  "open":{
+    "zh-CN":"开启",
+    "en":"Open"
+  },
+  "confirm":{
+    "zh-CN":"确认",
+    "en":"Confirmed"
+  },
+  "apply":{
+    "zh-CN":"确认",
+    "en":"Apply"
+  },
+  "skip":{
+    "zh-CN":"跳过",
+    "en":"Skip"
+  },
+  "false_positive":{
+    "zh-CN":"误报",
+    "en":"False Positive"
+  },
+  "trace_path":{
+    "zh-CN":"跟踪路径",
+    "en":"TRACE PATH"
+  },
+  "newproject":{
+    "zh-CN":"新项目",
+    "en":"NEW PROJECT"
+  },
+  "project_key":{
+    "zh-CN":"项目编号",
+    "en":"PROJECT ID"
+  },
+  "preset":{
+    "zh-CN":"模板",
+    "en":"Preset"
+  },
+  "conf_details":{
+    "zh-CN":"其他设置",
+    "en":"Configuration Detail"
+  },
+  "reset":{
+    "zh-CN":"重设",
+    "en":"Reset"
+  },
+  "start_scan":{
+    "zh-CN":"扫描",
+    "en":"START SCAN"
+  },
+  "scan":{
+    "zh-CN":"扫描",
+    "en":"RESCAN"
+  },
+  "open_licenses":{
+    "zh-CN":"未用安装证书",
+    "en":"Open Licenses"
+  },
+  "send_failure_please_email":{
+    "zh-CN":"发送失败。请发送电子邮件至",
+    "en":"Send failure. Please Email"
+  },
+  "update_licence":{
+    "zh-CN":"更新证书",
+    "en":"Update License"
+  },
+  "company_name":{
+    "zh-CN":"公司名称",
+    "en":"Company Name"
+  },
+  "thank_for_choosing":{
+    "zh-CN":"欢迎使用",
+    "en":"Thank you for choosing"
+  },
+  "import_license":{
+    "zh-CN":"安装证书",
+    "en":"import license"
+  },
+  "go_to_results":{
+    "zh-CN":"查看结果",
+    "en":"go to results"
+  },
+  "likelihood":{
+    "zh-CN":"可能性",
+    "en":"Likelihood"
+  },
+  "remediation_cost":{
+    "zh-CN":"修复成本",
+    "en":"Remediation Cost"
+  },
+  "risk_assessment":{
+    "zh-CN":"风险等级",
+    "en":"Risk Assessment"
+  },
+  "level":{
+    "zh-CN":"级别",
+    "en":"Level"
+  },
+  "bugs":{
+    "zh-CN":"错误",
+    "en":"Bugs"
+  },
+  "code_smells":{
+    "zh-CN":"代码闻起来",
+    "en":"Code Smells"
+  },
+  "vulnerabilities":{
+    "zh-CN":"漏洞",
+    "en":"Vulnerabilities"
+  },
+  "defect_details":{
+    "zh-CN":"风险详情",
+    "en":"DEFECT DETAILS"
+  },
+  "scanned_with":{
+    "zh-CN":"扫描引擎",
+    "en":"Scanned with"
+  },
+  "version":{
+    "zh-CN":"版本",
+    "en":"Version"
+  },
+  "project_risk_level":{
+    "zh-CN":"项目风险等级",
+    "en":"Project Risk"
+  },
+  "medium":{
+    "zh-CN":"中",
+    "en":"Medium"
+  },
+  "number_of_defects":{
+    "zh-CN":"缺陷等级",
+    "en":"TOTAL NUMBER OF DEFECTS"
+  },
+  "issue_total":{
+    "zh-CN":"缺陷<br/>数量",
+    "en":"DEFECTS<br/>FOUND"
+  },
+  "issue_total_inline":{
+    "zh-CN":"缺陷数量",
+    "en":"DEFECTS FOUND"
+  },
+  "table_issue_total":{
+    "zh-CN":"缺陷总量",
+    "en":"DEFECTS FOUND"
+  },
+  "r_a_d_t":{
+    "zh-CN":"缺陷类型",
+    "en":"Risk Assessment<br/>Defect Types"
+  },
+  "id":{
+    "zh-CN":"编号",
+    "en":"ID"
+  },
+  "critical":{
+    "zh-CN":"严重",
+    "en":"Critical"
+  },
+  "waived":{
+    "zh-CN":"忽略",
+    "en":"Waived"
+  },
+  "pending":{
+    "zh-CN":"待定",
+    "en":"Pending"
+  },
+  "low":{
+    "zh-CN":"低",
+    "en":"Low"
+  },
+  "team_template":{
+    "zh-CN":"模板下载",
+    "en":"Team Template"
+  },
+  "scan_results":{
+    "zh-CN":"扫描结果",
+    "en":"Scan Results"
+  },
+  "organize":{
+    "zh-CN":"组织",
+    "en":"Organize"
+  },
+  "Project Name is not allowed to be empty":{
+    "zh-CN":"项目名称必填",
+    "en":"Project Name is required"
+  },
+  "Project Name is required":{
+    "zh-CN":"项目名称必填",
+    "en":"Project Name is required"
+  },
+  "Project Key is required":{
+    "zh-CN":"项目编号必填",
+    "en":"Project Key is required"
+  },
+  "Project Key is not allowed to be empty":{
+    "zh-CN":"项目编号必填",
+    "en":"Project Key is required"
+  },
+  "Configuration detail is required":{
+    "zh-CN":"参数配置项必填",
+    "en":"Configuration detail is required"
+  },
+  "Source_storage_name is not allowed to be empty":{
+    "zh-CN":"请选择源代码位置",
+    "en":"Select the source code location"
+  },
+  "Relative path is not allowed to be empty":{
+    "zh-CN":"源代码路径必填",
+    "en":"Source code path is not allowed to be empty"
+  },
+  "Gitlab project id is not allowed to be empty":{
+    "zh-CN":"Gitlab项目ID必填",
+    "en":"Gitlab project id is not allowed to be empty"
+  },
+  "Git project url is not allowed to be empty":{
+    "zh-CN":"Git项目URL必填",
+    "en":"Git project url is not allowed to be empty"
+  },
+  "Please input project url":{
+    "zh-CN":"请输项目URL",
+    "en":"Please input project URL"
+  },
+  "The git project URL should start with {{host}}":{
+    "zh-CN":"Git项目URL应该以\"{{host}}\"开头",
+    "en":"The git project URL should start with \"{{host}}\""
+  },
+  "Build path is not allowed to be empty":{
+    "zh-CN":"build文件路径必填",
+    "en":"Build file path is not allowed to be empty"
+  },
+  "Configuration detail is not valid JSON":{
+    "zh-CN":"参数配置项不是有效的JSON",
+    "en":"Configuration detail is not valid JSON"
+  },
+  "Configuration detail is not allowed to be empty":{
+    "zh-CN":"参数配置项必填",
+    "en":"Configuration detail is required"
+  },
+  "Please upload the project first":{
+    "zh-CN":"请先上传项目",
+    "en":"Please upload the project first"
+  },
+  "Login is not allowed to be empty":{
+    "zh-CN":"姓名必填",
+    "en":"Login is not allowed to be empty"
+  },
+  "Name is not allowed to be empty":{
+    "zh-CN":"昵称必填",
+    "en":"Name is not allowed to be empty"
+  },
+  "User names format error":{
+    "zh-CN":"用户名仅支持小写字母、数字、下划线和点",
+    "en":"User names can only contain lowercase letters, numbers, underscores, and dots"
+  },
+  "Login length must be at least 3 characters long":{
+    "zh-CN":"用户名长度至少3位",
+    "en":"Login length must be at least 3 characters long"
+  },
+  "Login length must be less than or equal to 15 characters long":{
+    "zh-CN":"用户名长度不能超过15个字符",
+    "en":"Login name length must be less than or equal to 15 characters long"
+  },
+  "Name length must be less than or equal to 15 characters long":{
+    "zh-CN":"显示名长度不能超过15个字符",
+    "en":"Display name length must be less than or equal to 15 characters long"
+  },
+  "Content is not allowed to be empty":{
+    "zh-CN":"信息必填",
+    "en":"Content is not allowed to be empty"
+  },
+  "Email must be a valid email":{
+    "zh-CN":"无效的邮件地址",
+    "en":"Email must be a valid email"
+  },
+  "Password length must be at least 5 characters long":{
+    "zh-CN":"密码长度至少为5位",
+    "en":"Passwords must contain at least 5 characters"
+  },
+  "Old Password length must be at least 5 characters long":{
+    "zh-CN":"旧密码长度至少为5位",
+    "en":"Passwords must contain at least 5 characters"
+  },
+  "Newpassword length must be at least 5 characters long":{
+    "zh-CN":"密码长度至少为5位",
+    "en":"Passwords must contain at least 5 characters"
+  },
+  "Password length must be at least 6 characters long":{
+    "zh-CN":"密码长度至少为6位",
+    "en":"Passwords must contain at least 6 characters"
+  },
+  "Old Password length must be at least 6 characters long":{
+    "zh-CN":"密码长度至少为6位",
+    "en":"Passwords must contain at least 6 characters"
+  },
+  "Newpassword length must be at least 6 characters long":{
+    "zh-CN":"密码长度至少为6位",
+    "en":"Passwords must contain at least 6 characters"
+  },
+  "Confirmpassword is required":{
+    "zh-CN":"请再次输入密码",
+    "en":"Confirm password is required"
+  },
+  "Created!":{
+    "zh-CN":"创建成功",
+    "en":"Created!"
+  },
+  "creator":{
+    "zh-CN":"创建",
+    "en":"Creator"
+  },
+  "created_time":{
+    "zh-CN":"创建时间",
+    "en":"Created"
+  },
+  "User has been added successfully":{
+    "zh-CN":"添加用户成功",
+    "en":"User has been added successfully."
+  },
+  "Project has been added successfully":{
+    "zh-CN":"项目创建成功",
+    "en":"Project has been added successfully."
+  },
+  "You will not be able to recover this record!":{
+    "zh-CN":"此项操作无法恢复",
+    "en":"You will not be able to recover this record!"
+  },
+  "Deleted!":{
+    "zh-CN":"删除!",
+    "en":"Deleted!"
+  },
+  "Your project has been deleted!":{
+    "zh-CN":"项目删除成功",
+    "en":"Your project has been deleted!"
+  },
+  "Imported!":{
+    "zh-CN":"导入成功!",
+    "en":"Imported!"
+  },
+  "Import failed!":{
+    "zh-CN":"导入失败!",
+    "en":"Import failed！"
+  },
+  "License has been successfully imported!":{
+    "zh-CN":"证书导入成功!",
+    "en":"License has been successfully imported!"
+  },
+  "Username is not allowed to be empty":{
+    "zh-CN":"用户名必填",
+    "en":"User name is required"
+  },
+  "From is not allowed to be empty":{
+    "zh-CN":"邮件地址必填",
+    "en":"Email address is not allowed to be empty"
+  },
+  "From must be a valid email":{
+    "zh-CN":"无效的邮件地址",
+    "en":"Email address must be a valid email"
+  },
+  "Password is not allowed to be empty":{
+    "zh-CN":"密码必填",
+    "en":"Password is required"
+  },
+  "Error":{
+    "zh-CN":"错误",
+    "en":"Error"
+  },
+  "Display Name is not allowed to be empty":{
+    "zh-CN":"昵称必填",
+    "en":"Display Name is required"
+  },
+  "Newpassword is required":{
+    "zh-CN":"密码必填",
+    "en":"New password is required"
+  },
+  "Old Password is not allowed to be empty":{
+    "zh-CN":"原密码必填",
+    "en":"Old Password is required"
+  },
+  "Please enter the old password":{
+    "zh-CN":"请输入旧密码",
+    "en":"Please enter the old password"
+  },
+  "Passwords do not match":{
+    "zh-CN":"密码不正确",
+    "en":"Passwords do not match."
+  },
+  "Updated!":{
+    "zh-CN":"更新成功!",
+    "en":"Updated!"
+  },
+  "Profile has been updated successfully":{
+    "zh-CN":"个人信息更新成功",
+    "en":"Profile has been updated successfully."
+  },
+  "User unlocked successfully":{
+    "zh-CN":"用户解锁成功",
+    "en":"User unlocked successfully"
+  },
+  "Scan failed, please contact system admin":{
+    "zh-CN":"扫描失败，请联系系统管理员.",
+    "en":"Scan failed, please contact system admin."
+  },
+  "Ok":{
+    "zh-CN":"好的",
+    "en":"OK"
+  },
+  "Assigned!":{
+    "zh-CN":"指派成功!",
+    "en":"Assigned!"
+  },
+  "Issues has been assigned successfully":{
+    "zh-CN":"任务指派成功",
+    "en":"Issues has been assigned successfully."
+  },
+  "Issue has been assigned successfully":{
+    "zh-CN":"任务指派成功",
+    "en":"Issue has been assigned successfully."
+  },
+  "Successful!":{
+    "zh-CN":"成功!",
+    "en":"Successful!"
+  },
+  "Transition action performed successfully":{
+    "zh-CN":"操作成功!",
+    "en":"Transition action performed successfully."
+  },
+  "Error!":{
+    "zh-CN":"错误!",
+    "en":"Error!"
+  },
+  "LOW":{
+    "zh-CN":"低",
+    "en":"LOW"
+  },
+  "MEDIUM":{
+    "zh-CN":"中",
+    "en":"MEDIUM"
+  },
+  "HIGH":{
+    "zh-CN":"高",
+    "en":"HIGH"
+  },
+  "view":{
+    "zh-CN":"查看",
+    "en":"VIEW"
+  },
+  "Variable parts in function ip4addr_aton is used but not initialized":{
+    "zh-CN":"Variable parts in function ip4addr_aton is used but not initialized",
+    "en":"Variable parts in function ip4addr_aton is used but not initialized"
+  },
+  "Message is not allowed to be empty":{
+    "zh-CN":"信息不能为空",
+    "en":"Message is not allowed to be empty"
+  },
+  "Sent!":{
+    "zh-CN":"发送成功",
+    "en":"Sent!"
+  },
+  "Your contact request has been sent successfully!":{
+    "zh-CN":"信息提交成功!",
+    "en":"Your contact request has been sent successfully!"
+  },
+  "Unknown":{
+    "zh-CN":"未知",
+    "en":"Unknown"
+  },
+  "User details has been updated successfully":{
+    "zh-CN":"用户信息提交成功",
+    "en":"User details has been updated successfully."
+  },
+  "User has been deleted!":{
+    "zh-CN":"用户已删除!",
+    "en":"User has been deleted!"
+  },
+  "Search result not found":{
+    "zh-CN":"没有找到结果",
+    "en":"Search result not found."
+  },
+  "relative_path":{
+    "zh-CN":"源代码路径",
+    "en":"Source Code Path"
+  },
+  "build_path":{
+    "zh-CN":"build文件路径",
+    "en":"Build File Path"
+  },
+  "select_recent_project":{
+    "zh-CN":"最近的项目参数设置",
+    "en":"RECENT PROJECT CONFIGURATION"
+  },
+  "source_code_location":{
+    "zh-CN":"选择源代码位置",
+    "en":"Source code location"
+  },
+  "gitlab_project_id":{
+    "zh-CN":"Gitlab项目ID",
+    "en":"Gitlab Project ID"
+  },
+  "gerrit_project_id":{
+    "zh-CN":"Gerrit项目ID",
+    "en":"Gerrit Project ID"
+  },
+  "gitUrl":{
+    "zh-CN":"git项目URL",
+    "en":"Git Project Url"
+  },
+  "language":{
+    "zh-CN":"语言",
+    "en":"Language"
+  },
+  "license_left":{
+    "zh-CN":"证书管理",
+    "en":"License"
+  },
+  "user_management_left":{
+    "zh-CN":"用户管理",
+    "en":"User Management"
+  },
+  "email_configuration":{
+    "zh-CN":"邮件设置",
+    "en":"Email Configuration"
+  },
+  "user_name":{
+    "zh-CN":"用户名",
+    "en":"User Name"
+  },
+  "email_address":{
+    "zh-CN":"邮件地址",
+    "en":"Email Address"
+  },
+  "role":{
+    "zh-CN":"角色",
+    "en":"Role"
+  },
+  "actions":{
+    "zh-CN":"操作",
+    "en":"Actions"
+  },
+  "email_server_config":{
+    "zh-CN":"邮件服务配置",
+    "en":"email server configuration"
+  },
+  "server_address":{
+    "zh-CN":"服务器地址",
+    "en":"SERVER ADDRESS"
+  },
+  "server_type":{
+    "zh-CN":"类型",
+    "en":"Server Type"
+  },
+  "server_port":{
+    "zh-CN":"服务端口",
+    "en":"Server Port"
+  },
+  "ssl_connection":{
+    "zh-CN":"使用SSL连接",
+    "en":"SSL CONNECTION"
+  },
+  "email_prefix":{
+    "zh-CN":"邮件标题前缀",
+    "en":"Email Prefix"
+  },
+  "assign_to_team":{
+    "zh-CN":"指派团队处理",
+    "en":"ASSIGNMENTS"
+  },
+  "total_no_assignments":{
+    "zh-CN":"总计分配",
+    "en":"Total No. Assignments"
+  },
+  "save_assignments":{
+    "zh-CN":"发送邮件",
+    "en":"Email team"
+  },
+  "leave_anyway":{
+    "zh-CN":"取消",
+    "en":"Leave anyway"
+  },
+  "back_scan_result":{
+    "zh-CN":"ㄑ返回扫描结果页",
+    "en":"ㄑBack to scan results"
+  },
+  "from_email":{
+    "zh-CN":"From",
+    "en":"From"
+  },
+  "update_email_config":{
+    "zh-CN":"保存",
+    "en":"Save"
+  },
+  "Server Address is not allowed to be empty":{
+    "zh-CN":"地址必填",
+    "en":"Server address is required"
+  },
+  "Server Port must be a number":{
+    "zh-CN":"端口必须是数字",
+    "en":"Server port must be a number"
+  },
+  "Server Port is not allowed to be empty":{
+    "zh-CN":"端口必填",
+    "en":"Server port is required"
+  },
+  "Server Port must be an integer":{
+    "zh-CN":"端口必须是整数",
+    "en":"Server Port must be an integer"
+  },
+  "Server Port must be less than or equal to 65535":{
+    "zh-CN":"端口必须小于或等于65535",
+    "en":"Server Port must be less than or equal to 65535"
+  },
+  "Server Port must be larger than or equal to 1":{
+    "zh-CN":"端口必须大于或等于1",
+    "en":"Server Port must be larger than or equal to 1"
+  },
+  "project_owner":{
+    "zh-CN":"项目负责人",
+    "en":"Project Owner"
+  },
+  "generated_by":{
+    "zh-CN":"报告打印人",
+    "en":"Generated By"
+  },
+  "language_report":{
+    "zh-CN":"代码语言",
+    "en":"Language"
+  },
+  "scan_time":{
+    "zh-CN":"扫描时间",
+    "en":"Scan Date"
+  },
+  "scan_print":{
+    "zh-CN":"打印日期",
+    "en":"Scan Print"
+  },
+  "level_1":{
+    "zh-CN":"高风险",
+    "en":"HIGH"
+  },
+  "level_2":{
+    "zh-CN":"中风险",
+    "en":"MEDIUM"
+  },
+  "level_3":{
+    "zh-CN":"低风险",
+    "en":"LOW"
+  },
+  "source_code":{
+    "zh-CN":"源代码",
+    "en":"Source Code"
+  },
+  "Preset configuration has been updated successfully":{
+    "zh-CN":"信息更新成功",
+    "en":"Preset configuration has been updated successfully."
+  },
+  "Preset configuration has been deleted successfully":{
+    "zh-CN":"删除成功",
+    "en":"Preset configuration has been deleted successfully."
+  },
+  "xcalibyte":{
+    "zh-CN":"鉴释",
+    "en":"Xcalibyte"
+  },
+  "Assigned":{
+    "zh-CN":"分配",
+    "en":"Assigned"
+  },
+  "Unassigned":{
+    "zh-CN":"未分配",
+    "en":"Unassigned"
+  },
+  "no preset available":{
+    "zh-CN":"没有可用模板",
+    "en":"OOPS, NO PRESET AVAILABLE"
+  },
+  "Save":{
+    "zh-CN":"保存",
+    "en":"Save"
+  },
+  "emails sent":{
+    "zh-CN":"邮件发送成功",
+    "en":"emails sent"
+  },
+  "No defects are assigned":{
+    "zh-CN":"请先分配缺陷",
+    "en":"No defects are assigned"
+  },
+  "No defects are selected":{
+    "zh-CN":"请选择要分配的缺陷",
+    "en":"No defects are selected"
+  },
+  "Assign defects":{
+    "zh-CN":"指派任务",
+    "en":"Assign defects"
+  },
+  "FILE NOT RECOGNIZED":{
+    "zh-CN":"无法识别文件",
+    "en":"FILE NOT RECOGNIZED"
+  },
+  "Please upload ZIP file only":{
+    "zh-CN":"上传文件仅支持ZIP格式",
+    "en":"Please upload ZIP file only"
+  },
+  "UPLOAD COMPLETE":{
+    "zh-CN":"上传成功",
+    "en":"UPLOAD COMPLETE"
+  },
+  "Local Server":{
+    "zh-CN":"文件路径",
+    "en":"FILE PATH"
+  },
+  "Upload File":{
+    "zh-CN":"上传项目",
+    "en":"Upload File"
+  },
+  "Upload":{
+    "zh-CN":"请选择",
+    "en":"UPLOAD"
+  },
+  "ZIP FILE ONLY":{
+    "zh-CN":"Zip文件",
+    "en":"ZIP FILE ONLY"
+  },
+  "SEND YOUR EMAILS NOW":{
+    "zh-CN":"发送邮件通知.",
+    "en":"SEND YOUR EMAILS NOW."
+  },
+  "EMAIL_TIPS":{
+    "zh-CN":"您确定放弃发送邮件并离开本页面吗？",
+    "en":"Do you want to leave without emailing the team?"
+  },
+  "user_display_name":{
+    "zh-CN":"名称",
+    "en":"Name"
+  },
+  "Items Per Page":{
+    "zh-CN":"每页显示",
+    "en":"Items Per Page"
+  },
+  "result_scan_time":{
+    "zh-CN":"时间",
+    "en":"TIME"
+  },
+  "result_scan_date":{
+    "zh-CN":"日期",
+    "en":"DATE"
+  },
+  "TOTAL CRITICAL DEFECTS":{
+    "zh-CN":"标记为严重",
+    "en":"FLAGGED AS CRITICAL"
+  },
+  "RESULT_CRITICAL":{
+    "zh-CN":"严重缺陷",
+    "en":"Critical"
+  },
+  "Flagged As Critical":{
+    "zh-CN":"标记为严重",
+    "en":"Flagged As Critical"
+  },
+  "Back to Scan results":{
+    "zh-CN":"返回扫描结果页",
+    "en":"Back to Scan results"
+  },
+  "no data":{
+    "zh-CN":"无数据",
+    "en":"No Data"
+  },
+  "Users has been successfully imported!":{
+    "zh-CN":"用户已成功导入!",
+    "en":"Users has been successfully imported!"
+  },
+  "delete_project":{
+    "zh-CN":"删除",
+    "en":"Trash"
+  },
+  "previous_scan":{
+    "zh-CN":"上次扫描",
+    "en":"PREVIOUS SCAN"
+  },
+  "files":{
+    "zh-CN":"文件数量",
+    "en":"FILES"
+  },
+  "files_qty":{
+    "zh-CN":"文件数量",
+    "en":"FILES"
+  },
+  "lines_qty":{
+    "zh-CN":"代码行数",
+    "en":"LINES"
+  },
+  "file":{
+    "zh-CN":"文件",
+    "en":"FILE"
+  },
+  "lines":{
+    "zh-CN":"代码行数",
+    "en":"LINES"
+  },
+  "line":{
+    "zh-CN":"行号",
+    "en":"LINE"
+  },
+  "line_number":{
+    "zh-CN":"行号",
+    "en":"LINE NUMBER"
+  },
+  "defects":{
+    "zh-CN":"缺陷总量",
+    "en":"DEFECTS"
+  },
+  "change":{
+    "zh-CN":"变化趋势",
+    "en":"CHANGE"
+  },
+  "no_source_code":{
+    "zh-CN":"无源代码",
+    "en":"Source code not found"
+  },
+  "agent_client":{
+    "zh-CN":"代码路径",
+    "en":"Project Path"
+  },
+  "paging_rows_total_before":{
+    "zh-CN":"找到",
+    "en":null
+  },
+  "paging_rows_total_after":{
+    "zh-CN":"条结果",
+    "en":"Defects Found"
+  },
+  "Optional":{
+    "zh-CN":"",
+    "en":"Optional"
+  },
+  "THANK YOU FOR CHOOSING XCALSCAN":{
+    "zh-CN":"感谢选择XCALSCAN",
+    "en":"THANK YOU FOR CHOOSING XCALSCAN."
+  },
+  "To commence using Xcalscan, please import your license":{
+    "zh-CN":"在开始使用之前，请首先导入证书",
+    "en":"To commence using Xcalscan, please import your license."
+  },
+  "Import License":{
+    "zh-CN":"导入证书",
+    "en":"Import License"
+  },
+  "If you haven’t received your license,":{
+    "zh-CN":"如果您没有获得证书文件",
+    "en":"If you haven’t received your license,"
+  },
+  "please contact us at":{
+    "zh-CN":"请发送邮件至",
+    "en":"please contact us at "
+  },
+  "STEP 1":{
+    "zh-CN":"第1步",
+    "en":"STEP 1"
+  },
+  "STEP 2":{
+    "zh-CN":"第2步",
+    "en":"STEP 2"
+  },
+  "STEP 3":{
+    "zh-CN":"第3步",
+    "en":"STEP 3"
+  },
+  "Set Up Email Server":{
+    "zh-CN":"邮件配置",
+    "en":"Set Up Email Server"
+  },
+  "User Management":{
+    "zh-CN":"团队管理",
+    "en":"User Management"
+  },
+  "SET UP COMPLETE":{
+    "zh-CN":"设置完成",
+    "en":"SET UP COMPLETE"
+  },
+  "THANKS, LICENSE HAS BEEN SUCCESSFULLY IMPORTED":{
+    "zh-CN":"证书导入成功",
+    "en":"THANKS, LICENSE HAS BEEN SUCCESSFULLY IMPORTED."
+  },
+  "Now we’re going to take you through 3 simple steps to set up Xcalscan":{
+    "zh-CN":"根据向导配置Xcalscan，仅需3个步骤即可完成。",
+    "en":"Now we’re going to take you through 3 simple steps to set up Xcalscan."
+  },
+  "NO, SKIP, I'LL DO IT LATER":{
+    "zh-CN":"跳过，稍后配置",
+    "en":"NO, SKIP, I'LL DO IT LATER"
+  },
+  "NEXT":{
+    "zh-CN":"下一步",
+    "en":"NEXT"
+  },
+  "SORRY, LICENSE IS NOT VALID":{
+    "zh-CN":"对不起，证书无效",
+    "en":"SORRY, LICENSE IS NOT VALID."
+  },
+  "please contact our technical support at":{
+    "zh-CN":"请发送邮件至",
+    "en":"please contact our technical support at "
+  },
+  "guide_get_technical_support":{
+    "zh-CN":"获取技术支持",
+    "en":null
+  },
+  "PLEASE SET UP EMAIL SERVER FOR NOTIFICATIONS":{
+    "zh-CN":"邮件服务配置",
+    "en":"PLEASE SET UP EMAIL SERVER FOR NOTIFICATIONS."
+  },
+  "sending reports and assigning tasks":{
+    "zh-CN":"配置邮件服务后，在指派任务和扫描报告生成后，您将收到自动邮件通知",
+    "en":"Set up to enable notifications to the team via email for sending reports and assigning tasks."
+  },
+  "PLEASE INVITE YOUR TEAM MEMBERS TO JOIN":{
+    "zh-CN":"团队管理",
+    "en":"PLEASE INVITE YOUR TEAM MEMBERS TO JOIN."
+  },
+  "Simply invite the team below or import a team list":{
+    "zh-CN":"您可以使用模板导入所有用户或者依次添加用户信息。",
+    "en":"Simply invite the team below or import a team list using our Team Template, <br/>or you can add more users later."
+  },
+  "ADD USER":{
+    "zh-CN":"新增用户",
+    "en":"ADD USER"
+  },
+  "Xcalscan is ready to use":{
+    "zh-CN":"现在，您可以开始使用Xcalscan了！",
+    "en":"Xcalscan is ready to use."
+  },
+  "Go to Dashboard":{
+    "zh-CN":"进入首页",
+    "en":"Go to Dashboard"
+  },
+  "rank":{
+    "zh-CN":"严重程度",
+    "en":"RANK"
+  },
+  "SCARIEST":{
+    "zh-CN":"致命缺陷",
+    "en":"SCARIEST"
+  },
+  "SCARY":{
+    "zh-CN":"严重缺陷",
+    "en":"SCARY"
+  },
+  "TROUBLING":{
+    "zh-CN":"一般缺陷",
+    "en":"TROUBLING"
+  },
+  "CONCERNING":{
+    "zh-CN":"轻微缺陷",
+    "en":"CONCERNING"
+  },
+  "CONFIDENCE":{
+    "zh-CN":"预警指数",
+    "en":"CONFIDENCE"
+  },
+  "function":{
+    "zh-CN":"函数名",
+    "en":"FUNCTION"
+  },
+  "VARIABLE":{
+    "zh-CN":"变量名",
+    "en":"VARIABLE"
+  },
+  "table_title_type":{
+    "zh-CN":"类型",
+    "en":"Type"
+  },
+  "upload_source_code_title":{
+    "zh-CN": "上传代码到Xcalscan服务器",
+    "en": "Upload source code to the xcalscan server"
+  },
+  "upload_source_code_description":{
+    "zh-CN": "请勾选此选项以便您可以在阅读报告时同时查看源代码。如果不勾选此选项，您仍然可以查阅扫描报告，只是无法在网页报告中查看源代码。",
+    "en": "Please check this box to enable the detailed viewing of source code when reviewing the scanning results. If you do not allow then you can still see scan results however the detailed source code cannot be viewed."
+  },
+  "access_token":{
+    "zh-CN":"访问令牌",
+    "en":"Token"
+  },
+  "git_branch":{
+    "zh-CN":"项目分支",
+    "en":"Branch"
+  },
+  "todo_msg":{
+    "zh-CN":"未完成的功能...",
+    "en":"Unfinished function..."
+  },
+  "api_data_error":{
+    "zh-CN":"数据错误。请联系 support@xcalibyte.com",
+    "en":"Data error. Please contact support@xcalibyte.com"
+  },
+  "project_settings":{
+    "zh-CN":"项目设置",
+    "en":"PROJECT SETTINGS"
+  },
+  "configuration_detail":{
+    "zh-CN":"设置内容",
+    "en":"CONFIGURATION DETAIL"
+  },
+  "Project has been updated successfully":{
+    "zh-CN":"项目更新成功",
+    "en":"Project has been updated successfully."
+  },
+  "all_files":{
+    "zh-CN":"所有文件夹",
+    "en":"All Folders"
+  },
+  "selected_files":{
+    "zh-CN":"选择文件夹",
+    "en":"Selected Folders"
+  },
+  "operation_success":{
+    "zh-CN":"操作成功",
+    "en":"Operation is successful!"
+  },
+  "source_code_file_too_large":{
+    "zh-CN":"源代码太大，暂不支持显示",
+    "en":"Source code is not available or too large for network transmission."
+  },
+  "open_source_code_file":{
+    "zh-CN":"点击打开源代码文件",
+    "en":"Click to open source code file"
+  },
+  "view_setting":{
+    "zh-CN":"查看项目配置",
+    "en":"view configuration"
+  },
+  "dashboard_summary":{
+    "zh-CN":"简要报告",
+    "en":"Dashboard Summary"
+  },
+  "detailed_report":{
+    "zh-CN":"详细报告",
+    "en":"Detailed Report"
+  },
+  "cross_file":{
+    "zh-CN":"跨文件",
+    "en":"Cross file"
+  },
+  "Scan Failed":{
+    "zh-CN":"扫描失败，请联系 Xcalibyte",
+    "en":"Scan failed. Please contact Xcalibyte support."
+  },
+  "all":{
+    "zh-CN":"全部",
+    "en":"ALL"
+  },
+  "see_details":{
+    "zh-CN":"查看详情",
+    "en":"SEE DETAILS"
+  },
+  "source":{
+    "zh-CN":"源头",
+    "en":"SOURCE"
+  },
+  "sink":{
+    "zh-CN":"触发点",
+    "en":"SINK"
+  },
+  "multi-sink":{
+    "zh-CN":"多触发点",
+    "en":"MULTIPLE SINK"
+  },
+  "multi-sink-info":{
+    "zh-CN":"想要查看其它触发点位置请浏览",
+    "en":"To see the different sink locations then please go to "
+  },
+  "all_paths":{
+    "zh-CN":"所有路径",
+    "en":"ALL PATHS"
+  },
+  "full_path":{
+    "zh-CN":"完整路径",
+    "en":"FULL PATH"
+  },
+  "paths":{
+    "zh-CN":"路径数",
+    "en": "Paths"
+  },
+  "paths2":{
+    "zh-CN":"路径",
+    "en": "Paths"
+  },
+  "depth":{
+    "zh-CN":"最大深度",
+    "en": "Depth"
+  },
+  "complexity":{
+    "zh-CN":"复杂度",
+    "en": "Complexity"
+  },
+  "execution_path":{
+    "zh-CN":"执行路径",
+    "en": "Execution path"
+  },
+  "number_of_execution_paths":{
+    "zh-CN":"执行路径的条数",
+    "en":"Number of Execution Paths"
+  },
+  "complexity_of_execution_paths":{
+    "zh-CN":"执行路径的复杂度",
+    "en":"Complexity of Execution Paths"
+  },
+  "number_of_nodes":{
+    "zh-CN":"最长路径的节点数",
+    "en":"Number of Nodes"
+  },
+  "previous_issue":{
+    "zh-CN":"上一个",
+    "en":"PREVIOUS"
+  },
+  "next_issue":{
+    "zh-CN":"下一个",
+    "en":"NEXT"
+  },
+  "tabs_open":{
+    "zh-CN":"选项卡页",
+    "en":"TABS OPEN"
+  },
+  "setting":{
+    "zh-CN":"设置",
+    "en":"setting"
+  },
+  "select_language":{
+    "zh-CN":"选择语言",
+    "en":"SELECT LANGUAGE"
+  },
+  "chinese":{
+    "zh-CN":"中文",
+    "en":"Chinese"
+  },
+  "english":{
+    "zh-CN":"英文",
+    "en":"English"
+  },
+  "chnage_language":{
+    "zh-CN":"切换语言",
+    "en":"Chnage Language"
+  },
+  "show_hide_password":{
+    "zh-CN":"显示或隐藏密码",
+    "en":"Show or hide the password"
+  },
+  "definite":{
+    "zh-CN":"确定的",
+    "en":"Definite"
+  },
+  "definites":{
+    "zh-CN":"确定的",
+    "en":"Definites"
+  },
+  "critical_tooltip":{
+    "zh-CN":"标记为严重以突出显示项目中最关键的风险。",
+    "en":"Set action as critical to highlight the most critical defects in your project."
+  },
+  "project":{
+    "zh-CN":"项目",
+    "en":"PROJECT"
+  },
+  "source_code_management":{
+    "zh-CN":"源码仓库管理",
+    "en":"Source Code Management"
+  },
+  "scm_type":{
+    "zh-CN":"仓库类型",
+    "en":"TYPE"
+  },
+  "scm_url":{
+    "zh-CN":"仓库地",
+    "en":"URL"
+  },
+  "add_new":{
+    "zh-CN":"新增",
+    "en":"ADD NEW"
+  },
+  "save_edit":{
+    "zh-CN":"保存修改",
+    "en":"EDIT"
+  },
+  "scm_source_url":{
+    "zh-CN":"源码仓库地址",
+    "en":"SOURCE CODE REPOSITORY URL"
+  },
+  "SCM name is not allowed to be empty":{
+    "zh-CN":"名称不能为空",
+    "en":"Name is not allowed to be empty"
+  },
+  "Repository URL is not allowed to be empty":{
+    "zh-CN":"仓库地址不能为空",
+    "en":"Repository URL is not allowed to be empty"
+  },
+  "SCM type is not allowed to be empty":{
+    "zh-CN":"请选择仓库类型",
+    "en":"Type is not allowed to be empty"
+  },
+  "SCM description is not allowed to be empty":{
+    "zh-CN":"描述不能为空",
+    "en":"Description is not allowed to be empty"
+  },
+  "data_status":{
+    "zh-CN":"状态",
+    "en":"status"
+  },
+  "active":{
+    "zh-CN":"恢复",
+    "en":"ACTIVE"
+  },
+  "deleted_list":{
+    "zh-CN":"已删除的数据",
+    "en":"Deleted List"
+  },
+  "Choose GitLab or GitLab V3":{
+    "zh-CN":"选择GitLab还是GitLab V3 ?",
+    "en":"Choose GitLab or GitLab V3?"
+  },
+  "show_deleted_list":{
+    "zh-CN":"显示删除列表",
+    "en":"show deleted list"
+  },
+  "exploitability":{
+    "zh-CN":"可利用性",
+    "en":"exploitability"
+  },
+  "prevalence":{
+    "zh-CN":"普遍性",
+    "en":"prevalence"
+  },
+  "detectability":{
+    "zh-CN":"可检测性",
+    "en":"detectability"
+  },
+  "technical":{
+    "zh-CN":"技术影响",
+    "en":"technical"
+  },
+  "job_queue_name":{
+    "zh-CN":"任务队列",
+    "en":"Job Queue Name"
+  },
+  "scam_mem_limit":{
+    "zh-CN":"内存限定",
+    "en":"Memory Limit"
+  },
+  "default":{
+    "zh-CN":"默认",
+    "en":"Default"
+  },
+  "optional":{
+    "zh-CN":"选填",
+    "en":"OPTIONAL"
+  },
+  "configure_command":{
+    "zh-CN":"预处理命令",
+    "en":"Configure Command"
+  },
+  "build_command":{
+    "zh-CN":"编译命令",
+    "en":"Build Command"
+  },
+  "build_tools":{
+    "zh-CN":"编译工具",
+    "en":"BUILD TOOLS"
+  },
+  "builder_path":{
+    "zh-CN":"编译路径",
+    "en":"Builder Path"
+  },
+  "opt_config_value":{
+    "zh-CN":"配置值",
+    "en":"Optional Configure Value"
+  },
+  "opt_config_key":{
+    "zh-CN":"配置名称",
+    "en":"Optional Configure Name"
+  },
+  "add":{
+    "zh-CN":"添加",
+    "en":"Add"
+  },
+  "build_tools_is_required":{
+    "zh-CN":"请选择编译工具",
+    "en":"Build Tools is required"
+  }
+}

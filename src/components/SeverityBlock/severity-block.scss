@@ -1,0 +1,33 @@
+@import "~styles/colors";
+.severity-block {
+  .content-data {
+    padding-right: 10px;
+  }
+  .info-tooltip {
+    color: $color-grey1;
+  }
+  &.left-divider {
+    border-right: 1px solid $color-grey1;
+  }
+  &.right-divider{
+    border-right: 1px solid $color-grey1;
+  }
+  .tooltip-container {
+    display: flex;
+    justify-content: flex-end;
+    .info-tooltip {
+      color: $color-grey1;
+      font-size: .8em;
+    }
+  }
+
+  [class^="col-"] {
+    padding-right: 0;
+    padding-right: 0;
+  }
+  .number-with-margin {
+    .title {
+      font-size: .9em;
+    }
+  }
+}

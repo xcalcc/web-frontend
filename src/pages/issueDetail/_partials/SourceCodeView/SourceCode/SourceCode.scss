@@ -1,0 +1,111 @@
+@import "~styles/colors";
+@import "~styles/variables";
+
+.issue-detail-page {
+    .source-code-content {
+        margin-bottom: 30px;
+
+        .title {
+            margin-bottom: 15px;
+
+            color: $color-grey12;
+            font-size: 14px;
+            strong {
+                margin-right: 20px;
+
+                font-weight: 600;
+                font-family: $font-family-condensed;
+            }
+            span {
+                font-weight: 400;
+                word-break: break-all;
+            }
+            .index {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+
+                color: $color-white;
+                font-weight: 600;
+                line-height: 20px;
+                text-align: center;
+
+                background: $color-grey11;
+                border-radius: 4px;
+            }
+        }
+
+        .source-code-half-height {
+            height: 300px;
+        }
+
+        .source-code-full-height {
+            height: 572px;
+        }
+
+        .no-sourcecode {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 300px;
+            padding: 0 20px;
+          
+            color: $color-grey1;
+            font-size: 26px;
+            text-align: center;
+          
+            background: $color-white;
+          
+            user-select: none;
+            .small {
+                color: $color-grey16;
+                font-size: 18px;
+                p {
+                    margin-bottom: 10px;
+                }
+                a {
+                    margin-top:15px;
+
+                    color: $color-grey16;
+                    font-size: 16px;
+                    text-decoration: underline;
+
+                    &:hover{
+                        color:$color-grey13;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-height: 1200px) {
+            .source-code-half-height {
+                height: 400px;
+            }
+
+            .source-code-full-height {
+                height: 828px;
+            }
+
+            .no-sourcecode {
+                height: 400px;
+            }
+        }
+
+        @media screen and (min-height: 1600px) {
+            .source-code-half-height {
+                height: 500px;
+            }
+
+            .source-code-full-height {
+                height: 1028px;
+            }
+
+            .no-sourcecode {
+                height: 500px;
+            }
+        }
+    }
+}

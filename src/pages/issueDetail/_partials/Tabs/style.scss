@@ -1,0 +1,98 @@
+@import "~styles/mixins";
+@import "~styles/colors";
+@import "~styles/variables";
+
+.x-tabs {
+    margin-top: 30px;
+
+    &-nav-wrap {
+        display: flex;
+        width: 100%;
+        .x-tabs-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: calc(100% - 53px);
+            overflow-x: scroll;
+
+            .x-tabs-tab {
+                @include noSelect;
+                display: flex;
+                justify-content: space-between;
+                margin-right: 1px;
+                padding: 7px 20px;
+
+                color: $color-grey16;
+                font-weight: 600;
+                font-size: 16px;
+                white-space: nowrap;
+
+                background: $color-grey17;
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-grey12;
+                }
+
+                &.active {
+                    color: $color-grey12;
+
+                    background: $color-white;
+                }
+
+                .x-tabs-tab-close {
+                    right: 0px;
+
+                    width: 30px;
+                    margin-left: 15px;
+
+                    background: 0 0;
+                    border: none;
+                    opacity: 0.2;
+
+                    transition: transform 100ms ease-out 0s;
+
+                    &:hover {
+                        transform:rotate(90deg);
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        .x-tabs-nav-add {
+            padding: 7px 20px;
+
+            color: $color-grey16;
+            font-size: 26px;
+            line-height: 1;
+
+            background: $color-grey17;
+            border: none;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+
+            &:hover {
+                color: $color-grey12;
+            }
+        }
+    }
+
+    &-content {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        .x-tabs-pane {
+            position: absolute;
+
+            width: 100%;
+
+            background: $color-white;
+            visibility: hidden;
+
+            &.active {
+                visibility: visible;
+            }
+        }
+    }
+}

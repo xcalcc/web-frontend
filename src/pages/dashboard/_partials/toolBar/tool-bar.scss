@@ -1,0 +1,47 @@
+@import '~styles/mixins';
+@import '~styles/colors';
+
+.toolbar {
+  display: flex;
+  padding: 0;
+  &-row {
+   width: 100%;
+  }
+
+  .project-total {
+    color: $color-jet-black;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .toolbar-item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+
+    &-title {
+      display: inline-block;
+
+      color: $color-grey13;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &-content {
+      padding-left: 10px;
+    }
+  }
+  .drop-down-one-line {
+    .btn {
+      color: $color-jet-black;
+
+      background: none;
+      border: none;
+      box-shadow: none;
+      &:hover {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

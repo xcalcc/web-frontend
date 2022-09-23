@@ -1,0 +1,44 @@
+@import "~styles/colors";
+
+.issue-detail__header {
+    &__baseinfo {
+        p {
+            min-width: 168px;
+            overflow: hidden;
+    
+            white-space: nowrap;
+            text-overflow: ellipsis;
+    
+            .title {
+                display: inline-block;
+                width: 75px;
+    
+                font-weight: 600;
+            }
+    
+            .value {
+                margin-left: 5%;
+            }
+    
+            .issue-id {
+                width: 76px;
+            }
+        }
+    }
+
+    &__tooltip {
+        .arrow {
+            transform: translate(30px, 0px) !important;
+        }
+    }
+}
+
+.chinese {
+    .issue-detail__header__baseinfo {
+        p {
+            .title {
+                width: 55px;
+            }
+        }
+    }
+}

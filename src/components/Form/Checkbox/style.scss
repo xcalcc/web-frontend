@@ -1,0 +1,65 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.xcheckbox {
+    padding-left: 0;
+
+    .form-check {
+        padding-left: 0;
+    }
+
+    .form-check-label {
+        user-select: none;
+    }
+
+    &__hint {
+        padding-left: 30px;
+
+        font-size: .8rem;
+    }
+
+    input[type=checkbox] + label {
+        padding-left: 15px;
+
+        color: $color-jet-black;
+        font-size: 1rem;
+
+        cursor: pointer;
+    }
+
+    input[type=checkbox] {
+        position: relative;
+
+        width: 15px;
+        height: 12px;
+        margin-left: 0;
+
+        font-size: 14px;
+
+        cursor: pointer;
+    }
+
+    input[type=checkbox]:after {
+        position: absolute;
+        top: -2px;
+
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+
+        color: #fff;
+        line-height: 16px;
+        text-align: center;
+
+        background-color: $color-ink-blue;
+        border-radius: 2px;
+
+        content: " ";
+    }
+
+    input[type=checkbox]:checked:after {
+        font-size: 12px;
+
+        content: "✓";
+    }
+}

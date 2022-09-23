@@ -1,0 +1,21 @@
+@import '~styles/variables';
+@import '~styles/colors';
+
+#pdf {
+  font-family: $font-family-condensed !important;
+  .zh-CN {
+    > * {
+      font-family: $font-family-noto-sans;
+    }
+
+    .field-name {
+      font-size: 9px;
+    }
+
+    .block {
+      h6 {
+        font-size: 9px;
+      }
+    }
+  }
+}

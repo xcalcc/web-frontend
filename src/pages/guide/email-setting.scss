@@ -1,0 +1,106 @@
+.guide-email-wrap {
+    .error {
+        text-align: left;
+    }
+
+    .input-group {
+        margin-bottom: 8px
+    }
+
+    form {
+        width: 89%;
+        margin: 17px auto 0 auto;
+    }
+
+    .smtp-connection-both {
+       .right-check.checkbox-wrap input[type="checkbox"]:checked + label,
+       .right-check.checkbox-wrap input[type="checkbox"]:not(:checked) + label {
+            color: #939598 !important;
+        }
+
+       .smtp-check.checkbox-wrap input[type="checkbox"]:checked + label,
+       .smtp-check.checkbox-wrap input[type="checkbox"]:not(:checked) + label {
+            text-align: left;
+        }
+
+       .smtp-check.checkbox-wrap input[type="checkbox"]:checked + label:after,
+       .smtp-check.checkbox-wrap input[type="checkbox"]:not(:checked) + label:after {
+            background: #f4313f;
+        }
+
+       .right-check.checkbox-wrap input[type="checkbox"]:checked + label:before,
+       .right-check.checkbox-wrap input[type="checkbox"]:not(:checked) + label:before {
+            right: inherit;
+            left: calc(100% + 8px);
+        }
+
+       .right-check.checkbox-wrap input[type="checkbox"]:checked + label:after,
+       .right-check.checkbox-wrap input[type="checkbox"]:not(:checked) + label:after {
+            right: inherit;
+            left: calc(100% + 11px);
+        }
+
+       .right-check.checkbox-wrap input[type="checkbox"]:checked + label.admin-label {
+            color: #939598 !important;
+        }
+
+       .input-group {
+            margin: 0;
+        }
+    }
+
+    .smatp-field {
+        width: 128px;
+    }
+
+    .email-server-btn {
+        float: none;
+        width: 165px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .guide-email-wrap {
+        .smtp-connection-both {
+            .right-check.checkbox-wrap {
+                input[type="checkbox"]:checked + label:before,
+                input[type="checkbox"]:not(:checked) + label:before {
+                    top: 50%;
+
+                    width: 16px;
+                    height: 16px;
+
+                    transform: translateY(-50%)
+                }
+
+                input[type="checkbox"]:checked + label:after,
+                input[type="checkbox"]:not(:checked) + label:after {
+                    top: 50%;
+                    left: calc(100% + 12px);
+
+                    width: 8px;
+                    height: 8px;
+
+                    transform: translateY(-50%);
+                }
+            }
+
+            .ssl-connection-field {
+                margin-left: 50px;
+            }
+        }
+
+        .smatp-field {
+            width: 18%;
+        }
+
+        .email-server-btn {
+            width: 206px;
+            height: 44px;
+
+            font-size: 18px;
+            line-height: 44px;
+        }
+    }
+}

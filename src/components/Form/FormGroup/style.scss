@@ -1,0 +1,36 @@
+@import "~styles/colors";
+@import "~styles/mixins";
+
+.xform-group {
+    margin-bottom: 1.5rem;
+
+    .form-label {
+        margin-bottom: .2rem;
+
+        color: $color-jet-black;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+
+    .text-muted {
+        color: $color-grey7;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    &.invalid {
+        label, small {
+            color: $color-dark-red;
+        }
+
+        input {
+            border-color: $color-dark-red;
+            border-width: 1.5px;
+        }
+
+        .dropdown {
+            border-color: $color-dark-red;
+            border-width: 1.5px;
+        }
+    }
+}
