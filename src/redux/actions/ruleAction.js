@@ -3,10 +3,12 @@ import Enums from 'Enums';
 export const getRuleInfoByCsvCode = csvCode => (dispatch, getState) => {
     const ruleState = getState()['rule'];
     const ruleList = ruleState.ruleList || [];
-    const csvCodeRuleListIndexMap = ruleState.csvCodeRuleListIndexMap;
+    const csvCodeRuleListIndexMap = ruleState.csvCodeRuleListIndexMap || {};
     const customRuleList = ruleState.customRuleList;
 
-    let ruleInfo = ruleList[csvCodeRuleListIndexMap[csvCode]] || ruleList.find(rule => rule.code === csvCode);
+    let ruleInfo = ruleList[csvCodeRuleListIndexMap[csvCode]]
+                        || ruleList.find(rule => Array.isArray(rule.csv_string) && rule.csv_string.includes(csvCode))
+                        || ruleList.find(rule => rule.code === csvCode);
 
     if(!ruleInfo) {
         const customRule = customRuleList.find(rule => rule.code === csvCode);
@@ -73,18 +75,23 @@ export const fetchRuleListByRuleSetName = (ruleSetId = null) => async (dispatch,
 };
 
 export const fetchRuleList = () => async (dispatch, getState, api) => {
+    const ruleState = getState()['rule'];
+    const ruleList = ruleState.ruleList || [];
+    if(ruleList.length > 0) {
+        return ruleState;
+    }
+
     let callback = await api.rule.getRuleInformationList();
     if(callback.rules) {
         try {
-            const rules = callback.rules;
             dispatch({
                 type: 'SET_RULE_LIST',
-                payload: rules
+                payload: callback.rules || []
             });
 
             dispatch({
                 type: 'SET_RULE_LIST_BY_CSV_CODE',
-                payload: callback.csvCodeMap
+                payload: callback.csvCodeMap || {}
             });
             return callback;
 
@@ -139,7 +146,7 @@ export const fetchPathMsg = () => async (dispatch, getState, api) => {
     if(pathMsgResponse.data) {
         dispatch({
             type: 'SET_PATH_MSG',
-            payload: pathMsgResponse.data
+            payload: pathMsgResponse.data || []
         });
     }
 };

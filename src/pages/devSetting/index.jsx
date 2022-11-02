@@ -11,6 +11,10 @@ const DEV_SETTING_OPTIONS = [
   {
     title: "解锁锁定的用户",
     value: enums.DEV_MODE_OPTION.userUnlock
+  },
+  {
+    title: "查看validation完整功能",
+    value: enums.DEV_MODE_OPTION.validation
   }
 ];
 

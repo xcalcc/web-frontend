@@ -53,6 +53,12 @@ const ExecutionPathGraph = props => {
             setGraphIsZooming(true);
             setCanZoomOut(canZoomOut);
         }
+
+        network.setOptions({
+            interaction:{
+                dragView: true
+            }
+        });
     };
 
     const _getHoveredPathIndex = hoverStatus => {
@@ -93,6 +99,7 @@ const ExecutionPathGraph = props => {
 
         setGraphLoaded(true);
         setNetwork(network);
+
     }, [executionPathsData]);
 
     useEffect(() => {

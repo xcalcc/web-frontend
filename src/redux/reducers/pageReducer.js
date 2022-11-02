@@ -13,11 +13,21 @@ const initialState = {
             customRuleSetId: '',
         },
         enableApi: true,
+        isReloadIssueGroupList: 0,
         sidebarSummary: {
             groupSummaryCount: {},
             criticalityCount: {}
         },
         general: {
+            paging: {
+                currentPage: 1,
+                pageSize: 15,
+                totalIssues: 0,
+                totalPages: 0
+            },
+            data: null, // []
+        },
+        ignore: {
             paging: {
                 currentPage: 1,
                 pageSize: 15,
@@ -119,6 +129,9 @@ const pageReducer = produce((draft, action) => {
             break;
         case 'TOGGLE_API_ON_OFF':
             draft['scanResult'].enableApi = action.payload;
+            break;
+        case 'IS_RELOAD_ISSUE_GROUP_LIST':
+            draft['scanResult'].isReloadIssueGroupList = action.payload;
             break;
         case 'SET_SCAN_RESULT_ISSUE_GROUP_DATA':
             draft['scanResult'][action.payload.issueGroupType] = action.payload.data;

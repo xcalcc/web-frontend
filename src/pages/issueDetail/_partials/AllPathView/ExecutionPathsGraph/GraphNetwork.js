@@ -87,6 +87,11 @@ class GraphNetwork {
     };
 
 
+    setOptions = options => {
+        this.network.setOptions(options);
+    };
+
+
     zoomIn = () => {
         const newScale = this._graphCurrentScale * GRAPH_SCALE_STEP;
 

@@ -32,6 +32,8 @@ const CustomDropdown = props => {
         <Dropdown.Menu>
             {
                 options && options.map((option, index) => 
+                    option.divider ? 
+                    <Dropdown.Divider/> :
                     <Dropdown.Item 
                         key={index}
                         className={classNames({active: option.value === selectedValue})}
@@ -43,6 +45,7 @@ const CustomDropdown = props => {
                     </Dropdown.Item>
                 )
             }
+            
             {props.children}
         </Dropdown.Menu>
     </Dropdown>

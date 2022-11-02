@@ -15,16 +15,26 @@
     }
 
     .total {
-        color: $color-jet-black;
+        color: $color-grey13;
         font-weight: 600;
         font-size: 18px;
         font-family: $font-family-condensed;
 
+        cursor: pointer;
+
         .number {
             margin-right: 3px;
 
-            color: $color-pantone;
+            color: $color-grey13;
             font-weight: 700;
+        }
+
+        &.active {
+            color: $color-jet-black;
+
+            .number {
+                color: $color-pantone;
+            }
         }
     }
 

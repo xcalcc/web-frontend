@@ -14,6 +14,7 @@ import './style.scss';
 
 const TopIssues = props => {
     const {
+        isMisraPage,
         isDsrPage,
         scanTaskId
     } = props;
@@ -90,8 +91,8 @@ const TopIssues = props => {
 
             Object.keys(csvCodeSummaryCountMap.allCsvCodeCountMap).forEach(csvCode => {
                 const ruleInfo = utils.scanResultHelper.getRuleInfo(csvCode);
-                if (!ruleInfo.code) {
-                    !csvCodeListForNotExist.includes(csvCode) && csvCodeListForNotExist.push(csvCode);
+                if (!ruleInfo.code && !csvCodeListForNotExist.includes(csvCode)) {
+                    csvCodeListForNotExist.push(csvCode);
                 }
                 if (ruleSetData.csvCodes.includes(csvCode)) {
                     // merge duplicate rule code
@@ -144,7 +145,7 @@ const TopIssues = props => {
         dispatch(scanResultAction.fetchCriticalityRuleCodeCountForTopIssue({
             scanTaskId,
             dsrType: [enums.DSR_TYPE.NEW, ...enums.DSR_TYPE.OUTSTANDING_ALL],
-            ruleSets: enums.BUILTIN_RULE_SETS
+            ruleSets: isMisraPage ? enums.MISRA_RULE_SETS : enums.BUILTIN_RULE_SETS
         }));
     }, [scanTaskId]);
 
@@ -152,7 +153,11 @@ const TopIssues = props => {
         <Row>
             <Col className="header">
                 <div className="title">
-                    {i18n.t('pages.scan-result.statistic-view.top-issues')}
+                    {
+                        isMisraPage ? 
+                        i18n.t('misra.top-issues-title') :
+                        i18n.t('pages.scan-result.statistic-view.top-issues')
+                    }
                     {
                         ruleCountMapList.length >= 10 &&
                         <div className="tooltip-icon">
@@ -168,20 +173,6 @@ const TopIssues = props => {
                         </div>
                     }
                 </div>
-                {/* Not show ruleset */
-                    /* <ul className="ruleset-list">
-                        {
-                            ruleSetAndStandardMaps.map((data, idx) =>
-                                <li
-                                    key={idx}
-                                    className={classNames({active: data.id === currentTabsId})}
-                                    onClick={() => setCurrentTabsId(data.id)}
-                                >
-                                    {data.label}
-                                </li>
-                            )
-                        }
-                    </ul> */}
             </Col>
         </Row>
         <Row>
@@ -194,6 +185,7 @@ const TopIssues = props => {
                         issueTotalCount={issueTotalCount}
                     />
                     : <HorizontalList 
+                        isMisraPage={isMisraPage}
                         ruleCountMapList={ruleCountMapList}
                         highRiskCount={highRiskCount}
                         chartPercentage={chartPercentage}

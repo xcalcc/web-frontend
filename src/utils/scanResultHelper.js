@@ -3,6 +3,11 @@ import store from 'Store';
 import enums from 'Enums';
 import DTO from 'DTO';
 
+import IconValidationUndecided from 'Icons/validation_open.svg';
+import IconValidationTrue from 'Icons/validation_true.svg';
+import IconValidationFalse from 'Icons/validation_false.svg';
+import IconValidationIgnore from 'Icons/validation_ignore.svg';
+
 export default {
     extractSummaryData(scanSummary) {
         if (!scanSummary) {
@@ -107,10 +112,12 @@ export default {
     getRuleInfo(code) {
         const ruleState = store.getState()['rule'];
         const ruleList = ruleState['ruleList'] || [];
-        const csvCodeRuleListIndexMap = ruleState['csvCodeRuleListIndexMap'];
-        const customRuleList = ruleState['customRuleList'];
+        const csvCodeRuleListIndexMap = ruleState['csvCodeRuleListIndexMap'] || {};
+        const customRuleList = ruleState['customRuleList'] || [];
 
-        let ruleInfo = ruleList[csvCodeRuleListIndexMap[code]] || ruleList.find(rule => rule.code === code);
+        let ruleInfo = ruleList[csvCodeRuleListIndexMap[code]]
+                        || ruleList.find(rule => Array.isArray(rule.csv_string) && rule.csv_string.includes(code))
+                        || ruleList.find(rule => rule.code === code);
 
         if(!ruleInfo) {
             const customRule = customRuleList.find(rule => rule.code === code);
@@ -126,6 +133,14 @@ export default {
         }
 
         return ruleInfo;
+    },
+    getCsvCodeByRuleCode(ruleCode) {
+        const ruleState = store.getState()['rule'];
+        const ruleList = ruleState['ruleList'] || [];
+        const ruleInfo = ruleList.find(rule => rule.code === ruleCode) || {};
+        const csvStrings = (ruleInfo.csv_string || []).sort();
+        const maxCsvCode = csvStrings[csvStrings.length - 1];
+        return maxCsvCode;
     },
     getStandardAndRuleSetNames(csvCode) {
         let nameList = [];
@@ -335,5 +350,26 @@ export default {
             return compareResult;
         });
         return groupDataList;
+    },
+    getIconByValidationValue: (value) => {
+        let imgSrc;
+        switch(value) {
+            case enums.ISSUE_VALIDATION_ACTION.UNDECIDED:
+                imgSrc = IconValidationUndecided;
+                break;
+            case enums.ISSUE_VALIDATION_ACTION.TRUE_POSITIVE:
+                imgSrc = IconValidationTrue;
+                break;
+            case enums.ISSUE_VALIDATION_ACTION.FALSE_POSITIVE:
+                imgSrc = IconValidationFalse;
+                break;
+            case enums.ISSUE_VALIDATION_ACTION.IGNORE:
+                imgSrc = IconValidationIgnore;
+                break;
+            default:
+                imgSrc = IconValidationUndecided;
+                break;
+        }
+        return imgSrc;
     }
 }

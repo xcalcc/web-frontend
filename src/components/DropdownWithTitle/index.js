@@ -9,6 +9,7 @@ const DropDownWithTitle = props => {
     const CustomToggle = React.forwardRef(({children, onClick}, ref) => (
         <div
             ref={ref}
+            className="current"
             onClick={(e) => {
                 e.preventDefault();
                 onClick(e);
@@ -51,6 +52,7 @@ const DropDownWithTitle = props => {
                                             value: menu.value,
                                         })}
                                     >
+                                        <span className="drop-down-option-icon">{menu.icon}</span>
                                         {menu.label}
                                     </Dropdown.Item>)
                             }

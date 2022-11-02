@@ -27,6 +27,7 @@ const AssigneeItem = props => {
 
 const Assignee = props => {
     const {
+        isMisraPage,
         projectUuid,
         scanTaskId
     } = props;
@@ -45,7 +46,7 @@ const Assignee = props => {
             projectUuid, 
             scanTaskId,
             dsrType: [enums.DSR_TYPE.NEW, ...enums.DSR_TYPE.OUTSTANDING_ALL],
-            ruleSets: enums.BUILTIN_RULE_SETS
+            ruleSets: isMisraPage ? enums.MISRA_RULE_SETS : enums.BUILTIN_RULE_SETS
         }));
     }, []);
 

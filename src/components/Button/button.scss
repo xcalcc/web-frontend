@@ -19,10 +19,15 @@
         border: none;
     }
 
-    &.btn.disabled {
+    &.btn.disabled, 
+    &.btn:disabled {
         color: $color-white;
 
         background: $color-grey11;
+
+        &:hover {
+            background: $color-grey11 !important;
+        }
     }
     &.btn.red:hover {
         color: $color-white;

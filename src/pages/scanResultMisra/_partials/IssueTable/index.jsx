@@ -10,11 +10,12 @@ import {useSelector, useDispatch} from "react-redux";
 import * as actions from 'Actions';
 import Loader from 'Components/Loader';
 import DropDownWithTitle from "Components/DropdownWithTitle";
+import ConfirmPrompt from 'Containers/ConfirmPrompt';
 import CopyIcon from 'Components/CopyIcon';
 import * as utils from "Utils";
 import enums from 'Enums';
 import Pagination from 'Components/Pagination';
-
+import MultipleSelectionTips from 'Pages/scanResult/_partials/IssueTable/MultipleSelectionTips';
 import './style.scss';
 
 const IssueTable = props => {
@@ -27,6 +28,17 @@ const IssueTable = props => {
         issueGroupType = enums.ISSUE_GROUP_TYPE.GENERAL
     } = props;
 
+    const CHECK_ALL_STATUS = {
+        DISABLE: 'disable',
+        CHECKED_ALL: 'checked',
+        NON_CHECKED_ALL: 'non-checked',
+    };
+    const TEMP_MULTIPLE_SELECTION_DATA_TYPE = {
+        CHECK_ROW: 0,
+        ASSIGNEE: 1,
+        VALIDATION: 2
+    };
+
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -37,11 +49,68 @@ const IssueTable = props => {
 
     const isEnglish = utils.isEnglish();
     const [isLoading, setIsLoading] = useState(false);
+    const [isShowDialog, setIsShowDialog] = useState(false);
+    const [checkAllStatus, setCheckAllStatus] = useState(CHECK_ALL_STATUS.DISABLE);
+    const [tempMultipleSelectionData, setTempMultipleSelectionData] = useState({
+        checkedIssueIds: [],
+        assignee: {/*assigneeId, assigneeDisplayName*/}, 
+        validation: '',
+    });
+    const [selectedValidation, setSelectedValidation] = useState({
+        currIssueGroupId: '', 
+        newValidation: '',
+        tooltip: ''
+    });
     const totalIssues = useSelector(state => state.page.scanResult[issueGroupType].paging.totalIssues);
     const totalPages = useSelector(state => state.page.scanResult[issueGroupType].paging.totalPages);
     const issueList = useSelector(state => state.page.scanResult[issueGroupType].data);
     const issueGroupListData = useSelector(state => state.page.scanResult[issueGroupType]);
     const enableApi = useSelector(state => state.page.scanResult.enableApi);
+    const isReloadIssueGroupList = useSelector(state => state.page.scanResult.isReloadIssueGroupList);
+
+    const updateTempMultipleSelectionData = (operationType, {
+        currIssueId,
+        newUserId,
+        newUserDisplayName,
+        newValidation
+    }) => {
+        let tempData = {...tempMultipleSelectionData};
+
+        const hasIncludedIssueId = tempData.checkedIssueIds.includes(currIssueId);
+        if(!hasIncludedIssueId) {
+            tempData.checkedIssueIds.push(currIssueId);
+        }
+
+        switch(operationType) {
+            case TEMP_MULTIPLE_SELECTION_DATA_TYPE.CHECK_ROW:
+                // check or uncheck. if id does not exist, add it, if id exists, delete it
+                if(hasIncludedIssueId) {
+                    tempData.checkedIssueIds.splice(tempData.checkedIssueIds.indexOf(currIssueId), 1);
+                }
+                if(tempData.checkedIssueIds.length === 0) {
+                    tempData.assignee = {};
+                    tempData.validation = '';
+                }
+                break;
+
+            case TEMP_MULTIPLE_SELECTION_DATA_TYPE.ASSIGNEE:
+                tempData.assignee = {
+                    assigneeId: newUserId,
+                    assigneeDisplayName: newUserDisplayName
+                };
+                break;
+
+            case TEMP_MULTIPLE_SELECTION_DATA_TYPE.VALIDATION:
+                tempData.validation = newValidation;
+                break;
+            default:
+                break;
+        }
+
+        setTempMultipleSelectionData(tempData);
+
+        return tempData;
+    }
 
     const onPageChange = pageNumber => {
         dispatch(actions.getPageActions('scanResult').setIssuePaging(issueGroupType, {
@@ -66,26 +135,10 @@ const IssueTable = props => {
         return (currentPaging.currentPage - 1) * currentPaging.pageSize + indexInCurrentPage;
     }
 
-    const getParentElements = (elem, until) => {
-        let matched = [];
-        let cur = elem.parentNode;
-
-        until = until || 'html';
-
-        while (cur && cur.nodeType !== 9 && cur !== document.querySelector(until)) {
-            if (cur.nodeType === 1) {
-                matched.push(cur);
-            }
-            cur = cur.parentNode;
-        }
-        return matched;
-    }
-
-
     // Below is old table component
     const handleRowClick = (event, issue) => {
         const classname = String(event.target.className);
-        let parents = getParentElements(event.target, 'table.data-table');
+        let parents = utils.getParentElements(event.target, 'table.data-table');
         parents = parents.filter(x => String(x.className).indexOf("no_clickable") > -1);
 
         if (
@@ -111,6 +164,18 @@ const IssueTable = props => {
 
     const handleAssignIssueToUser = async (issueGroupId, userId, displayName, assigneeId) => {
         if(userId === assigneeId) return;
+
+        // for multiple selection
+        if(checkAllStatus === CHECK_ALL_STATUS.NON_CHECKED_ALL || checkAllStatus === CHECK_ALL_STATUS.CHECKED_ALL) {
+            updateTempMultipleSelectionData(TEMP_MULTIPLE_SELECTION_DATA_TYPE.ASSIGNEE, {
+                currIssueId: issueGroupId,
+                newUserId: userId,
+                newUserDisplayName: displayName,
+            });
+            return;
+        }
+
+        // for single issue
         const assignResult = await dispatch(actions.assignIssueToUser(issueGroupId, userId));
 
         if(assignResult.error) {
@@ -122,7 +187,7 @@ const IssueTable = props => {
             return;
         }
 
-        const _issueList = produce(issueList, draft => {
+        const newIssueList = produce(issueList, draft => {
             draft.forEach(issue => {
                 if (issue.id === issueGroupId) {
                     issue.assigneeId = userId;
@@ -133,8 +198,183 @@ const IssueTable = props => {
 
         dispatch(actions.getPageActions('scanResult').setScanResultIssueGroupData(issueGroupType, {
             ...issueGroupListData,
-            data: [..._issueList]
+            data: [...newIssueList]
         }));
+    }
+
+    const onSelectValidation = (currIssueGroupId, currValidation, newValidation) => {
+        if(newValidation === currValidation) return;
+
+        // for multiple selection
+        if(checkAllStatus === CHECK_ALL_STATUS.NON_CHECKED_ALL || checkAllStatus === CHECK_ALL_STATUS.CHECKED_ALL) {
+            updateTempMultipleSelectionData(TEMP_MULTIPLE_SELECTION_DATA_TYPE.VALIDATION, {
+                currIssueId: currIssueGroupId.id, 
+                newValidation
+            });
+            return;
+        }
+
+        // for single issue
+        let i18nKey = newValidation === enums.ISSUE_VALIDATION_ACTION.IGNORE
+                    ? 'pages.scan-result.tooltip.modify-validation-ignore'
+                    : 'pages.scan-result.tooltip.modify-validation-nonignore';
+
+        if(!utils.isEnableDevModeOption(enums.DEV_MODE_OPTION.validation)) {
+            i18nKey = 'pages.scan-result.tooltip.modify-validation-nonignore';
+        }
+
+        setSelectedValidation({
+            currIssueGroupId, 
+            newValidation,
+            tooltip: i18n.t(i18nKey, {
+                currValidation: i18n.t(`pages.scan-result.validation.${currValidation}`),
+                newValidation: i18n.t(`pages.scan-result.validation.${newValidation}`),
+                issueGroupId: currIssueGroupId
+            })
+        });
+        setIsShowDialog(true);
+    }
+
+    const updateValidation = async () => {
+        const {
+            currIssueGroupId,
+            newValidation
+        } = selectedValidation;
+
+        setIsLoading(true);
+        setIsShowDialog(false);
+
+        const currIssue = issueList.find(x => x.id === currIssueGroupId) || {};
+
+        const defaultValidation = currIssue.validations && 
+                currIssue.validations.find(x => x.type === enums.ISSUE_VALIDATION_TYPE.DEFAULT);
+
+        let responseData;
+        let deletedValidation = false;
+        if(!defaultValidation) {
+            responseData = await dispatch(actions.addIssueValidation({
+                projectId: currIssue.projectId,
+                scanTaskId: currIssue.occurScanTaskId,
+                ruleCode: currIssue.ruleCode,
+                filePath: currIssue.sinkRelativePath || currIssue.srcRelativePath,
+                functionName: currIssue.functionName,
+                variableName: currIssue.variableName,
+                type: enums.ISSUE_VALIDATION_TYPE.DEFAULT,
+                action: newValidation,
+                scope: enums.ISSUE_VALIDATION_SCOPE.GLOBAL
+            }));
+        } else if(newValidation === enums.ISSUE_VALIDATION_ACTION.UNDECIDED) {
+            deletedValidation = true;
+            responseData = await dispatch(actions.deleteIssueValidation(defaultValidation.id));
+        } else {
+            responseData = await dispatch(actions.updateIssueValidation({
+                id: defaultValidation.id,
+                action: newValidation
+            }));
+        }
+
+        setIsLoading(false);
+
+        if(responseData.error) {
+            dispatch(actions.pushAlert({
+                type: 'error',
+                title: i18n.t('common.notifications.failure'),
+                content: utils.getApiMessage(responseData.error)
+            }));
+            return;
+        }
+
+        const isIgnoreTable = issueGroupType === enums.ISSUE_GROUP_TYPE.IGNORE;
+        if(isIgnoreTable || newValidation === enums.ISSUE_VALIDATION_ACTION.IGNORE) {
+            // call the API again to modify the data. move data from the current table to another table.
+            dispatch(actions.getPageActions('scanResult').isReloadIssueGroupList(Math.random()));
+        } else {
+            // modify the data directly on the front end
+            const newIssueList = produce(issueList, draft => {
+                draft.forEach(issue => {
+                    if (issue.id === currIssue.id) {
+                        issue.validations = issue.validations || [];
+                        // the issue group has only one DEFAULT validation
+                        issue.validations = issue.validations.filter(x => x.type !== enums.ISSUE_VALIDATION_TYPE.DEFAULT);
+                        !deletedValidation && issue.validations.push(responseData);
+                    }
+                });
+            });
+
+            dispatch(actions.getPageActions('scanResult').setScanResultIssueGroupData(issueGroupType, {
+                ...issueGroupListData,
+                data: [...newIssueList]
+            }));
+        }
+    }
+
+    const gotoCustomFilter = (issue) => {
+        const ruleInfo = utils.scanResultHelper.getRuleInfo(issue.ruleCode);
+        const params = {
+            projectId: projectData.id,
+            scanTaskId,
+            ruleCode: ruleInfo.code,
+            filePath: issue.sinkRelativePath || issue.srcRelativePath,
+            functionName: issue.functionName,
+            variableName: issue.variableName
+        };
+        history.push(`/setting/issue-filters?${new URLSearchParams(params).toString()}`);
+    }
+
+    const onCheckAll = () => {
+        const prevCheckAllStatus = checkAllStatus;
+
+        switch(prevCheckAllStatus) {
+            case CHECK_ALL_STATUS.DISABLE:
+                setCheckAllStatus(CHECK_ALL_STATUS.NON_CHECKED_ALL);
+                break;
+
+            case CHECK_ALL_STATUS.NON_CHECKED_ALL:
+                setCheckAllStatus(CHECK_ALL_STATUS.CHECKED_ALL);
+                setTempMultipleSelectionData({
+                    ...tempMultipleSelectionData,
+                    checkedIssueIds: issueList.map(issue => issue.id)
+                });
+                break;
+
+            case CHECK_ALL_STATUS.CHECKED_ALL:
+                setCheckAllStatus(CHECK_ALL_STATUS.NON_CHECKED_ALL);
+                setTempMultipleSelectionData({
+                    ...tempMultipleSelectionData,
+                    checkedIssueIds: [],
+                    assignee: {},
+                    validation: ''
+                });
+                break;
+            default:
+                break;
+        }
+    }
+
+    const onCheckRow = (event, currIssue) => {
+        const newData = updateTempMultipleSelectionData(TEMP_MULTIPLE_SELECTION_DATA_TYPE.CHECK_ROW, {
+            currIssueId: currIssue.id
+        });
+
+        if(newData.checkedIssueIds.length === issueList.length) {
+            setCheckAllStatus(CHECK_ALL_STATUS.CHECKED_ALL);
+        } else {
+            setCheckAllStatus(CHECK_ALL_STATUS.NON_CHECKED_ALL);
+        }
+    }
+
+    const onCancelMultipleSelection = () => {
+        setCheckAllStatus(CHECK_ALL_STATUS.DISABLE);
+        setTempMultipleSelectionData({
+            ...tempMultipleSelectionData,
+            checkedIssueIds: [],
+            assignee: {},
+            validation: ''
+        });
+    }
+
+    const onApplyMultipleSelection = () => {
+        console.log('onApplyMultipleSelection', {tempMultipleSelectionData})
     }
 
     const getFirstColumn = issue => {
@@ -150,20 +390,34 @@ const IssueTable = props => {
   
     const getTableHead = () => {
         let headRows = [
-            {field: 'ruleInformation.priority,ruleInformation.certainty', label: '', isSort: true},
-            {field: 'seq', label: utils.language("id"), isSort: true},
-            {field: 'ruleInformation.vulnerable', label: utils.language("table_title_type"), isSort: true},
-            {field: 'ruleInformation.name', label: utils.language("description"), isSort: true},
-            {field: 'scanFile.projectRelativePath', label: utils.language("file"), isSort: true},
-            {field: 'lineNo', label: utils.language("line"), isSort: false},
-            {field: 'functionName', label: utils.language("function"), isSort: true},
-            {field: 'numberOfPath', label: utils.language("paths2"), isSort: false},
+            {field: 'ruleInformation.priority,ruleInformation.certainty', label: '', isSort: false},
+            // Temporarily disable the multi-select feature
+            {
+                field: 'choose', 
+                // label: <input 
+                //     type="checkbox" 
+                //     className={classNames('check-input check-all', {
+                //         [checkAllStatus]: checkAllStatus
+                //     })}
+                //     onChange={onCheckAll}
+                // />, 
+                label: '',
+                isSort: false
+            },
+            {field: 'seq', label: i18n.t('pages.scan-result.issue-table.id'), isSort: false},
+            {field: 'ruleInformation.vulnerable', label: i18n.t('pages.scan-result.issue-table.type'), isSort: false},
+            {field: 'ruleInformation.name', label: i18n.t('pages.scan-result.issue-table.description'), isSort: false},
+            {field: 'scanFile.projectRelativePath', label: i18n.t('pages.scan-result.issue-table.file'), isSort: false},
+            {field: 'lineNo', label: i18n.t('pages.scan-result.issue-table.line'), isSort: false},
+            {field: 'functionName', label: i18n.t('pages.scan-result.issue-table.function'), isSort: false},
+            {field: 'numberOfPath', label: i18n.t('pages.scan-result.issue-table.path'), isSort: false},
             {
                 field: 'dsr',
                 label: dsrType === enums.DSR_TYPE.FIXED ? i18n.t('pages.dsr.fixed-time') : i18n.t('pages.dsr.detected-time'),
                 isShow: !!dsrType
             },
-            {field: 'assignTo.displayName', label: i18n.t('pages.scan-result.issue-table.assignee'), isSort: true}
+            {field: 'assignTo.displayName', label: i18n.t('pages.scan-result.issue-table.assignee'), isSort: false},
+            {field: 'validation', label: i18n.t('pages.scan-result.issue-table.validation'), isSort: false},
         ];
 
         return (
@@ -179,28 +433,77 @@ const IssueTable = props => {
         );
     }
  
-    const getAssignIssueTd = issue => {
+    const getAssignIssueColumn = issue => {
         const menus = userList.map(user => ({
             label: user.displayName,
             value: '',
             onSelect: () => handleAssignIssueToUser(issue.id, user.id, user.displayName, issue.assigneeId)
         }));
 
-        return <td className="no_clickable">
-            <DropDownWithTitle 
-                menuGroups={[
-                    {
-                        menus: menus
-                    }
-                ]}
-                label={issue.assigneeDisplayName || i18n.t('pages.dsr.issue-table.unassigned')}
-                icon={issue.assigneeDisplayName ? <PersonCircle /> : <PersonPlusFill />}
-            />
-        </td>;
+        const assigneeDisplayName = tempMultipleSelectionData.checkedIssueIds.includes(issue.id)
+                                    ? (tempMultipleSelectionData.assignee.assigneeDisplayName || issue.assigneeDisplayName)
+                                    : issue.assigneeDisplayName;
+
+        return <DropDownWithTitle 
+            menuGroups={[
+                {
+                    menus: menus
+                }
+            ]}
+            label={assigneeDisplayName || i18n.t('pages.dsr.issue-table.unassigned')}
+            icon={assigneeDisplayName ? <PersonCircle /> : <PersonPlusFill />}
+        />;
+    }
+
+    const getValidationColumn = issue => {
+        const validations = issue.validations || [];
+        const validationData = validations.find(x => x.type === enums.ISSUE_VALIDATION_TYPE.DEFAULT) || {};
+        const issueValidationAction = validationData.action || enums.ISSUE_VALIDATION_ACTION.UNDECIDED;
+
+        const currValidation = tempMultipleSelectionData.checkedIssueIds.includes(issue.id) 
+                                ? (tempMultipleSelectionData.validation || issueValidationAction)
+                                : issueValidationAction;
+
+        const ddlIconPath = utils.scanResultHelper.getIconByValidationValue(currValidation);
+        const ddlMenus = Object.keys(enums.ISSUE_VALIDATION_ACTION).map(key => {
+            const validationValue = enums.ISSUE_VALIDATION_ACTION[key];
+            const optionIconPath = utils.scanResultHelper.getIconByValidationValue(validationValue);
+
+            if(!utils.isEnableDevModeOption(enums.DEV_MODE_OPTION.validation)) {
+                if(['TP', 'FP'].includes(validationValue)) {
+                    return {};
+                }
+            }
+
+            return {
+                label: i18n.t(`pages.scan-result.validation.${validationValue}`),
+                value: validationValue,
+                icon: <img src={optionIconPath} />,
+                onSelect: () => onSelectValidation(issue.id, currValidation, validationValue)
+            }
+        }).filter(x => !!x.label);
+
+        return <DropDownWithTitle 
+            menuGroups={[
+                {
+                    menus: ddlMenus
+                },
+                {
+                    menus: [{
+                        label: '自定义忽略规则',
+                        value: '',
+                        icon: '',
+                        onSelect: () => gotoCustomFilter(issue)
+                    }]
+                }
+            ]}
+            label={i18n.t(`pages.scan-result.validation.${currValidation || enums.ISSUE_VALIDATION_ACTION.UNDECIDED}`)}
+            icon={<img src={ddlIconPath} />}
+        />;
     }
 
     const getDsrTime = issue => {
-        let format = isEnglish ? 'DD/MM/YYYY HH:mm:ss' : 'YYYY/MM/DD HH:mm:ss';
+        let format = isEnglish ? 'DD/MM/YYYY HH:mm' : 'YYYY/MM/DD HH:mm';
         let time = dsrType === enums.DSR_TYPE.FIXED ? issue.fixedTime : issue.occurTime;
         let timeMoment = moment(Number(time) || null);
         return timeMoment.isValid() ? timeMoment.format(format) : '-';
@@ -224,6 +527,9 @@ const IssueTable = props => {
                 isMisraPage: true,
                 scanTaskId,
                 currentFilter,
+                validationFilterType: issueGroupType === enums.ISSUE_GROUP_TYPE.IGNORE 
+                                        ? enums.VALIDATION_FILTER_TYPE.IGNORE 
+                                        : enums.VALIDATION_FILTER_TYPE.NON_IGNORE,
                 pageNumber: currentPaging.currentPage,
                 pageSize: currentPaging.pageSize
             }));
@@ -257,7 +563,7 @@ const IssueTable = props => {
             }));
         })();
 
-    }, [scanTaskId, currentFilter, currentPaging.currentPage, currentPaging.pageSize]);
+    }, [scanTaskId, currentFilter, currentPaging.currentPage, currentPaging.pageSize, isReloadIssueGroupList]);
 
     return (
         <div className="misra-issue-table-wrap">
@@ -276,9 +582,22 @@ const IssueTable = props => {
                                     onClick={event => handleRowClick(event, issue)}
                                     key={issue.id}
                                 >
-                                    <td className="red-txt">
+                                    <td>
                                         {getFirstColumn(issue)}
                                     </td>
+                                    {/* Temporarily disable the multi-select feature */}
+                                    <td></td>
+                                    {/* <td className="no_clickable">
+                                        {
+                                            checkAllStatus !== CHECK_ALL_STATUS.DISABLE &&
+                                            <input 
+                                                type="checkbox" 
+                                                className="check-input" 
+                                                checked={tempMultipleSelectionData.checkedIssueIds.includes(issue.id)}
+                                                onChange={event => onCheckRow(event, issue)}
+                                            />
+                                        }
+                                    </td> */}
                                     <td>
                                         <span>{issue.id}</span>
                                     </td>
@@ -315,7 +634,12 @@ const IssueTable = props => {
                                         </td>
                                     }
 
-                                    {getAssignIssueTd(issue)}
+                                    <td className="no_clickable">
+                                        {getAssignIssueColumn(issue)}
+                                    </td>
+                                    <td className="no_clickable">
+                                        {getValidationColumn(issue)}
+                                    </td>
                                 </tr>
                             ))}
                         {/* </Scrollbar> */}
@@ -336,6 +660,25 @@ const IssueTable = props => {
                     onPageSizeChange={onPageSizeChange}
                 />
             }
+            {
+                checkAllStatus !== CHECK_ALL_STATUS.DISABLE &&
+                <MultipleSelectionTips
+                    onApply={onApplyMultipleSelection}
+                    onCancel={onCancelMultipleSelection}
+                    disabledApply={!tempMultipleSelectionData.validation && utils.isEmptyObject(tempMultipleSelectionData.assignee)}
+                    description={i18n.t('pages.scan-result.tooltip.multiple-selection-tip')}
+                />
+            }
+            <ConfirmPrompt
+                show={isShowDialog}
+                title={i18n.t('common.are-you-sure')}
+                cancelBtnText={i18n.t('common.buttons.cancel')}
+                confirmBtnText={i18n.t('common.buttons.confirm')}
+                contentText={selectedValidation.tooltip}
+                onConfirm={updateValidation}
+                onCancel={() => setIsShowDialog(false)}
+                onHide={() => setIsShowDialog(false)}
+            />
         </div>
     );
 }

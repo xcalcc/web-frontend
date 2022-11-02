@@ -45,6 +45,12 @@ export const getPageActions = pageName => {
                         payload: isOn
                     });
                 },
+                isReloadIssueGroupList: value => dispatch => {
+                    dispatch({
+                        type: 'IS_RELOAD_ISSUE_GROUP_LIST',
+                        payload: value
+                    });
+                },
                 resetScanResultPage: () => dispatch => {
                     dispatch({
                         type: 'SET_DEFAULT_SCAN_RESULT'

@@ -7,6 +7,15 @@
   }
   .drop-down {
     cursor: pointer;
+    &-option-icon {
+      margin-right: 10px;
+      img {
+        width: 14px;
+      }
+    }
+    .dropdown-item {
+      padding: 8px 15px;
+    }
     .label {
       @include text-label;
       position: relative;

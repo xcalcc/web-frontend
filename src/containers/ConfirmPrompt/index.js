@@ -33,11 +33,9 @@ const ConfirmPrompt = props => {
         footer={footer}
         onHide={props.onHide}
     >
-        <div className="prompt-body">
-            {
-                props.contentText
-            }
-        </div>
+        {
+            props.contentText && <div className="prompt-body" dangerouslySetInnerHTML={{__html: props.contentText}} />
+        }
     </Prompt>
 }
 

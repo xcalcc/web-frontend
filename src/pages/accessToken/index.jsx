@@ -112,7 +112,7 @@ const AccessToken = () => {
                             </div>
                         </Col>
                     </Row>
-                    <Row className="token-input-wrap">
+                    <Row className="input-wrap">
                         <Col md={4}>
                             <p>{i18n.t('pages.settings.access-token.token-name')}</p>
                             <XInput 
@@ -132,7 +132,7 @@ const AccessToken = () => {
                             />
                         </Col>
                         <Col md={1} className="noPadding">
-                            <span className="token-unit">{i18n.t('pages.settings.access-token.token-expiration-unit')}</span>
+                            <span className="input-suffix">{i18n.t('pages.settings.access-token.token-expiration-unit')}</span>
                         </Col>
                         <Col md={3}>
                             <XButton

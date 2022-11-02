@@ -8,13 +8,13 @@
             padding-bottom: 0;
         }
     }
-    .token-input-wrap {
+    .input-wrap {
         margin: 20px 0;
 
         font-size: 16px;
     }
 
-    .token-unit {
+    .input-suffix {
         position: absolute;
         bottom: 10px;
     }
@@ -25,7 +25,7 @@
     }
 
     .table {
-        font-size: 16px;
+        font-size: 14px;
         word-wrap: break-word;
         word-break: break-all;
 
@@ -56,12 +56,12 @@
     }
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (min-width: 1550px) {
     .chinese {
         .access-token {
-            .token-input-wrap,
+            .input-wrap,
             .table {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
     }

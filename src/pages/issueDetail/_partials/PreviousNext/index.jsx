@@ -42,10 +42,11 @@ const PreviousNext = ({scanTaskId}) => {
         const payload = dispatch(actions.getPayloadOfSearchIssue({
             isDsrPage: !!urlQuery.dsr,
             isMisraPage: enums.MISRA_RULE_SETS.includes(issueGroup.ruleSet),
+            validationFilterType: enums.VALIDATION_FILTER_TYPE.NON_IGNORE,
             scanTaskId, 
             currentFilter, 
             pageNumber: singleIssueGroupPageNumber, 
-            pageSize: 1
+            pageSize: 1,
         }));
 
         if(urlQuery.dsr) {

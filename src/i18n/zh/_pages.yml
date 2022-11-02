@@ -6,6 +6,8 @@ pages:
       download: 下载
       project-summary: 项目概要
       detailed-report: 详细报告
+      project-summary-include-ignore: 项目概要 (包含忽略)
+      detailed-report-include-ignore: 详细报告 (包含忽略)
       project-setting: 查看项目设置
       delete: 删除项目
     side-bar:
@@ -34,9 +36,23 @@ pages:
       scan-fail: "最近的一次扫描失败于 <br/> {{date}}, {{time}}"
       top-issues-tip: 仅显示前 10 位
       copy-full-path-tip: 复制完整路径
+      multiple-selection-tip: 请选中复选框以批量更改缺陷的"评估类别" 或 "指派人"。
+      multiple-selection-ignore: 您将勾选的缺陷标记成了 "误报" 或 "忽略"。 确认后，这些缺陷将移至"忽略"选项卡。
+      multiple-selection-ignore-remove: 您将重置已勾选的缺陷。 一旦确认，这些缺陷将从"忽略"选项卡中删除。
+      modify-validation-ignore: 将 "{{currValidation}}" 修改为 "{{newValidation}}"? <br/>确认后，缺陷将移至"忽略"选项卡。<br/>(缺陷编号:{{issueGroupId}})
+      modify-validation-nonignore: 将 "{{currValidation}}" 修改为 "{{newValidation}}"? <br/>(缺陷编号:{{issueGroupId}})
     issue-table:
+      id: 编号
+      type: 类型
+      description: 描述
       rule-standard: 规则与标准
+      file: 文件
+      line: 行号
+      function: 函数名
+      variable: 变量名
+      path: 路径
       assignee: 指派人
+      validation: 评估
     report-download-description: 我们支持PDF和CSV两种报告格式，点击图标下载。
     report-download-description-all: 点击图标下载。
     report-download-detail: 详细报告
@@ -63,6 +79,7 @@ pages:
     issue-type: 类型
     assigned: 任务指派成功
     results: 条数据
+    ignored: 条已忽略
     search-results: 搜索结果
     search-box-placeholder: 搜索
     copy: 复制
@@ -70,6 +87,12 @@ pages:
     project-risk: 项目风险等级
     single: 单文件
     misra: MISRA
+    validation: 
+      UNDECIDED: 未决定的
+      TP: 缺陷
+      FP: 误报
+      IGNORE: 忽略
+    custom-filter: 自定义忽略规则
     statistic-view:
       top-issues: 高风险缺陷
       defects-assigned: 缺陷分配
@@ -266,3 +289,24 @@ pages:
   triage:
     rule-standard: 规则与标准
     assignee: 指派人
+  issue-filters: 
+    title: 缺陷过滤规则管理
+    validation-title: 缺陷评估管理
+    section-new-title: 创建一个新的过滤规则
+    section-new-description: 符合以下规则的缺陷将会显示在扫描结果页的"忽略列表"中
+    rule-code: 缺陷类型(如ERR33-C、AOB、NPD)
+    file-path: 缺陷文件相对路径
+    variable-name: 缺陷变量名
+    function-name: 缺陷函数名
+    button-save: 创建
+    section-list-title: 过滤规则列表
+    validation:
+      data-empty: 缺陷类型和文件路径不能同时为空
+      data-exists: 已存在相同规则的数据
+    table: 
+      rule-code: 类型
+      file-path: 文件
+      function-name: 函数名
+      variable-name: 变量名
+      validation: 评估
+      created: 创建日期

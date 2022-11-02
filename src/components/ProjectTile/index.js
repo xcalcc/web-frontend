@@ -259,7 +259,7 @@ const ProjectTile = props => {
                                         }
                                     </span>
                                     {
-                                        props.hasDsr && 
+                                        (isScanSuccessful && props.hasDsr) && 
                                         <a className="link-dsr" onClick={(event) => onGotoDsrPage(event, data.id, isSelectedMisra)}>
                                             <Image src={TriangleIcon}/>
                                             <span>{i18n.t('pages.scan-result.right-nav.delta-view')}</span>

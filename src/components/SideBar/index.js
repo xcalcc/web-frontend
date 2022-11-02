@@ -70,6 +70,20 @@ const SideBar = props => {
                     enabled: true,
                     url: '/access-token',
                 },
+                {
+                    name: 'issue-validation-management',
+                    icon: '',
+                    label: i18n.t('common.sidebar.issue-validation'),
+                    enabled: true,
+                    url: '/setting/issue-validations',
+                },
+                {
+                    name: 'issue-filter-management',
+                    icon: '',
+                    label: i18n.t('common.sidebar.issue-filter'),
+                    enabled: true,
+                    url: '/setting/issue-filters',
+                },
             ]
         }
     ];

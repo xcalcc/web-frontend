@@ -4,7 +4,7 @@ import i18n from 'i18next';
 import DoughnutChart from 'Components/DoughnutNumber';
 import Item from './Item';
 
-const HorizontalList = ({ruleCountMapList, highRiskCount, chartPercentage, issueTotalCount}) => {
+const HorizontalList = ({isMisraPage, ruleCountMapList, highRiskCount, chartPercentage, issueTotalCount}) => {
 
     let group1 = [];
     let group2 = [];
@@ -18,7 +18,10 @@ const HorizontalList = ({ruleCountMapList, highRiskCount, chartPercentage, issue
         {
             <Col xs={2} className="top-issues-chart">
                 <DoughnutChart
-                    label={i18n.t('pages.scan-result.statistic-view.high-risk')}
+                    label={isMisraPage ? 
+                        i18n.t('misra.severity.HIGH') : 
+                        i18n.t('pages.scan-result.statistic-view.high-risk')
+                    }
                     percentage={chartPercentage}
                     data={
                         {

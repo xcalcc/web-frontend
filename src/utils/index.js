@@ -249,6 +249,15 @@ export const urlRedirect = {
 }
 
 /*
+ * String Fuzzy compare
+ */
+export function isStringFuzzyEqual(str1, str2) {
+    const s1 = str1 || '';
+    const s2 = str2 || '';
+    return s1.toLowerCase() === s2.toLowerCase();
+}
+
+/*
  * Deep compare
  */
 export function isDeepEqual(param1, param2) {
@@ -844,6 +853,24 @@ export const isExistClassNameInEvent = (domEvent, className) => {
 
     return isExist;
 };
+
+/*
+ * Gets all parent elements
+ */
+export const getParentElements = (dom, until) => {
+    let matched = [];
+    let cur = dom.parentNode;
+
+    until = until || 'html';
+
+    while (cur && cur.nodeType !== 9 && cur !== document.querySelector(until)) {
+        if (cur.nodeType === 1) {
+            matched.push(cur);
+        }
+        cur = cur.parentNode;
+    }
+    return matched;
+}
 
 /*
  * APP From refers to the URL parameter 'from'.

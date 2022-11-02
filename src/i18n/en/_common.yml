@@ -10,6 +10,7 @@ common:
   save: Save
   next: Next
   dismiss: Dismiss
+  success: Success
   update-success: Updated!
   create-success: Created!
   operation-success: Operation is successful!
@@ -25,7 +26,7 @@ common:
     project-create-success: Project has been added successfully!
     project-update-success: Project has been updated successfully!
   buttons:
-    confirm: Confirm
+    confirm: CONFIRM
     back: BACK
     apply: APPLY
     cancel: CANCEL
@@ -52,6 +53,8 @@ common:
     data-management: Data Management
     settings: SETTINGS
     access-token: Access Token
+    issue-validation: Defect Validations
+    issue-filter: Defect Filter Rules
     license-info: >
       <p>Xcalscan {{version}}</p>
       <p>Copyright 2019 - {{currentYear}}</p>

@@ -22,6 +22,8 @@ import NotFound from "Pages/404";
 import HistoryList from "Pages/historyList";
 import DevSetting from "Pages/devSetting";
 import AccessToken from "Pages/accessToken";
+import IssueFilterManagement from "Pages/settings/issueFilterManagement";
+import IssueValidationManagement from "Pages/settings/issueValidationManagement";
 
 const routesConfig = [
     {
@@ -342,6 +344,28 @@ const routesConfig = [
         header: true,
         sidebar: true,
         pageComponent: AccessToken,
+        enabled: true,
+    },
+    {
+        name: 'issue-filter',
+        internal: false,
+        path: '/setting/issue-filters',
+        protected: true,
+        needAdmin: true,
+        header: true,
+        sidebar: true,
+        pageComponent: IssueFilterManagement,
+        enabled: true,
+    },
+    {
+        name: 'issue-validation',
+        internal: false,
+        path: '/setting/issue-validations',
+        protected: true,
+        needAdmin: true,
+        header: true,
+        sidebar: true,
+        pageComponent: IssueValidationManagement,
         enabled: true,
     }
 ];

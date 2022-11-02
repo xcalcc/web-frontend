@@ -1,8 +1,9 @@
 import React, {useState, useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {Dropdown} from 'react-bootstrap';
+import classNames from 'classnames';
 import i18n from 'i18next';
-import * as utils from 'Utils'
+import * as utils from 'Utils';
 import enums from 'Enums';
 import IssueSearchBox from '../../../scanResult/_partials/IssueFilter/_partials/IssueSearchBox';
 import FilterPopup from './_partials/FilterPopup';
@@ -11,7 +12,7 @@ import DropdownIcon from 'Icons/dropdown.svg';
 import DropdownRedIcon from 'Icons/dropdown_red.svg';
 import './style.scss';
 
-const IssueFilter = ({isDsrPage, scanTaskId}) => {
+const IssueFilter = ({isDsrPage, scanTaskId, isIgnoreView, setIsIgnoreView=()=>{}}) => {
     const [showPopup, setShowPopup] = useState(false);
     const [isToggleHidePopup, setIsToggleHidePopup] = useState(false);
 
@@ -20,6 +21,7 @@ const IssueFilter = ({isDsrPage, scanTaskId}) => {
     const dsrNewTotalIssues = useSelector(state => state.page.scanResult[enums.ISSUE_GROUP_TYPE.DSR_NEW].paging.totalIssues);
     const dsrFixedTotalIssues = useSelector(state => state.page.scanResult[enums.ISSUE_GROUP_TYPE.DSR_FIXED].paging.totalIssues);
     const dsrOutstandingTotalIssues = useSelector(state => state.page.scanResult[enums.ISSUE_GROUP_TYPE.DSR_OUTSTANDING].paging.totalIssues);
+    const ignoreTotalIssues = useSelector(state => state.page.scanResult[enums.ISSUE_GROUP_TYPE.IGNORE].paging.totalIssues);
 
     let totalIssues = 0;
     if(isDsrPage) {
@@ -48,11 +50,31 @@ const IssueFilter = ({isDsrPage, scanTaskId}) => {
     }
 
     return <div className="issue-filter">
-        <div className="total">
+        <div 
+            className={classNames('total', {
+                active: !isIgnoreView
+            })}
+            onClick={() => setIsIgnoreView(false)}
+        >
             <span className="number">{utils.formatNumber(totalIssues)}</span>
             {i18n.t('pages.scan-result.results')}
         </div>
         <div className="divide"></div>
+        {
+            utils.isEnableDevModeOption(enums.DEV_MODE_OPTION.validation) && 
+            <>
+                <div 
+                    className={classNames('total', {
+                        active: isIgnoreView
+                    })}
+                    onClick={() => setIsIgnoreView(true)}
+                >
+                    <span className="number">{utils.formatNumber(ignoreTotalIssues)}</span>
+                    {i18n.t('pages.scan-result.ignored')}
+                </div>
+                <div className="divide"></div>
+            </>
+        }
         <Dropdown 
             show={showPopup} 
             className="filter-dropdown"

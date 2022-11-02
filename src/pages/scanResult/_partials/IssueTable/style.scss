@@ -50,21 +50,21 @@
             tr {
                 cursor: pointer;
 
-                td:nth-child(4),
-                td:nth-child(6) {
+                td:nth-child(5),
+                td:nth-child(7) {
                     max-width: 140px;
                 }
 
-                td:nth-child(8),
-                td:nth-child(9) {
+                td:nth-child(9),
+                td:nth-child(10) {
                     max-width: 80px;
                 }
 
-                td:nth-child(3),
                 td:nth-child(4),
-                td:nth-child(6),
-                td:nth-child(8),
-                td:nth-child(9) {
+                td:nth-child(5),
+                td:nth-child(7),
+                td:nth-child(9),
+                td:nth-child(10) {
                     span {
                         display: inline-block;
                         width: 100%;
@@ -111,6 +111,58 @@
             }
         }
 
+        .check-input {
+            width: 15px;
+            height: 15px;
+            margin-top: 0.25em;
+
+            background-color: $color-white;
+            background-repeat: no-repeat;
+            background-position: 65%;
+            background-size: 15px;
+            border: 1px solid $color-grey13;
+            cursor: pointer;
+
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+
+            &:checked {
+                background-color: $color-red;
+                background-image: url("../../../../assets/images/icons/check.svg");
+                border-color: $color-red;
+            }
+
+            &:hover {
+                border-color: $color-red;
+            }
+        }
+
+        .check-all {
+            cursor: pointer;
+            &:checked {
+                background-image: none;
+            }
+            &.disable {
+                &:checked {
+                    background-color: $color-white;
+                    background-image: none;
+                    border-color: $color-grey13;
+                }
+            }
+            &.non-checked {
+                background-color: $color-grey11;
+                background-image: url("../../../../assets/images/icons/line_bold.svg");
+                border-color: $color-grey11;
+            }
+            &.checked {
+                background-color: $color-red;
+                background-image: url("../../../../assets/images/icons/check.svg");
+                border-color: $color-red;
+            }
+        }
+
         .label-flag {
             width: 7px;
             height: 105%;
@@ -145,10 +197,10 @@
                 background: unset;
                 border: unset;
                 box-shadow: unset;
-    
+
                 .label {
                     position: unset;
-        
+
                     height: unset;
 
                     font-weight: 400;
@@ -156,17 +208,26 @@
                     line-height: unset;
                     text-transform: unset;
                 }
-    
-                .icon {
-                    position: unset;
 
-                    float: left;
-                    height: unset;
-                    margin-right: 5px;
-                    overflow: scroll;
+                .current {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    justify-content: flex-end;
 
-                    font-size: 18px;
-                    line-height: unset;
+                    .icon {
+                        position: unset;
+
+                        float: unset;
+                        height: unset;
+                        margin-right: 5px;
+
+                        font-size: 18px;
+                        line-height: unset;
+                        img {
+                            width: 15px;
+                        }
+                    }
                 }
 
                 .dropdown-menu {
@@ -198,5 +259,37 @@
     .copy-icon {
         display: inline !important;
         padding: 10px 5px;
+    }
+
+    .multiple-selection-tips {
+        position: relative;
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        margin-top: -39px;
+        padding: 0 30px;
+
+        background-color: #fff;
+
+        .desc {
+            font-weight: 500;
+            font-size: 18px;
+            font-family: $font-family-condensed;
+            
+            img {
+                width: 15px;
+                height: 15px;
+                margin: -5px 15px 0 0;
+            }
+        }
+
+        .buttons {
+            .btn {
+                margin-left: 20px;
+            }
+        }
     }
 }

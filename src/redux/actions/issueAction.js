@@ -23,7 +23,7 @@ const getTracePathDescription = (functionName, variableName, issue, msg_templ) =
         .replace(new RegExp('\\' + enums.RULE_MSG_TEMPL_KEYWORDS.sink.variable, 'ig'), variableName);
 }
 
-export const getPayloadOfSearchIssue = ({isDsrPage, isMisraPage, scanTaskId, currentFilter, pageNumber, pageSize}) => (dispatch, getState) => {
+export const getPayloadOfSearchIssue = ({isDsrPage, isMisraPage, scanTaskId, currentFilter, validationFilterType, pageNumber, pageSize}) => (dispatch, getState) => {
     let pathCategory = undefined;
     let scanFileIds = currentFilter.scanFileIds.filter(x => x !== enums.SEARCH_ISSUE_TYPE.ONLY_PROJECT && x !== enums.SEARCH_ISSUE_TYPE.ONLY_NON_PROJECT);
     const inProject = currentFilter.scanFileIds.includes(enums.SEARCH_ISSUE_TYPE.ONLY_PROJECT);
@@ -51,6 +51,9 @@ export const getPayloadOfSearchIssue = ({isDsrPage, isMisraPage, scanTaskId, cur
         pathCategory: pathCategory,
         certainty: currentFilter.includePossibleDefect ? undefined : enums.ISSUE_CERTAINTY.D,
         ruleSetAndStandardNames: ruleSetAndStandardNames || undefined,
+        validationAction: (!validationFilterType || validationFilterType === enums.VALIDATION_FILTER_TYPE.ALL) 
+                ? undefined 
+                : validationFilterType
     };
 
     payload.ruleSets = isMisraPage ? enums.MISRA_RULE_SETS : enums.BUILTIN_RULE_SETS;
@@ -159,4 +162,20 @@ export const fetchIssueGroupById = (scanTaskId, issueGroupId) => async (dispatch
 
 export const fetchSearchSuggest = ({filter, page, size}) => async (dispatch, getState, api) => {
     return api.issue.getSearchSuggest(filter, page, size);
+}
+
+export const searchIssueValidationList = (filter) => async (dispatch, getState, api) => {
+    return api.issue.searchIssueValidationList(filter);
+}
+
+export const addIssueValidation = (data) => async (dispatch, getState, api) => {
+    return api.issue.addIssueValidation(data);
+}
+
+export const updateIssueValidation = (data) => async (dispatch, getState, api) => {
+    return api.issue.updateIssueValidation(data);
+}
+
+export const deleteIssueValidation = (id) => async (dispatch, getState, api) => {
+    return api.issue.deleteIssueValidation(id);
 }

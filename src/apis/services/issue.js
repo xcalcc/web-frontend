@@ -52,6 +52,7 @@ const issueService = {
                               certainty,
                               dsrType,
                               searchValue,
+                              validationAction,
                               sort
                           } = {}) {
         try {
@@ -66,7 +67,8 @@ const issueService = {
                     pathCategory,
                     certainty,
                     dsrType,
-                    searchValue
+                    searchValue,
+                    validationAction
                 },
                 {
                     paramsSerializer: function () {
@@ -225,6 +227,84 @@ const issueService = {
             );
         } catch (e) {
             return { error: e };
+        }
+        return callback.data;
+    },
+    async searchIssueValidationList({type, scope, action, page = 0, size = 500} = {}) {
+        let callback = {};
+        try {
+            callback = await axios.post(
+                `${Config.issueServiceV3}/search_issue_validations`, 
+                {
+                    type,
+                    scope,
+                    action
+                },
+                {
+                    paramsSerializer: function () {
+                        let params = [];
+                        params.push(`page=${page}`);
+                        params.push(`size=${size}`);
+                        return params.join("&");
+                    }
+                }
+            );
+        } catch (e) {
+            return {
+                error: e
+            };
+        }
+        return callback.data;
+    },
+    async addIssueValidation(data) {
+        let callback = {};
+        try {
+            callback = await axios.post(
+                `${Config.issueServiceV3}/issue_validation`, {
+                    projectId: data.projectId,
+                    scanTaskId: data.scanTaskId,
+                    ruleCode: data.ruleCode,
+                    filePath: data.filePath,
+                    functionName: data.functionName,
+                    variableName: data.variableName,
+                    lineNumber: data.lineNumber,
+                    type: data.type,
+                    action: data.action,
+                    scope: data.scope
+                }
+            );
+        } catch (e) {
+            return {
+                error: e
+            };
+        }
+        return callback.data;
+    },
+    async updateIssueValidation({id, action, scope}) {
+        let callback = {};
+        try {
+            callback = await axios.put(
+                `${Config.issueServiceV3}/issue_validation/${id}`, {
+                    id,
+                    action,
+                    scope
+                }
+            );
+        } catch (e) {
+            return {
+                error: e
+            };
+        }
+        return callback.data;
+    },
+    async deleteIssueValidation(id) {
+        let callback = {};
+        try {
+            callback = await axios.delete(`${Config.issueServiceV3}/issue_validation/${id}`);
+        } catch (e) {
+            return {
+                error: e
+            };
         }
         return callback.data;
     },

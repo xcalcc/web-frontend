@@ -1,0 +1,102 @@
+@import "~styles/colors";
+
+.issue-filters {
+    .section {
+        margin-bottom: 40px;
+
+        .title {
+            padding-bottom: 0;
+        }
+    }
+    .input-wrap {
+        margin: 10px 0;
+
+        font-size: 16px;
+    }
+
+    .input-suffix {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .table {
+        font-size: 14px;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        th {
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 0.5rem 0.75rem;
+
+            &.type {
+                white-space: nowrap;
+            }
+
+            &.file {
+                max-width: 200px;
+            }
+            &.function,
+            &.variable {
+                max-width: 120px;
+            }
+
+            &.file,
+            &.function,
+            &.variable {
+                p {
+                    display: inline-block;
+                    width: 100%;
+                    overflow: hidden;
+
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    word-break: break-word;
+                }
+
+                &:hover {
+                    p {
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+
+        .link {
+            display: flex;
+
+            white-space: nowrap;
+
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+
+            img {
+                width: 13px;
+                margin-right: 3px;
+            }
+        }
+    }
+
+    .norecord {
+        margin-top: 40px;
+
+        color: $color-grey12;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .chinese {
+        .issue-filters {
+            .input-wrap,
+            .table {
+                font-size: 16px;
+            }
+        }
+    }
+}

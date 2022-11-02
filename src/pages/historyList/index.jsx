@@ -9,6 +9,7 @@ import Form from 'Common/form';
 import Pagination from 'Components/Pagination';
 import Loader from 'Components/Loader';
 import ConfirmPrompt from 'Containers/ConfirmPrompt';
+import IconBackCircle from 'Images/icon/back-circle-gray.png';
 import './style.scss';
 
 const DEFAULT_PAGE_SIZE = 12;
@@ -258,7 +259,7 @@ class HistoryList extends Form {
               <div className="sidebar-data">
                 <div className="back-link">
                   <a href="javascript:void(0)" onClick={() => this.goBack()}>
-                    <img src="/images/icon/back-circle-gray.png"/>
+                    <img src={IconBackCircle}/>
                   </a>
                 </div>
                 <div className="middle-content">

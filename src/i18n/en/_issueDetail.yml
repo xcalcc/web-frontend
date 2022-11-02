@@ -13,6 +13,7 @@ issueDetail:
   of-paths: "# OF PATHS"
   first-detected: FIRST DETECTED
   assigned: ASSIGNEE
+  validation: VALIDATION
   severity: SEVERITY
   likelihood: LIKELIHOOD
   remediation-cost: REMEDIATION COST

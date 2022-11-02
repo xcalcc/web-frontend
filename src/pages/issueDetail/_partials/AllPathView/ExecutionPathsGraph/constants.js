@@ -35,7 +35,7 @@ export const GRAPH_DEFAULT_OPTIONS = {
   },
   interaction: {
     dragNodes: false,
-    dragView: true,
+    dragView: false,
     selectable: true,
     selectConnectedEdges: false,
     hover: true,

@@ -13,6 +13,7 @@ issueDetail:
   of-paths: 总路径
   first-detected: 首次发生时间
   assigned: 分配缺陷
+  validation: 评估
   severity: 严重程度
   likelihood: 可能性
   remediation-cost: 修复成本

@@ -10,6 +10,7 @@ common:
   save: 保存
   next: 下一步
   dismiss: 关闭
+  success: 成功
   update-success: 更新成功!
   create-success: 创建成功!
   operation-success: 操作成功!
@@ -52,6 +53,8 @@ common:
     data-management: 数据管理
     settings: 设置
     access-token: 访问令牌
+    issue-validation: 缺陷评估管理
+    issue-filter: 缺陷过滤规则管理
     license-info: >
       <p>爱科识 {{version}}</p>
       <p>本软件所有权益归属于</p>

@@ -27,6 +27,7 @@ const ScanResult = props => {
     const [projectName, setProjectName] = useState('');
     const [scanTaskId, setScanTaskId] = useState(_scanTaskId);
     const [scanMode, setScanMode] = useState();
+    const [isIgnoreView, setIsIgnoreView] = useState(false);
 
     const currentScanSummary = useSelector(state => state.scan.currentScanSummary);
     const previousScanSummary = useSelector(state => state.scan.previousScanSummary);
@@ -164,6 +165,8 @@ const ScanResult = props => {
                         projectUuid={projectUuid}
                         scanTaskId={scanTaskId}
                         currentProjectSummary={currentProjectSummary}
+                        isIgnoreView={isIgnoreView}
+                        setIsIgnoreView={setIsIgnoreView}
                     />
                 </Route>
                 <Route exact path="/project/:projectKey/scans">
@@ -172,6 +175,8 @@ const ScanResult = props => {
                         projectUuid={projectUuid}
                         scanTaskId={scanTaskId}
                         currentProjectSummary={currentProjectSummary}
+                        isIgnoreView={isIgnoreView}
+                        setIsIgnoreView={setIsIgnoreView}
                     />
                 </Route>
                 <Route exact path="/project/:projectKey/scan/:scanTaskId">
@@ -180,6 +185,8 @@ const ScanResult = props => {
                         projectUuid={projectUuid}
                         scanTaskId={scanTaskId}
                         currentProjectSummary={currentProjectSummary}
+                        isIgnoreView={isIgnoreView}
+                        setIsIgnoreView={setIsIgnoreView}
                     />
                 </Route>
             </Switch>

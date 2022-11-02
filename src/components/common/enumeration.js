@@ -56,6 +56,7 @@ export default {
     DEV_MODE_OPTION: {
         viewScanHistoryRecord: "view_scan_history_record",
         userUnlock: "user_unlock",
+        validation: "validation_full"
     },
 
     RULE_SET: {
@@ -377,6 +378,7 @@ export default {
 
     ISSUE_GROUP_TYPE: {
         GENERAL: 'general',
+        IGNORE: 'ignore',
         DSR_NEW: 'dsr_new',
         DSR_FIXED: 'dsr_fixed',
         DSR_OUTSTANDING: 'dsr_outstanding'
@@ -431,5 +433,29 @@ export default {
     REPO_ACTION: {
         CI: 'CI',
         CD: 'CD'
-    }
+    },
+
+    ISSUE_VALIDATION_ACTION: {
+        UNDECIDED: 'UNDECIDED',
+        TRUE_POSITIVE: 'TP',
+        FALSE_POSITIVE: 'FP',
+        IGNORE: 'IGNORE'
+    },
+
+    ISSUE_VALIDATION_SCOPE: {
+        GLOBAL: 'GLOBAL',
+        USER: 'USER',
+        PROJECT: 'PROJECT'
+    },
+
+    ISSUE_VALIDATION_TYPE: {
+        DEFAULT: 'DEFAULT',
+        CUSTOM: 'CUSTOM'
+    },
+
+    VALIDATION_FILTER_TYPE: {
+        ALL: 'ALL',
+        IGNORE: 'IGNORE',
+        NON_IGNORE: 'NON-IGNORE'
+    },
 }

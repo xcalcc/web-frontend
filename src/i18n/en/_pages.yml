@@ -6,6 +6,8 @@ pages:
       download: DOWNLOAD
       project-summary: Project Summary
       detailed-report: Detailed Report
+      project-summary-include-ignore: Project Summary - full
+      detailed-report-include-ignore: Detailed Report - full
       project-setting: Project Settings
       delete: Delete Project
     side-bar:
@@ -34,9 +36,23 @@ pages:
       scan-fail: Most recent scan failed on <br/>{{date}} at {{time}}
       top-issues-tip: Displaying top 10 only
       copy-full-path-tip: Copy the full path
+      multiple-selection-tip: Please check the box to change the VALIDATION category or ASSIGNEE for a defect.
+      multiple-selection-ignore: You have tagged False Positive or Ignore for the selected defects. These defects will be moved to the IGNORED tab once confirmed.
+      multiple-selection-ignore-remove: You have chosen Reset for the selected defects. These defects will be removed from the IGNORED tab once confirmed.
+      modify-validation-ignore: Change "{{currValidation}}" to "{{newValidation}}"? <br/>This defect will be moved to the IGNORED tab once confirmed. <br/>(Defect ID:{{issueGroupId}})
+      modify-validation-nonignore: Change "{{currValidation}}" to "{{newValidation}}"? <br/>(Defect ID:{{issueGroupId}})
     issue-table:
+      id: ID
+      type: TYPE
+      description: DESCRIPTION
       rule-standard: RULE & STANDARD
+      file: FILE
+      line: LINE
+      function: FUNCTION
+      variable: VARIABLE
+      path: PATH
       assignee: ASSIGNEE
+      validation: VALIDATION
     report-download-description: >
       We support both PDF & CSV format reports.
       <br/>
@@ -66,6 +82,7 @@ pages:
     issue-type: TYPES
     assigned: Issue has been assigned successfully.
     results: RESULTS
+    ignored: IGNORED
     search-results: RESULTS
     search-box-placeholder: Search
     copy: Copy
@@ -73,6 +90,12 @@ pages:
     project-risk: PROJECT RISK
     single: SINGLE
     misra: MISRA
+    validation: 
+      UNDECIDED: Undecided
+      TP: True Positive
+      FP: False Positive
+      IGNORE: Ignore
+    custom-filter: Custom Ignore Rules
     statistic-view:
       top-issues: HIGH RISK DEFECTS
       defects-assigned: DEFECTS ASSIGNED
@@ -271,3 +294,24 @@ pages:
   triage:
     rule-standard: RULE & STANDARD
     assignee: ASSIGNEE
+  issue-filters: 
+    title: Defect Filter Rules
+    validation-title: Defect Validation Management
+    section-new-title: Create a new filter rule
+    section-new-description: Defects that meet the following rules will be displayed in the "Ignored List" on the scan results page
+    rule-code: TYPE (e.g. ERR33-C、AOB、NPD)
+    file-path: FILE
+    variable-name: VARIABLE
+    function-name: FUNCTION
+    button-save: CREATE
+    section-list-title: Filter Rule List
+    validation:
+      data-empty: The defect type and file path cannot be empty at the same time
+      data-exists: Data with the same rule already exists
+    table: 
+      rule-code: TYPE
+      file-path: FILE
+      function-name: FUNCTION
+      variable-name: VARIABLE
+      validation: VALIDATION
+      created: CREATED

@@ -30,7 +30,7 @@ const DownloadReport = props => {
     const currentFilter = useSelector(state => state.page.scanResult.filter);
     const appInfo = useSelector(state => state.app.appInfo);
 
-    const downloadOptions = [
+    let downloadOptions = [
         {
             label: i18n.t('pages.scan-result.right-nav.project-summary'),
             value: 'pdf',
@@ -40,30 +40,62 @@ const DownloadReport = props => {
             label: i18n.t('pages.scan-result.right-nav.detailed-report'),
             value: 'csv',
             icon: <Image src={CsvIcon}/>
-        }
+        },
     ];
 
+    if(utils.isEnableDevModeOption(enums.DEV_MODE_OPTION.validation)) {
+        downloadOptions = downloadOptions.concat([
+            {
+                divider: true
+            },
+            {
+                label: i18n.t('pages.scan-result.right-nav.project-summary-include-ignore'),
+                value: 'pdf-include-ignore',
+                icon: <Image src={PdfIcon}/>
+            },
+            {
+                label: i18n.t('pages.scan-result.right-nav.detailed-report-include-ignore'),
+                value: 'csv-include-ignore',
+                icon: <Image src={CsvIcon}/>
+            }
+        ]);
+    }
+
     const handleSelected = async data => {
-        if (data.value === 'pdf') {
-            await handlePdfDownload();
-        } else {
-            await handleCsvDownload();
+        switch(data.value) {
+            case 'pdf':
+                await handlePdfDownload(false);
+                break;
+            case 'csv':
+                await handleCsvDownload(false);
+                break;
+            case 'pdf-include-ignore':
+                await handlePdfDownload(true);
+                break;
+            case 'csv-include-ignore':
+                await handleCsvDownload(true);
+                break;
+            default:
+                break;
         }
     }
 
-    const prepareReportFilter = () => {
+    const prepareReportFilter = (isIncludeIgnore) => {
         const payload = dispatch(actions.getPayloadOfSearchIssue({
             isDsrPage,
             isMisraPage: true,
             scanTaskId,
             currentFilter,
+            validationFilterType: isIncludeIgnore 
+                ? enums.VALIDATION_FILTER_TYPE.ALL
+                : enums.VALIDATION_FILTER_TYPE.NON_IGNORE
         }));
 
         payload.projectId = projectUuid;
         return payload;
     }
 
-    const handleCsvDownload = async () => {
+    const handleCsvDownload = async (isIncludeIgnore) => {
         setIsLoading(true);
 
         let newPrefix;
@@ -102,7 +134,7 @@ const DownloadReport = props => {
         }
 
         const response = await dispatch(actions.getDetailReport({
-            payload: prepareReportFilter(),
+            payload: prepareReportFilter(isIncludeIgnore),
             fileType: 'csv',
             reportType: reportContentType, 
             isDsr: isDsrPage,
@@ -136,11 +168,11 @@ const DownloadReport = props => {
         return `${projectName}_xcalscan_report_msr_${moment().format('DD-MM-YYYY')}_${localStorage.getItem('language') === 'en' ? 'en' : 'zh'}.pdf`;
     };
 
-    const handlePdfDownload = async () => {
+    const handlePdfDownload = async (isIncludeIgnore) => {
         setIsLoading(true);
         //{proj name}_xcalscan_summary_{today date}.pdf
         const locale = localStorage.getItem('language');
-        const filterConditions = prepareReportFilter();
+        const filterConditions = prepareReportFilter(isIncludeIgnore);
         let pdfData = await dispatch(actions.getSummaryReport(filterConditions));
         pdfData.filterConditions = currentFilter;
 

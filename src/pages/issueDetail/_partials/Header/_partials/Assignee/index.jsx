@@ -18,11 +18,29 @@ const Assignee = ({issueGroup}) => {
     const [userOptions, setUserOptions] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const [selectedUser, setSelectedUser] = useState({});
+    const [selectedValidation, setSelectedValidation] = useState('');
 
     const dateFormat = utils.isChinese() ? 'YYYY/MM/DD' : 'DD/MM/YYYY';
     const scanEndMomentEntity = moment(issueGroup.occurTime);
     const date = (scanEndMomentEntity.isValid() && scanEndMomentEntity.format(dateFormat)) || '';
     const time = (scanEndMomentEntity.isValid() && scanEndMomentEntity.format('HH:mm:ss')) || '';
+
+    const issueValidationAction = enums.ISSUE_VALIDATION_ACTION;
+    if(!utils.isEnableDevModeOption(enums.DEV_MODE_OPTION.validation)) {
+        delete issueValidationAction.TRUE_POSITIVE;
+        delete issueValidationAction.FALSE_POSITIVE
+    }
+
+    const validationOptions = Object.keys(issueValidationAction).map(key => {
+        const validationValue = enums.ISSUE_VALIDATION_ACTION[key];
+        const optionIconPath = utils.scanResultHelper.getIconByValidationValue(validationValue);
+
+        return {
+            label: i18n.t(`pages.scan-result.validation.${validationValue}`),
+            value: validationValue,
+            icon: <img src={optionIconPath} />
+        }
+    });
 
     const handleUserSelected = async user => {
         setIsLoading(true);
@@ -40,8 +58,56 @@ const Assignee = ({issueGroup}) => {
         }
     };
 
+    const handleValidationSelected = async selected => {
+        if(selected.value === selectedValidation) return;
+
+        const defaultValidation = issueGroup.validations && 
+                issueGroup.validations.find(x => x.type === enums.ISSUE_VALIDATION_TYPE.DEFAULT);
+
+        let responseData;
+        if(!defaultValidation) {
+            responseData = await dispatch(actions.addIssueValidation({
+                projectId: issueGroup.projectId,
+                scanTaskId: issueGroup.occurScanTaskId,
+                ruleCode: issueGroup.ruleCode,
+                filePath: issueGroup.sinkRelativePath || issueGroup.srcRelativePath,
+                functionName: issueGroup.functionName,
+                variableName: issueGroup.variableName,
+                type: enums.ISSUE_VALIDATION_TYPE.DEFAULT,
+                action: selected.value,
+                scope: enums.ISSUE_VALIDATION_SCOPE.GLOBAL
+            }));
+        } else if(selected.value === enums.ISSUE_VALIDATION_ACTION.UNDECIDED) {
+            responseData = await dispatch(actions.deleteIssueValidation(defaultValidation.id));
+        } else {
+            responseData = await dispatch(actions.updateIssueValidation({
+                id: defaultValidation.id,
+                action: selected.value
+            }));
+        }        
+
+        if(responseData.error) {
+            dispatch(actions.pushAlert({
+                type: 'error',
+                title: i18n.t('common.notifications.failure'),
+                content: utils.getApiMessage(responseData.error)
+            }));
+            return;
+        }
+
+        setSelectedValidation(selected.value);
+    }
+
+    const getValidationAction = () => {
+        const validations = issueGroup.validations || [];
+        const validationData = validations.find(x => x.type === enums.ISSUE_VALIDATION_TYPE.DEFAULT) || {};
+        const issueValidationAction = validationData.action || enums.ISSUE_VALIDATION_ACTION.UNDECIDED;
+        return issueValidationAction;
+    }
+
     useMemo(() => {
         if(!utils.isEmptyObject(issueGroup)) {
+            setSelectedValidation(getValidationAction());
             setSelectedUser({
                 id: issueGroup.assigneeId,
                 displayName: issueGroup.assigneeDisplayName || i18n.t('issueDetail.unassigned'),
@@ -82,7 +148,7 @@ const Assignee = ({issueGroup}) => {
         </div>
         {
             utils.getAppFrom() !== enums.APP_FROM.ANT &&
-            <div className="user">
+            <div className="ddl-panel user">
                 <span className="title">{i18n.t('issueDetail.assigned')}</span>
                 <div className="value">
                     <Dropdown
@@ -97,6 +163,18 @@ const Assignee = ({issueGroup}) => {
                 </div>
             </div>
         }
+        <div className="ddl-panel validation">
+            <span className="title">{i18n.t('issueDetail.validation')}</span>
+            <div className="value">
+                <Dropdown
+                    label={selectedValidation && i18n.t(`pages.scan-result.validation.${selectedValidation}`)}
+                    selectedValue={selectedValidation}
+                    options={validationOptions}
+                    icon={<img src={utils.scanResultHelper.getIconByValidationValue(selectedValidation)} />}
+                    onSelect={(data) => handleValidationSelected(data)}
+                />
+            </div>
+        </div>
     </div>;
 }
 
